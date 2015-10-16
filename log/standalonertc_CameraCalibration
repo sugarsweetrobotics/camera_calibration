@@ -1,0 +1,3801 @@
+Oct 16 05:37:42.994 INFO: manager: 1.1.1
+Oct 16 05:37:42.995 INFO: manager: Copyright (C) 2003-2012
+Oct 16 05:37:42.995 INFO: manager:   Noriaki Ando
+Oct 16 05:37:42.995 INFO: manager:   Intelligent Systems Research Institute, AIST
+Oct 16 05:37:42.995 INFO: manager: Manager starting.
+Oct 16 05:37:42.995 INFO: manager: Starting local logging.
+Oct 16 05:37:42.995 TRACE: manager: Manager::initORB()
+Oct 16 05:37:42.995 DEBUG: manager: corba.args: 
+Oct 16 05:37:42.995 DEBUG: manager: - config
+  - version: 1.1.1
+- openrtm
+  - name: OpenRTM-aist-1.1.1
+  - version: 1.1.1
+- manager
+  - instance_name: manager
+  - name: manager_cpp
+  - naming_formats: %n_cpp.mgr
+  - pid: 19255
+  - refstring_path: /var/log/rtcmanager.ref
+  - modules
+    - load_path: ./
+    - abs_path_allowed: YES
+    - C++
+      - manager_cmd: rtcd
+      - profile_cmd: rtcprof
+      - suffixes: dylib
+      - load_paths: ./
+    - Python
+      - manager_cmd: rtcd_python
+      - profile_cmd: rtcprof_python
+      - suffixes: py
+      - load_paths: ./
+    - Java
+      - manager_cmd: rtcd_java
+      - profile_cmd: rtcprof_java
+      - suffixes: class
+      - load_paths: ./
+    - preload: 
+    - config_path: 
+    - download_allowed: 
+    - init_func_suffix: 
+    - init_func_prefix: 
+  - is_master: NO
+  - corba_servant: YES
+  - shutdown_on_nortcs: NO
+  - shutdown_auto: NO
+  - auto_shutdown_duration: 10.0
+  - command: rtcd
+  - supported_languages: C++, Python, Java
+  - local_service
+    - enabled_services: ALL
+  - components
+    - precreate: 
+- os
+  - name: Darwin
+  - release: 14.5.0
+  - version: Darwin Kernel Version 14.5.0: Wed Jul 29 02:26:53 PDT 2015; root:xnu-2782.40.9~1/RELEASE_X86_64
+  - arch: x86_64
+  - hostname: visnu.local
+- logger
+  - enable: YES
+  - file_name: ./log/standalonertc_CameraCalibration
+  - date_format: %b %d %H:%M:%S.%Q
+  - log_level: TRACE
+  - stream_lock: NO
+  - master_logger: 
+  - clock_type: 
+- module
+  - conf_path: 
+  - load_path: 
+- naming
+  - enable: YES
+  - type: corba
+  - formats: %n.rtc
+  - update
+    - enable: YES
+    - interval: 10.0
+- timer
+  - enable: YES
+  - tick: 0.1
+- corba
+  - args: 
+  - endpoint: 
+  - id: omniORB
+  - nameservers: localhost:2809
+  - master_manager: localhost:2810
+  - nameservice
+    - replace_endpoint: NO
+- exec_cxt
+  - periodic
+    - type: PeriodicExecutionContext
+    - rate: 1000
+  - sync_transition: YES
+  - transition_timeout: 0.5
+- sdo
+  - service
+    - provider
+      - enabled_service: ALL
+    - consumer
+      - enabled_service: ALL
+- ImageProcessin
+  - CameraCalibration0
+    - config_file: conf/CameraCalibration0.conf
+- config_file: conf/rtc_CameraCalibration.conf
+
+Oct 16 05:37:42.995 DEBUG: manager: corba.endpoint: 
+Oct 16 05:37:42.995 DEBUG: manager: manager.is_master: NO
+Oct 16 05:37:42.995 DEBUG: manager: corba.id: omniORB
+Oct 16 05:37:42.996 TRACE: manager: Manager::initNaming()
+Oct 16 05:37:42.996 TRACE: manager: Register Naming Server: corba/localhost:2809
+Oct 16 05:37:42.996 TRACE: NamingManager: NamingManager::registerNameServer(corba, localhost:2809)
+Oct 16 05:37:42.996 TRACE: NamingManager: createNamingObj(method = corba, nameserver = localhost:2809
+Oct 16 05:37:42.996 TRACE: manager: Manager::getORB()
+Oct 16 05:37:43.006 WARNING: NamingOnCorba: No endpoint for the CORBA naming service (localhost) was found.
+Oct 16 05:37:43.006 INFO: NamingManager: NameServer connection succeeded: corba/localhost:2809
+Oct 16 05:37:43.006 TRACE: manager: Manager::initFactories()
+Oct 16 05:37:43.006 TRACE: manager: Manager::initExecContext()
+Oct 16 05:37:43.006 TRACE: manager: Manager::initComposite()
+Oct 16 05:37:43.006 TRACE: manager: Manager::registerFactory(PeriodicECSharedComposite)
+Oct 16 05:37:43.006 TRACE: manager: Manager::initManagerServant()
+Oct 16 05:37:43.007 TRACE: ManagerServant: This manager is slave.
+Oct 16 05:37:43.007 TRACE: ManagerServant: findManager(host_port = localhost:2810)
+Oct 16 05:37:43.007 DEBUG: ManagerServant: corbaloc: corbaloc::localhost:2810/manager_cpp
+Oct 16 05:37:43.007 TRACE: manager: Manager::getORB()
+Oct 16 05:37:43.008 DEBUG: ManagerServant: CORBA SystemException cought (CORBA::TRANSIENT)
+Oct 16 05:37:43.008 INFO: ManagerServant: Master manager not found
+Oct 16 05:37:43.008 TRACE: manager: Manager::activateManager()
+Oct 16 05:37:43.008 TRACE: manager: Manager::getPOAManager()
+Oct 16 05:37:43.008 TRACE: manager: Manager::getPOAManager()
+Oct 16 05:37:43.008 TRACE: manager: POA Manager activated.
+Oct 16 05:37:43.008 TRACE: manager: Manager::initLocalService()
+Oct 16 05:37:43.008 TRACE: LocalServiceAdmin: LocalServiceAdmin::LocalServiceAdmin()
+Oct 16 05:37:43.008 TRACE: LocalServiceAdmin: LocalServiceAdmin::init():
+Oct 16 05:37:43.008 DEBUG: LocalServiceAdmin: - enabled_services: ALL
+- modules: 
+
+Oct 16 05:37:43.008 INFO: LocalServiceAdmin: All the local services are enabled.
+Oct 16 05:37:43.008 DEBUG: LocalServiceAdmin: Available services: 
+Oct 16 05:37:43.008 DEBUG: manager: LocalServiceAdmin's properties:
+Oct 16 05:37:43.008 DEBUG: manager: - enabled_services: ALL
+- modules: 
+
+Oct 16 05:37:43.008 TRACE: manager: Manager::registerFactory(CameraCalibration)
+Oct 16 05:37:43.008 TRACE: manager: Manager::createComponent(CameraCalibration)
+Oct 16 05:37:43.009 TRACE: manager: RTC basic propfile vendor: 
+Oct 16 05:37:43.009 TRACE: manager: RTC basic propfile category: 
+Oct 16 05:37:43.009 TRACE: manager: RTC basic propfile implementation_id: CameraCalibration
+Oct 16 05:37:43.009 TRACE: manager: RTC basic propfile version: 
+Oct 16 05:37:43.009 TRACE: manager: Manager::getORB()
+Oct 16 05:37:43.009 TRACE: manager: Manager::getPOA()
+Oct 16 05:37:43.010 TRACE: manager: Manager::getORB()
+Oct 16 05:37:43.010 TRACE: manager: Manager::getPOA()
+Oct 16 05:37:43.010 TRACE: : getProperties()
+Oct 16 05:37:43.010 TRACE: SdoServiceAdmin: SdoServiceAdmin::SdoServiceAdmin()
+Oct 16 05:37:43.010 TRACE: : getProperties()
+Oct 16 05:37:43.010 DEBUG: SdoServiceAdmin: sdo.service.provider.enabled_services: 
+Oct 16 05:37:43.010 DEBUG: SdoServiceAdmin: sdo.service.provider.available_services: 
+Oct 16 05:37:43.010 DEBUG: SdoServiceAdmin: sdo.service.consumer.enabled_services: 
+Oct 16 05:37:43.010 DEBUG: SdoServiceAdmin: sdo.service.consumer.available_services: 
+Oct 16 05:37:43.010 DEBUG: InImage: Port name: InImage
+Oct 16 05:37:43.010 DEBUG: InImage: setting port.port_type: DataIntPort
+Oct 16 05:37:43.010 DEBUG: InImage: setting dataport.data_type: IDL:Img/TimedCameraImage:1.0
+Oct 16 05:37:43.010 TRACE: : setProperties()
+Oct 16 05:37:43.010 TRACE: : getTypeName()
+Oct 16 05:37:43.010 TRACE: CameraCalibration0: setInstanceName(CameraCalibration0)
+Oct 16 05:37:43.010 TRACE: manager: RTC created: CameraCalibration
+Oct 16 05:37:43.010 TRACE: CameraCalibration0: getCategory()
+Oct 16 05:37:43.010 TRACE: CameraCalibration0: getTypeName()
+Oct 16 05:37:43.010 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 05:37:43.010 TRACE: CameraCalibration0: setProperties()
+Oct 16 05:37:43.010 TRACE: CameraCalibration0: setProperties()
+Oct 16 05:37:43.010 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:37:43.010 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:37:43.010 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:37:43.010 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:37:43.010 TRACE: CameraCalibration0: initialize()
+Oct 16 05:37:43.010 DEBUG: CameraCalibration0: getContextOptions()
+Oct 16 05:37:43.010 TRACE: CameraCalibration0: getGlobalContextOptions()
+Oct 16 05:37:43.011 DEBUG: CameraCalibration0: Global EC options are specified.
+Oct 16 05:37:43.011 DEBUG: CameraCalibration0: - type: PeriodicExecutionContext
+- rate: 1000
+
+Oct 16 05:37:43.011 DEBUG: CameraCalibration0: Copying inherited EC options.
+Oct 16 05:37:43.011 TRACE: CameraCalibration0: getPrivateContextOptions()
+Oct 16 05:37:43.011 DEBUG: CameraCalibration0: No component specific EC specified.
+Oct 16 05:37:43.011 TRACE: ec_worker: ExecutionContextWorker()
+Oct 16 05:37:43.011 TRACE: periodic_ecprofile: ExecutionContextProfile()
+Oct 16 05:37:43.011 DEBUG: periodic_ecprofile: Actual rate: 0 [sec], 1 [usec]
+Oct 16 05:37:43.011 TRACE: periodic_ec: PeriodicExecutionContext()
+Oct 16 05:37:43.011 TRACE: periodic_ecprofile: setObjRef()
+Oct 16 05:37:43.011 TRACE: periodic_ecprofile: setKind(PERIODIC)
+Oct 16 05:37:43.011 TRACE: ec_base: setRate(1000000.000000)
+Oct 16 05:37:43.011 TRACE: periodic_ecprofile: setRate(1000000.000000)
+Oct 16 05:37:43.011 INFO: ec_base: setRate(1000000.000000) done
+Oct 16 05:37:43.011 DEBUG: periodic_ec: Actual period: 0 [sec], 1 [usec]
+Oct 16 05:37:43.011 DEBUG: CameraCalibration0: EC (PeriodicExecutionContext) created.
+Oct 16 05:37:43.011 TRACE: ec_base: init()
+Oct 16 05:37:43.011 DEBUG: ec_base: - sync_transition: YES
+- transition_timeout: 0.5
+- type: PeriodicExecutionContext
+- rate: 1000
+- name: 
+
+Oct 16 05:37:43.011 TRACE: ec_base: setRate(1000.000000)
+Oct 16 05:37:43.011 TRACE: periodic_ecprofile: setRate(1000.000000)
+Oct 16 05:37:43.011 INFO: ec_base: setRate(1000.000000) done
+Oct 16 05:37:43.011 TRACE: ec_base: setTransitionMode(sync_transition)
+Oct 16 05:37:43.011 DEBUG: ec_base: Transition Mode: sync_transition = YES
+Oct 16 05:37:43.011 TRACE: ec_base: setTransitionMode(sync_activation)
+Oct 16 05:37:43.011 DEBUG: ec_base: Configuration sync_activation not found.
+Oct 16 05:37:43.011 TRACE: ec_base: setTransitionMode(sync_deactivation)
+Oct 16 05:37:43.011 DEBUG: ec_base: Configuration sync_deactivation not found.
+Oct 16 05:37:43.011 TRACE: ec_base: setTransitionMode(sync_reset)
+Oct 16 05:37:43.011 DEBUG: ec_base: Configuration sync_reset not found.
+Oct 16 05:37:43.011 TRACE: ec_base: setTimeout(transition_timeout)
+Oct 16 05:37:43.011 DEBUG: ec_base: Timeout (transition_timeout): 0.500000 [s]
+Oct 16 05:37:43.011 TRACE: ec_base: setTimeout(activation_timeout)
+Oct 16 05:37:43.011 DEBUG: ec_base: Configuration activation_timeout not found.
+Oct 16 05:37:43.011 TRACE: ec_base: setTimeout(deactivation_timeout)
+Oct 16 05:37:43.011 DEBUG: ec_base: Configuration deactivation_timeout not found.
+Oct 16 05:37:43.011 TRACE: ec_base: setTimeout(reset_timeout)
+Oct 16 05:37:43.011 DEBUG: ec_base: Configuration reset_timeout not found.
+Oct 16 05:37:43.011 DEBUG: ec_base: ExecutionContext's configurations:
+Oct 16 05:37:43.011 DEBUG: ec_base: Exec rate   : 1000.000000 [Hz]
+Oct 16 05:37:43.011 DEBUG: ec_base: Activation  : Sync = YES, Timeout = 0.500000
+Oct 16 05:37:43.011 DEBUG: ec_base: Deactivation: Sync = YES, Timeout = 0.500000
+Oct 16 05:37:43.011 DEBUG: ec_base: Reset       : Sync = YES, Timeout = 0.500000
+Oct 16 05:37:43.011 TRACE: periodic_ecprofile: setProperties()
+Oct 16 05:37:43.011 DEBUG: periodic_ecprofile: - sync_transition: YES
+- transition_timeout: 0.5
+- type: PeriodicExecutionContext
+- rate: 1000
+- name: 
+
+Oct 16 05:37:43.011 TRACE: ec_worker: bindComponent()
+Oct 16 05:37:43.011 TRACE: CameraCalibration0: bindContext()
+Oct 16 05:37:43.011 DEBUG: ec_worker: bindContext returns id = 0
+Oct 16 05:37:43.011 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:37:43.011 TRACE: manager: Manager::getPOA()
+Oct 16 05:37:43.011 DEBUG: ec_worker: bindComponent() succeeded.
+Oct 16 05:37:43.011 INFO: CameraCalibration0: 1 execution context was created.
+Oct 16 05:37:43.011 TRACE: CameraCalibration0: on_initialize()
+Oct 16 05:37:43.011 DEBUG: CameraCalibration0: Calling onInitialize().
+Oct 16 05:37:43.011 TRACE: CameraCalibration0: addInPort(InImage)
+Oct 16 05:37:43.011 TRACE: CameraCalibration0: addPort(PortBase&)
+Oct 16 05:37:43.011 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:37:43.011 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 05:37:43.011 TRACE: InImage: setOwner(CameraCalibration0)
+Oct 16 05:37:43.011 TRACE: InImage: getPortProfile()
+Oct 16 05:37:43.011 TRACE: InImage: getName() = CameraCalibration0.InImage
+Oct 16 05:37:43.011 TRACE: InImage: getPortRef()
+Oct 16 05:37:43.011 TRACE: InImage: getProfile()
+Oct 16 05:37:43.011 TRACE: InImage: init()
+Oct 16 05:37:43.011 DEBUG: InImage: single buffer mode.
+Oct 16 05:37:43.011 TRACE: InImage: initProviders()
+Oct 16 05:37:43.011 DEBUG: InImage: available providers: corba_cdr
+Oct 16 05:37:43.011 DEBUG: InImage: dataflow_type push is supported
+Oct 16 05:37:43.011 TRACE: InImage: initConsumers()
+Oct 16 05:37:43.011 DEBUG: InImage: available consumers: corba_cdr
+Oct 16 05:37:43.011 TRACE: CameraCaptureService: registerConsumer()
+Oct 16 05:37:43.011 TRACE: CameraCalibration0: addPort(CrobaPort)
+Oct 16 05:37:43.011 TRACE: CameraCaptureService: init()
+Oct 16 05:37:43.011 DEBUG: CameraCaptureService: : 
+
+Oct 16 05:37:43.011 DEBUG: CameraCaptureService: : 
+
+Oct 16 05:37:43.011 TRACE: CameraCalibration0: addPort(PortBase&)
+Oct 16 05:37:43.011 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:37:43.011 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 05:37:43.011 TRACE: InImage: get_port_profile()
+Oct 16 05:37:43.012 TRACE: CameraCaptureService: setOwner(CameraCalibration0)
+Oct 16 05:37:43.012 TRACE: CameraCaptureService: getPortProfile()
+Oct 16 05:37:43.012 TRACE: CameraCaptureService: getName() = CameraCalibration0.CameraCaptureService
+Oct 16 05:37:43.012 TRACE: InImage: get_port_profile()
+Oct 16 05:37:43.012 TRACE: CameraCaptureService: getPortRef()
+Oct 16 05:37:43.012 TRACE: CameraCaptureService: getProfile()
+Oct 16 05:37:43.012 TRACE: InImage: getProfile()
+Oct 16 05:37:43.012 TRACE: CameraCalibration0: bindParameter(image_num (default: 10))
+Oct 16 05:37:43.012 TRACE: CameraCalibration0: bindParameter(chess_pattern_row (default: 7))
+Oct 16 05:37:43.012 TRACE: CameraCalibration0: bindParameter(chess_pattern_column (default: 10))
+Oct 16 05:37:43.012 TRACE: CameraCalibration0: bindParameter(chess_pattern_size (default: 24.0))
+Oct 16 05:37:43.012 TRACE: CameraCalibration0: bindParameter(output_file_name (default: calib.yml))
+Oct 16 05:37:43.012 DEBUG: CameraCalibration0: onInitialize() succeeded.
+Oct 16 05:37:43.012 DEBUG: CameraCalibration0: Active configuration set: default exists.
+Oct 16 05:37:43.012 INFO: CameraCalibration0: Initial active configuration set is default.
+Oct 16 05:37:43.012 DEBUG: CameraCalibration0: on_initialize() was properly done.
+Oct 16 05:37:43.012 DEBUG: CameraCalibration0: EC[0] starting.
+Oct 16 05:37:43.012 TRACE: ec_base: start()
+Oct 16 05:37:43.012 TRACE: ec_worker: start()
+Oct 16 05:37:43.012 TRACE: CameraCalibration0: on_startup(0)
+Oct 16 05:37:43.012 TRACE: CameraCalibration0: onStartup(0)
+Oct 16 05:37:43.012 DEBUG: ec_worker: 1 components started.
+Oct 16 05:37:43.012 TRACE: periodic_ec: open()
+Oct 16 05:37:43.012 TRACE: manager: RTC initialization succeeded: CameraCalibration
+Oct 16 05:37:43.012 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 05:37:43.012 TRACE: manager: Manager::registerComponent(CameraCalibration0)
+Oct 16 05:37:43.012 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 05:37:43.012 TRACE: CameraCalibration0: getNamingNames()
+
+Oct 16 05:37:43.012 TRACE: manager: Oct 16 05:37:43.012 TRACE: periodic_ec: Bind name: CameraCalibration0.rtcsvc()
+
+
+Oct 16 05:37:43.012 TRACE: NamingManager: NamingManager::bindObject(CameraCalibration0.rtc)
+Oct 16 05:37:43.012 TRACE: NamingOnCorba: bindObject(name = CameraCalibration0.rtc, rtobj)
+Oct 16 05:37:43.012 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:37:43.013 TRACE: manager: Manager::runManager(): blocking mode
+Oct 16 05:37:53.260 TRACE: NamingManager: NamingManager::update()
+Oct 16 05:37:53.260 TRACE: NamingOnCorba: isAlive()
+Oct 16 05:37:55.286 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 05:37:55.286 TRACE: InImage: get_port_profile()
+Oct 16 05:37:55.286 TRACE: CameraCaptureService: get_port_profile()
+Oct 16 05:37:56.816 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 05:37:56.816 TRACE: InImage: get_port_profile()
+Oct 16 05:37:56.816 TRACE: CameraCaptureService: get_port_profile()
+Oct 16 05:38:03.502 TRACE: NamingManager: NamingManager::update()
+Oct 16 05:38:03.502 TRACE: NamingOnCorba: isAlive()
+Oct 16 05:47:51.924 INFO: manager: 1.1.1
+Oct 16 05:47:51.925 INFO: manager: Copyright (C) 2003-2012
+Oct 16 05:47:51.925 INFO: manager:   Noriaki Ando
+Oct 16 05:47:51.925 INFO: manager:   Intelligent Systems Research Institute, AIST
+Oct 16 05:47:51.925 INFO: manager: Manager starting.
+Oct 16 05:47:51.925 INFO: manager: Starting local logging.
+Oct 16 05:47:51.925 TRACE: manager: Manager::initORB()
+Oct 16 05:47:51.925 DEBUG: manager: corba.args: 
+Oct 16 05:47:51.925 DEBUG: manager: - config
+  - version: 1.1.1
+- openrtm
+  - name: OpenRTM-aist-1.1.1
+  - version: 1.1.1
+- manager
+  - instance_name: manager
+  - name: manager_cpp
+  - naming_formats: %n_cpp.mgr
+  - pid: 19302
+  - refstring_path: /var/log/rtcmanager.ref
+  - modules
+    - load_path: ./
+    - abs_path_allowed: YES
+    - C++
+      - manager_cmd: rtcd
+      - profile_cmd: rtcprof
+      - suffixes: dylib
+      - load_paths: ./
+    - Python
+      - manager_cmd: rtcd_python
+      - profile_cmd: rtcprof_python
+      - suffixes: py
+      - load_paths: ./
+    - Java
+      - manager_cmd: rtcd_java
+      - profile_cmd: rtcprof_java
+      - suffixes: class
+      - load_paths: ./
+    - preload: 
+    - config_path: 
+    - download_allowed: 
+    - init_func_suffix: 
+    - init_func_prefix: 
+  - is_master: NO
+  - corba_servant: YES
+  - shutdown_on_nortcs: NO
+  - shutdown_auto: NO
+  - auto_shutdown_duration: 10.0
+  - command: rtcd
+  - supported_languages: C++, Python, Java
+  - local_service
+    - enabled_services: ALL
+  - components
+    - precreate: 
+- os
+  - name: Darwin
+  - release: 14.5.0
+  - version: Darwin Kernel Version 14.5.0: Wed Jul 29 02:26:53 PDT 2015; root:xnu-2782.40.9~1/RELEASE_X86_64
+  - arch: x86_64
+  - hostname: visnu.local
+- logger
+  - enable: YES
+  - file_name: ./log/standalonertc_CameraCalibration
+  - date_format: %b %d %H:%M:%S.%Q
+  - log_level: TRACE
+  - stream_lock: NO
+  - master_logger: 
+  - clock_type: 
+- module
+  - conf_path: 
+  - load_path: 
+- naming
+  - enable: YES
+  - type: corba
+  - formats: %n.rtc
+  - update
+    - enable: YES
+    - interval: 10.0
+- timer
+  - enable: YES
+  - tick: 0.1
+- corba
+  - args: 
+  - endpoint: 
+  - id: omniORB
+  - nameservers: localhost:2809
+  - master_manager: localhost:2810
+  - nameservice
+    - replace_endpoint: NO
+- exec_cxt
+  - periodic
+    - type: PeriodicExecutionContext
+    - rate: 1000
+  - sync_transition: YES
+  - transition_timeout: 0.5
+- sdo
+  - service
+    - provider
+      - enabled_service: ALL
+    - consumer
+      - enabled_service: ALL
+- ImageProcessin
+  - CameraCalibration0
+    - config_file: conf/CameraCalibration0.conf
+- config_file: conf/rtc_CameraCalibration.conf
+
+Oct 16 05:47:51.925 DEBUG: manager: corba.endpoint: 
+Oct 16 05:47:51.925 DEBUG: manager: manager.is_master: NO
+Oct 16 05:47:51.925 DEBUG: manager: corba.id: omniORB
+Oct 16 05:47:51.925 TRACE: manager: Manager::initNaming()
+Oct 16 05:47:51.926 TRACE: manager: Register Naming Server: corba/localhost:2809
+Oct 16 05:47:51.926 TRACE: NamingManager: NamingManager::registerNameServer(corba, localhost:2809)
+Oct 16 05:47:51.926 TRACE: NamingManager: createNamingObj(method = corba, nameserver = localhost:2809
+Oct 16 05:47:51.926 TRACE: manager: Manager::getORB()
+Oct 16 05:47:51.936 WARNING: NamingOnCorba: No endpoint for the CORBA naming service (localhost) was found.
+Oct 16 05:47:51.936 INFO: NamingManager: NameServer connection succeeded: corba/localhost:2809
+Oct 16 05:47:51.936 TRACE: manager: Manager::initFactories()
+Oct 16 05:47:51.936 TRACE: manager: Manager::initExecContext()
+Oct 16 05:47:51.936 TRACE: manager: Manager::initComposite()
+Oct 16 05:47:51.937 TRACE: manager: Manager::registerFactory(PeriodicECSharedComposite)
+Oct 16 05:47:51.937 TRACE: manager: Manager::initManagerServant()
+Oct 16 05:47:51.937 TRACE: ManagerServant: This manager is slave.
+Oct 16 05:47:51.937 TRACE: ManagerServant: findManager(host_port = localhost:2810)
+Oct 16 05:47:51.937 DEBUG: ManagerServant: corbaloc: corbaloc::localhost:2810/manager_cpp
+Oct 16 05:47:51.937 TRACE: manager: Manager::getORB()
+Oct 16 05:47:51.938 DEBUG: ManagerServant: CORBA SystemException cought (CORBA::TRANSIENT)
+Oct 16 05:47:51.938 INFO: ManagerServant: Master manager not found
+Oct 16 05:47:51.938 TRACE: manager: Manager::activateManager()
+Oct 16 05:47:51.938 TRACE: manager: Manager::getPOAManager()
+Oct 16 05:47:51.938 TRACE: manager: Manager::getPOAManager()
+Oct 16 05:47:51.938 TRACE: manager: POA Manager activated.
+Oct 16 05:47:51.938 TRACE: manager: Manager::initLocalService()
+Oct 16 05:47:51.938 TRACE: LocalServiceAdmin: LocalServiceAdmin::LocalServiceAdmin()
+Oct 16 05:47:51.938 TRACE: LocalServiceAdmin: LocalServiceAdmin::init():
+Oct 16 05:47:51.938 DEBUG: LocalServiceAdmin: - enabled_services: ALL
+- modules: 
+
+Oct 16 05:47:51.938 INFO: LocalServiceAdmin: All the local services are enabled.
+Oct 16 05:47:51.938 DEBUG: LocalServiceAdmin: Available services: 
+Oct 16 05:47:51.938 DEBUG: manager: LocalServiceAdmin's properties:
+Oct 16 05:47:51.938 DEBUG: manager: - enabled_services: ALL
+- modules: 
+
+Oct 16 05:47:51.938 TRACE: manager: Manager::registerFactory(CameraCalibration)
+Oct 16 05:47:51.938 TRACE: manager: Manager::createComponent(CameraCalibration)
+Oct 16 05:47:51.938 TRACE: manager: RTC basic propfile vendor: 
+Oct 16 05:47:51.938 TRACE: manager: RTC basic propfile category: 
+Oct 16 05:47:51.938 TRACE: manager: RTC basic propfile implementation_id: CameraCalibration
+Oct 16 05:47:51.938 TRACE: manager: RTC basic propfile version: 
+Oct 16 05:47:51.938 TRACE: manager: Manager::getORB()
+Oct 16 05:47:51.938 TRACE: manager: Manager::getPOA()
+Oct 16 05:47:51.938 TRACE: manager: Manager::getORB()
+Oct 16 05:47:51.938 TRACE: manager: Manager::getPOA()
+Oct 16 05:47:51.938 TRACE: : getProperties()
+Oct 16 05:47:51.938 TRACE: SdoServiceAdmin: SdoServiceAdmin::SdoServiceAdmin()
+Oct 16 05:47:51.938 TRACE: : getProperties()
+Oct 16 05:47:51.938 DEBUG: SdoServiceAdmin: sdo.service.provider.enabled_services: 
+Oct 16 05:47:51.938 DEBUG: SdoServiceAdmin: sdo.service.provider.available_services: 
+Oct 16 05:47:51.938 DEBUG: SdoServiceAdmin: sdo.service.consumer.enabled_services: 
+Oct 16 05:47:51.938 DEBUG: SdoServiceAdmin: sdo.service.consumer.available_services: 
+Oct 16 05:47:51.938 DEBUG: InImage: Port name: InImage
+Oct 16 05:47:51.938 DEBUG: InImage: setting port.port_type: DataIntPort
+Oct 16 05:47:51.938 DEBUG: InImage: setting dataport.data_type: IDL:Img/TimedCameraImage:1.0
+Oct 16 05:47:51.939 TRACE: : setProperties()
+Oct 16 05:47:51.939 TRACE: : getTypeName()
+Oct 16 05:47:51.939 TRACE: CameraCalibration0: setInstanceName(CameraCalibration0)
+Oct 16 05:47:51.939 TRACE: manager: RTC created: CameraCalibration
+Oct 16 05:47:51.939 TRACE: CameraCalibration0: getCategory()
+Oct 16 05:47:51.939 TRACE: CameraCalibration0: getTypeName()
+Oct 16 05:47:51.939 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 05:47:51.939 TRACE: CameraCalibration0: setProperties()
+Oct 16 05:47:51.939 TRACE: CameraCalibration0: setProperties()
+Oct 16 05:47:51.939 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:47:51.939 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:47:51.939 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:47:51.939 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:47:51.939 TRACE: CameraCalibration0: initialize()
+Oct 16 05:47:51.939 DEBUG: CameraCalibration0: getContextOptions()
+Oct 16 05:47:51.939 TRACE: CameraCalibration0: getGlobalContextOptions()
+Oct 16 05:47:51.939 DEBUG: CameraCalibration0: Global EC options are specified.
+Oct 16 05:47:51.939 DEBUG: CameraCalibration0: - type: PeriodicExecutionContext
+- rate: 1000
+
+Oct 16 05:47:51.939 DEBUG: CameraCalibration0: Copying inherited EC options.
+Oct 16 05:47:51.939 TRACE: CameraCalibration0: getPrivateContextOptions()
+Oct 16 05:47:51.939 DEBUG: CameraCalibration0: No component specific EC specified.
+Oct 16 05:47:51.939 TRACE: ec_worker: ExecutionContextWorker()
+Oct 16 05:47:51.939 TRACE: periodic_ecprofile: ExecutionContextProfile()
+Oct 16 05:47:51.939 DEBUG: periodic_ecprofile: Actual rate: 0 [sec], 1 [usec]
+Oct 16 05:47:51.939 TRACE: periodic_ec: PeriodicExecutionContext()
+Oct 16 05:47:51.939 TRACE: periodic_ecprofile: setObjRef()
+Oct 16 05:47:51.939 TRACE: periodic_ecprofile: setKind(PERIODIC)
+Oct 16 05:47:51.939 TRACE: ec_base: setRate(1000000.000000)
+Oct 16 05:47:51.939 TRACE: periodic_ecprofile: setRate(1000000.000000)
+Oct 16 05:47:51.939 INFO: ec_base: setRate(1000000.000000) done
+Oct 16 05:47:51.939 DEBUG: periodic_ec: Actual period: 0 [sec], 1 [usec]
+Oct 16 05:47:51.939 DEBUG: CameraCalibration0: EC (PeriodicExecutionContext) created.
+Oct 16 05:47:51.939 TRACE: ec_base: init()
+Oct 16 05:47:51.939 DEBUG: ec_base: - sync_transition: YES
+- transition_timeout: 0.5
+- type: PeriodicExecutionContext
+- rate: 1000
+- name: 
+
+Oct 16 05:47:51.939 TRACE: ec_base: setRate(1000.000000)
+Oct 16 05:47:51.939 TRACE: periodic_ecprofile: setRate(1000.000000)
+Oct 16 05:47:51.939 INFO: ec_base: setRate(1000.000000) done
+Oct 16 05:47:51.939 TRACE: ec_base: setTransitionMode(sync_transition)
+Oct 16 05:47:51.939 DEBUG: ec_base: Transition Mode: sync_transition = YES
+Oct 16 05:47:51.939 TRACE: ec_base: setTransitionMode(sync_activation)
+Oct 16 05:47:51.939 DEBUG: ec_base: Configuration sync_activation not found.
+Oct 16 05:47:51.939 TRACE: ec_base: setTransitionMode(sync_deactivation)
+Oct 16 05:47:51.939 DEBUG: ec_base: Configuration sync_deactivation not found.
+Oct 16 05:47:51.939 TRACE: ec_base: setTransitionMode(sync_reset)
+Oct 16 05:47:51.939 DEBUG: ec_base: Configuration sync_reset not found.
+Oct 16 05:47:51.939 TRACE: ec_base: setTimeout(transition_timeout)
+Oct 16 05:47:51.939 DEBUG: ec_base: Timeout (transition_timeout): 0.500000 [s]
+Oct 16 05:47:51.939 TRACE: ec_base: setTimeout(activation_timeout)
+Oct 16 05:47:51.939 DEBUG: ec_base: Configuration activation_timeout not found.
+Oct 16 05:47:51.939 TRACE: ec_base: setTimeout(deactivation_timeout)
+Oct 16 05:47:51.939 DEBUG: ec_base: Configuration deactivation_timeout not found.
+Oct 16 05:47:51.939 TRACE: ec_base: setTimeout(reset_timeout)
+Oct 16 05:47:51.939 DEBUG: ec_base: Configuration reset_timeout not found.
+Oct 16 05:47:51.939 DEBUG: ec_base: ExecutionContext's configurations:
+Oct 16 05:47:51.939 DEBUG: ec_base: Exec rate   : 1000.000000 [Hz]
+Oct 16 05:47:51.939 DEBUG: ec_base: Activation  : Sync = YES, Timeout = 0.500000
+Oct 16 05:47:51.939 DEBUG: ec_base: Deactivation: Sync = YES, Timeout = 0.500000
+Oct 16 05:47:51.939 DEBUG: ec_base: Reset       : Sync = YES, Timeout = 0.500000
+Oct 16 05:47:51.939 TRACE: periodic_ecprofile: setProperties()
+Oct 16 05:47:51.939 DEBUG: periodic_ecprofile: - sync_transition: YES
+- transition_timeout: 0.5
+- type: PeriodicExecutionContext
+- rate: 1000
+- name: 
+
+Oct 16 05:47:51.939 TRACE: ec_worker: bindComponent()
+Oct 16 05:47:51.939 TRACE: CameraCalibration0: bindContext()
+Oct 16 05:47:51.939 DEBUG: ec_worker: bindContext returns id = 0
+Oct 16 05:47:51.939 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:47:51.939 TRACE: manager: Manager::getPOA()
+Oct 16 05:47:51.939 DEBUG: ec_worker: bindComponent() succeeded.
+Oct 16 05:47:51.939 INFO: CameraCalibration0: 1 execution context was created.
+Oct 16 05:47:51.939 TRACE: CameraCalibration0: on_initialize()
+Oct 16 05:47:51.939 DEBUG: CameraCalibration0: Calling onInitialize().
+Oct 16 05:47:51.939 TRACE: CameraCalibration0: addInPort(InImage)
+Oct 16 05:47:51.939 TRACE: CameraCalibration0: addPort(PortBase&)
+Oct 16 05:47:51.939 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:47:51.939 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 05:47:51.939 TRACE: InImage: setOwner(CameraCalibration0)
+Oct 16 05:47:51.940 TRACE: InImage: getPortProfile()
+Oct 16 05:47:51.940 TRACE: InImage: getName() = CameraCalibration0.InImage
+Oct 16 05:47:51.940 TRACE: InImage: getPortRef()
+Oct 16 05:47:51.940 TRACE: InImage: getProfile()
+Oct 16 05:47:51.940 TRACE: InImage: init()
+Oct 16 05:47:51.940 DEBUG: InImage: single buffer mode.
+Oct 16 05:47:51.940 TRACE: InImage: initProviders()
+Oct 16 05:47:51.940 DEBUG: InImage: available providers: corba_cdr
+Oct 16 05:47:51.940 DEBUG: InImage: dataflow_type push is supported
+Oct 16 05:47:51.940 TRACE: InImage: initConsumers()
+Oct 16 05:47:51.940 DEBUG: InImage: available consumers: corba_cdr
+Oct 16 05:47:51.940 TRACE: CameraCaptureService: registerConsumer()
+Oct 16 05:47:51.940 TRACE: CameraCalibration0: addPort(CrobaPort)
+Oct 16 05:47:51.940 TRACE: CameraCaptureService: init()
+Oct 16 05:47:51.940 DEBUG: CameraCaptureService: : 
+
+Oct 16 05:47:51.940 DEBUG: CameraCaptureService: : 
+
+Oct 16 05:47:51.940 TRACE: CameraCalibration0: addPort(PortBase&)
+Oct 16 05:47:51.940 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:47:51.940 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 05:47:51.940 TRACE: InImage: get_port_profile()
+Oct 16 05:47:51.940 TRACE: CameraCaptureService: setOwner(CameraCalibration0)
+Oct 16 05:47:51.940 TRACE: CameraCaptureService: getPortProfile()
+Oct 16 05:47:51.940 TRACE: CameraCaptureService: getName() = CameraCalibration0.CameraCaptureService
+Oct 16 05:47:51.940 TRACE: InImage: get_port_profile()
+Oct 16 05:47:51.940 TRACE: CameraCaptureService: getPortRef()
+Oct 16 05:47:51.940 TRACE: CameraCaptureService: getProfile()
+Oct 16 05:47:51.940 TRACE: InImage: getProfile()
+Oct 16 05:47:51.940 TRACE: CameraCalibration0: bindParameter(image_num (default: 10))
+Oct 16 05:47:51.940 TRACE: CameraCalibration0: bindParameter(chess_pattern_row (default: 7))
+Oct 16 05:47:51.940 TRACE: CameraCalibration0: bindParameter(chess_pattern_column (default: 10))
+Oct 16 05:47:51.940 TRACE: CameraCalibration0: bindParameter(chess_pattern_size (default: 24.0))
+Oct 16 05:47:51.940 TRACE: CameraCalibration0: bindParameter(output_file_name (default: calib.yml))
+Oct 16 05:47:51.940 DEBUG: CameraCalibration0: onInitialize() succeeded.
+Oct 16 05:47:51.940 DEBUG: CameraCalibration0: Active configuration set: default exists.
+Oct 16 05:47:51.940 INFO: CameraCalibration0: Initial active configuration set is default.
+Oct 16 05:47:51.940 DEBUG: CameraCalibration0: on_initialize() was properly done.
+Oct 16 05:47:51.940 DEBUG: CameraCalibration0: EC[0] starting.
+Oct 16 05:47:51.940 TRACE: ec_base: start()
+Oct 16 05:47:51.940 TRACE: ec_worker: start()
+Oct 16 05:47:51.940 TRACE: CameraCalibration0: on_startup(0)
+Oct 16 05:47:51.940 TRACE: CameraCalibration0: onStartup(0)
+Oct 16 05:47:51.940 DEBUG: ec_worker: 1 components started.
+Oct 16 05:47:51.940 TRACE: periodic_ec: open()
+Oct 16 05:47:51.940 TRACE: manager: RTC initialization succeeded: CameraCalibration
+Oct 16 05:47:51.940 TRACE: CameraCalibration0: getInstanceName()
+
+Oct 16 05:47:51.940 TRACE: manager: Oct 16 05:47:51.940 TRACE: periodic_ec: Manager::registerComponent(CameraCalibration0)svc()
+
+Oct 16 05:47:51.940 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 05:47:51.940 TRACE: CameraCalibration0: getNamingNames()
+Oct 16 05:47:51.940 TRACE: manager: Bind name: CameraCalibration0.rtc
+Oct 16 05:47:51.940 TRACE: NamingManager: NamingManager::bindObject(CameraCalibration0.rtc)
+Oct 16 05:47:51.940 TRACE: NamingOnCorba: bindObject(name = CameraCalibration0.rtc, rtobj)
+Oct 16 05:47:51.940 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:47:51.940 TRACE: manager: Manager::runManager(): blocking mode
+Oct 16 05:48:02.188 TRACE: NamingManager: NamingManager::update()
+Oct 16 05:48:02.188 TRACE: NamingOnCorba: isAlive()
+Oct 16 05:50:38.934 INFO: manager: 1.1.1
+Oct 16 05:50:38.935 INFO: manager: Copyright (C) 2003-2012
+Oct 16 05:50:38.936 INFO: manager:   Noriaki Ando
+Oct 16 05:50:38.936 INFO: manager:   Intelligent Systems Research Institute, AIST
+Oct 16 05:50:38.936 INFO: manager: Manager starting.
+Oct 16 05:50:38.936 INFO: manager: Starting local logging.
+Oct 16 05:50:38.936 TRACE: manager: Manager::initORB()
+Oct 16 05:50:38.936 DEBUG: manager: corba.args: 
+Oct 16 05:50:38.936 DEBUG: manager: - config
+  - version: 1.1.1
+- openrtm
+  - name: OpenRTM-aist-1.1.1
+  - version: 1.1.1
+- manager
+  - instance_name: manager
+  - name: manager_cpp
+  - naming_formats: %n_cpp.mgr
+  - pid: 19327
+  - refstring_path: /var/log/rtcmanager.ref
+  - modules
+    - load_path: ./
+    - abs_path_allowed: YES
+    - C++
+      - manager_cmd: rtcd
+      - profile_cmd: rtcprof
+      - suffixes: dylib
+      - load_paths: ./
+    - Python
+      - manager_cmd: rtcd_python
+      - profile_cmd: rtcprof_python
+      - suffixes: py
+      - load_paths: ./
+    - Java
+      - manager_cmd: rtcd_java
+      - profile_cmd: rtcprof_java
+      - suffixes: class
+      - load_paths: ./
+    - preload: 
+    - config_path: 
+    - download_allowed: 
+    - init_func_suffix: 
+    - init_func_prefix: 
+  - is_master: NO
+  - corba_servant: YES
+  - shutdown_on_nortcs: NO
+  - shutdown_auto: NO
+  - auto_shutdown_duration: 10.0
+  - command: rtcd
+  - supported_languages: C++, Python, Java
+  - local_service
+    - enabled_services: ALL
+  - components
+    - precreate: 
+- os
+  - name: Darwin
+  - release: 14.5.0
+  - version: Darwin Kernel Version 14.5.0: Wed Jul 29 02:26:53 PDT 2015; root:xnu-2782.40.9~1/RELEASE_X86_64
+  - arch: x86_64
+  - hostname: visnu.local
+- logger
+  - enable: YES
+  - file_name: ./log/standalonertc_CameraCalibration
+  - date_format: %b %d %H:%M:%S.%Q
+  - log_level: TRACE
+  - stream_lock: NO
+  - master_logger: 
+  - clock_type: 
+- module
+  - conf_path: 
+  - load_path: 
+- naming
+  - enable: YES
+  - type: corba
+  - formats: %n.rtc
+  - update
+    - enable: YES
+    - interval: 10.0
+- timer
+  - enable: YES
+  - tick: 0.1
+- corba
+  - args: 
+  - endpoint: 
+  - id: omniORB
+  - nameservers: localhost:2809
+  - master_manager: localhost:2810
+  - nameservice
+    - replace_endpoint: NO
+- exec_cxt
+  - periodic
+    - type: PeriodicExecutionContext
+    - rate: 1000
+  - sync_transition: YES
+  - transition_timeout: 0.5
+- sdo
+  - service
+    - provider
+      - enabled_service: ALL
+    - consumer
+      - enabled_service: ALL
+- ImageProcessin
+  - CameraCalibration0
+    - config_file: conf/CameraCalibration0.conf
+- config_file: conf/rtc_CameraCalibration.conf
+
+Oct 16 05:50:38.936 DEBUG: manager: corba.endpoint: 
+Oct 16 05:50:38.936 DEBUG: manager: manager.is_master: NO
+Oct 16 05:50:38.936 DEBUG: manager: corba.id: omniORB
+Oct 16 05:50:38.937 TRACE: manager: Manager::initNaming()
+Oct 16 05:50:38.937 TRACE: manager: Register Naming Server: corba/localhost:2809
+Oct 16 05:50:38.937 TRACE: NamingManager: NamingManager::registerNameServer(corba, localhost:2809)
+Oct 16 05:50:38.937 TRACE: NamingManager: createNamingObj(method = corba, nameserver = localhost:2809
+Oct 16 05:50:38.937 TRACE: manager: Manager::getORB()
+Oct 16 05:50:38.946 WARNING: NamingOnCorba: No endpoint for the CORBA naming service (localhost) was found.
+Oct 16 05:50:38.946 INFO: NamingManager: NameServer connection succeeded: corba/localhost:2809
+Oct 16 05:50:38.946 TRACE: manager: Manager::initFactories()
+Oct 16 05:50:38.946 TRACE: manager: Manager::initExecContext()
+Oct 16 05:50:38.946 TRACE: manager: Manager::initComposite()
+Oct 16 05:50:38.946 TRACE: manager: Manager::registerFactory(PeriodicECSharedComposite)
+Oct 16 05:50:38.946 TRACE: manager: Manager::initManagerServant()
+Oct 16 05:50:38.947 TRACE: ManagerServant: This manager is slave.
+Oct 16 05:50:38.947 TRACE: ManagerServant: findManager(host_port = localhost:2810)
+Oct 16 05:50:38.947 DEBUG: ManagerServant: corbaloc: corbaloc::localhost:2810/manager_cpp
+Oct 16 05:50:38.947 TRACE: manager: Manager::getORB()
+Oct 16 05:50:38.948 DEBUG: ManagerServant: CORBA SystemException cought (CORBA::TRANSIENT)
+Oct 16 05:50:38.948 INFO: ManagerServant: Master manager not found
+Oct 16 05:50:38.948 TRACE: manager: Manager::activateManager()
+Oct 16 05:50:38.948 TRACE: manager: Manager::getPOAManager()
+Oct 16 05:50:38.948 TRACE: manager: Manager::getPOAManager()
+Oct 16 05:50:38.948 TRACE: manager: POA Manager activated.
+Oct 16 05:50:38.948 TRACE: manager: Manager::initLocalService()
+Oct 16 05:50:38.949 TRACE: LocalServiceAdmin: LocalServiceAdmin::LocalServiceAdmin()
+Oct 16 05:50:38.949 TRACE: LocalServiceAdmin: LocalServiceAdmin::init():
+Oct 16 05:50:38.949 DEBUG: LocalServiceAdmin: - enabled_services: ALL
+- modules: 
+
+Oct 16 05:50:38.949 INFO: LocalServiceAdmin: All the local services are enabled.
+Oct 16 05:50:38.949 DEBUG: LocalServiceAdmin: Available services: 
+Oct 16 05:50:38.949 DEBUG: manager: LocalServiceAdmin's properties:
+Oct 16 05:50:38.949 DEBUG: manager: - enabled_services: ALL
+- modules: 
+
+Oct 16 05:50:38.949 TRACE: manager: Manager::registerFactory(CameraCalibration)
+Oct 16 05:50:38.949 TRACE: manager: Manager::createComponent(CameraCalibration)
+Oct 16 05:50:38.949 TRACE: manager: RTC basic propfile vendor: 
+Oct 16 05:50:38.949 TRACE: manager: RTC basic propfile category: 
+Oct 16 05:50:38.949 TRACE: manager: RTC basic propfile implementation_id: CameraCalibration
+Oct 16 05:50:38.949 TRACE: manager: RTC basic propfile version: 
+Oct 16 05:50:38.949 TRACE: manager: Manager::getORB()
+Oct 16 05:50:38.949 TRACE: manager: Manager::getPOA()
+Oct 16 05:50:38.949 TRACE: manager: Manager::getORB()
+Oct 16 05:50:38.949 TRACE: manager: Manager::getPOA()
+Oct 16 05:50:38.949 TRACE: : getProperties()
+Oct 16 05:50:38.949 TRACE: SdoServiceAdmin: SdoServiceAdmin::SdoServiceAdmin()
+Oct 16 05:50:38.949 TRACE: : getProperties()
+Oct 16 05:50:38.949 DEBUG: SdoServiceAdmin: sdo.service.provider.enabled_services: 
+Oct 16 05:50:38.949 DEBUG: SdoServiceAdmin: sdo.service.provider.available_services: 
+Oct 16 05:50:38.949 DEBUG: SdoServiceAdmin: sdo.service.consumer.enabled_services: 
+Oct 16 05:50:38.949 DEBUG: SdoServiceAdmin: sdo.service.consumer.available_services: 
+Oct 16 05:50:38.949 DEBUG: InImage: Port name: InImage
+Oct 16 05:50:38.949 DEBUG: InImage: setting port.port_type: DataIntPort
+Oct 16 05:50:38.949 DEBUG: InImage: setting dataport.data_type: IDL:Img/TimedCameraImage:1.0
+Oct 16 05:50:38.949 TRACE: : setProperties()
+Oct 16 05:50:38.949 TRACE: : getTypeName()
+Oct 16 05:50:38.949 TRACE: CameraCalibration0: setInstanceName(CameraCalibration0)
+Oct 16 05:50:38.949 TRACE: manager: RTC created: CameraCalibration
+Oct 16 05:50:38.949 TRACE: CameraCalibration0: getCategory()
+Oct 16 05:50:38.949 TRACE: CameraCalibration0: getTypeName()
+Oct 16 05:50:38.949 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 05:50:38.949 TRACE: CameraCalibration0: setProperties()
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: setProperties()
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: initialize()
+Oct 16 05:50:38.950 DEBUG: CameraCalibration0: getContextOptions()
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: getGlobalContextOptions()
+Oct 16 05:50:38.950 DEBUG: CameraCalibration0: Global EC options are specified.
+Oct 16 05:50:38.950 DEBUG: CameraCalibration0: - type: PeriodicExecutionContext
+- rate: 1000
+
+Oct 16 05:50:38.950 DEBUG: CameraCalibration0: Copying inherited EC options.
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: getPrivateContextOptions()
+Oct 16 05:50:38.950 DEBUG: CameraCalibration0: No component specific EC specified.
+Oct 16 05:50:38.950 TRACE: ec_worker: ExecutionContextWorker()
+Oct 16 05:50:38.950 TRACE: periodic_ecprofile: ExecutionContextProfile()
+Oct 16 05:50:38.950 DEBUG: periodic_ecprofile: Actual rate: 0 [sec], 1 [usec]
+Oct 16 05:50:38.950 TRACE: periodic_ec: PeriodicExecutionContext()
+Oct 16 05:50:38.950 TRACE: periodic_ecprofile: setObjRef()
+Oct 16 05:50:38.950 TRACE: periodic_ecprofile: setKind(PERIODIC)
+Oct 16 05:50:38.950 TRACE: ec_base: setRate(1000000.000000)
+Oct 16 05:50:38.950 TRACE: periodic_ecprofile: setRate(1000000.000000)
+Oct 16 05:50:38.950 INFO: ec_base: setRate(1000000.000000) done
+Oct 16 05:50:38.950 DEBUG: periodic_ec: Actual period: 0 [sec], 1 [usec]
+Oct 16 05:50:38.950 DEBUG: CameraCalibration0: EC (PeriodicExecutionContext) created.
+Oct 16 05:50:38.950 TRACE: ec_base: init()
+Oct 16 05:50:38.950 DEBUG: ec_base: - sync_transition: YES
+- transition_timeout: 0.5
+- type: PeriodicExecutionContext
+- rate: 1000
+- name: 
+
+Oct 16 05:50:38.950 TRACE: ec_base: setRate(1000.000000)
+Oct 16 05:50:38.950 TRACE: periodic_ecprofile: setRate(1000.000000)
+Oct 16 05:50:38.950 INFO: ec_base: setRate(1000.000000) done
+Oct 16 05:50:38.950 TRACE: ec_base: setTransitionMode(sync_transition)
+Oct 16 05:50:38.950 DEBUG: ec_base: Transition Mode: sync_transition = YES
+Oct 16 05:50:38.950 TRACE: ec_base: setTransitionMode(sync_activation)
+Oct 16 05:50:38.950 DEBUG: ec_base: Configuration sync_activation not found.
+Oct 16 05:50:38.950 TRACE: ec_base: setTransitionMode(sync_deactivation)
+Oct 16 05:50:38.950 DEBUG: ec_base: Configuration sync_deactivation not found.
+Oct 16 05:50:38.950 TRACE: ec_base: setTransitionMode(sync_reset)
+Oct 16 05:50:38.950 DEBUG: ec_base: Configuration sync_reset not found.
+Oct 16 05:50:38.950 TRACE: ec_base: setTimeout(transition_timeout)
+Oct 16 05:50:38.950 DEBUG: ec_base: Timeout (transition_timeout): 0.500000 [s]
+Oct 16 05:50:38.950 TRACE: ec_base: setTimeout(activation_timeout)
+Oct 16 05:50:38.950 DEBUG: ec_base: Configuration activation_timeout not found.
+Oct 16 05:50:38.950 TRACE: ec_base: setTimeout(deactivation_timeout)
+Oct 16 05:50:38.950 DEBUG: ec_base: Configuration deactivation_timeout not found.
+Oct 16 05:50:38.950 TRACE: ec_base: setTimeout(reset_timeout)
+Oct 16 05:50:38.950 DEBUG: ec_base: Configuration reset_timeout not found.
+Oct 16 05:50:38.950 DEBUG: ec_base: ExecutionContext's configurations:
+Oct 16 05:50:38.950 DEBUG: ec_base: Exec rate   : 1000.000000 [Hz]
+Oct 16 05:50:38.950 DEBUG: ec_base: Activation  : Sync = YES, Timeout = 0.500000
+Oct 16 05:50:38.950 DEBUG: ec_base: Deactivation: Sync = YES, Timeout = 0.500000
+Oct 16 05:50:38.950 DEBUG: ec_base: Reset       : Sync = YES, Timeout = 0.500000
+Oct 16 05:50:38.950 TRACE: periodic_ecprofile: setProperties()
+Oct 16 05:50:38.950 DEBUG: periodic_ecprofile: - sync_transition: YES
+- transition_timeout: 0.5
+- type: PeriodicExecutionContext
+- rate: 1000
+- name: 
+
+Oct 16 05:50:38.950 TRACE: ec_worker: bindComponent()
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: bindContext()
+Oct 16 05:50:38.950 DEBUG: ec_worker: bindContext returns id = 0
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:50:38.950 TRACE: manager: Manager::getPOA()
+Oct 16 05:50:38.950 DEBUG: ec_worker: bindComponent() succeeded.
+Oct 16 05:50:38.950 INFO: CameraCalibration0: 1 execution context was created.
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: on_initialize()
+Oct 16 05:50:38.950 DEBUG: CameraCalibration0: Calling onInitialize().
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: addInPort(InImage)
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: addPort(PortBase&)
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 05:50:38.950 TRACE: InImage: setOwner(CameraCalibration0)
+Oct 16 05:50:38.950 TRACE: InImage: getPortProfile()
+Oct 16 05:50:38.950 TRACE: InImage: getName() = CameraCalibration0.InImage
+Oct 16 05:50:38.950 TRACE: InImage: getPortRef()
+Oct 16 05:50:38.950 TRACE: InImage: getProfile()
+Oct 16 05:50:38.950 TRACE: InImage: init()
+Oct 16 05:50:38.950 DEBUG: InImage: single buffer mode.
+Oct 16 05:50:38.950 TRACE: InImage: initProviders()
+Oct 16 05:50:38.950 DEBUG: InImage: available providers: corba_cdr
+Oct 16 05:50:38.950 DEBUG: InImage: dataflow_type push is supported
+Oct 16 05:50:38.950 TRACE: InImage: initConsumers()
+Oct 16 05:50:38.950 DEBUG: InImage: available consumers: corba_cdr
+Oct 16 05:50:38.950 TRACE: CameraCaptureService: registerConsumer()
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: addPort(CrobaPort)
+Oct 16 05:50:38.950 TRACE: CameraCaptureService: init()
+Oct 16 05:50:38.950 DEBUG: CameraCaptureService: : 
+
+Oct 16 05:50:38.950 DEBUG: CameraCaptureService: : 
+
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: addPort(PortBase&)
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 05:50:38.950 TRACE: InImage: get_port_profile()
+Oct 16 05:50:38.950 TRACE: CameraCaptureService: setOwner(CameraCalibration0)
+Oct 16 05:50:38.950 TRACE: CameraCaptureService: getPortProfile()
+Oct 16 05:50:38.950 TRACE: CameraCaptureService: getName() = CameraCalibration0.CameraCaptureService
+Oct 16 05:50:38.950 TRACE: InImage: get_port_profile()
+Oct 16 05:50:38.950 TRACE: CameraCaptureService: getPortRef()
+Oct 16 05:50:38.950 TRACE: CameraCaptureService: getProfile()
+Oct 16 05:50:38.950 TRACE: InImage: getProfile()
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: bindParameter(image_num (default: 10))
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: bindParameter(chess_pattern_row (default: 7))
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: bindParameter(chess_pattern_column (default: 10))
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: bindParameter(chess_pattern_size (default: 24.0))
+Oct 16 05:50:38.950 TRACE: CameraCalibration0: bindParameter(output_file_name (default: calib.yml))
+Oct 16 05:50:38.951 DEBUG: CameraCalibration0: onInitialize() succeeded.
+Oct 16 05:50:38.951 DEBUG: CameraCalibration0: Active configuration set: default exists.
+Oct 16 05:50:38.951 INFO: CameraCalibration0: Initial active configuration set is default.
+Oct 16 05:50:38.951 DEBUG: CameraCalibration0: on_initialize() was properly done.
+Oct 16 05:50:38.951 DEBUG: CameraCalibration0: EC[0] starting.
+Oct 16 05:50:38.951 TRACE: ec_base: start()
+Oct 16 05:50:38.951 TRACE: ec_worker: start()
+Oct 16 05:50:38.951 TRACE: CameraCalibration0: on_startup(0)
+Oct 16 05:50:38.951 TRACE: CameraCalibration0: onStartup(0)
+Oct 16 05:50:38.951 DEBUG: ec_worker: 1 components started.
+Oct 16 05:50:38.951 TRACE: periodic_ec: open()
+Oct 16 05:50:38.951 TRACE: manager: RTC initialization succeeded: CameraCalibration
+Oct 16 05:50:38.951 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 05:50:38.951 TRACE: manager: Manager::registerComponent(CameraCalibration0)
+Oct 16 05:50:38.951 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 05:50:38.951 TRACE: CameraCalibration0: getNamingNames()
+Oct 16 05:50:38.951 TRACE: manager: Bind name: CameraCalibration0.rtc
+
+Oct 16 05:50:38.951 TRACE: periodic_ec: svc()
+
+Oct 16 05:50:38.951 TRACE: NamingManager: NamingManager::bindObject(CameraCalibration0.rtc)
+Oct 16 05:50:38.951 TRACE: NamingOnCorba: bindObject(name = CameraCalibration0.rtc, rtobj)
+Oct 16 05:50:38.951 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:50:38.951 TRACE: manager: Manager::runManager(): blocking mode
+Oct 16 05:50:49.201 TRACE: NamingManager: NamingManager::update()
+Oct 16 05:50:49.201 TRACE: NamingOnCorba: isAlive()
+Oct 16 05:50:59.448 TRACE: NamingManager: NamingManager::update()
+Oct 16 05:50:59.448 TRACE: NamingOnCorba: isAlive()
+Oct 16 05:51:10.923 INFO: manager: 1.1.1
+Oct 16 05:51:10.923 INFO: manager: Copyright (C) 2003-2012
+Oct 16 05:51:10.923 INFO: manager:   Noriaki Ando
+Oct 16 05:51:10.923 INFO: manager:   Intelligent Systems Research Institute, AIST
+Oct 16 05:51:10.923 INFO: manager: Manager starting.
+Oct 16 05:51:10.923 INFO: manager: Starting local logging.
+Oct 16 05:51:10.923 TRACE: manager: Manager::initORB()
+Oct 16 05:51:10.923 DEBUG: manager: corba.args: 
+Oct 16 05:51:10.923 DEBUG: manager: - config
+  - version: 1.1.1
+- openrtm
+  - name: OpenRTM-aist-1.1.1
+  - version: 1.1.1
+- manager
+  - instance_name: manager
+  - name: manager_cpp
+  - naming_formats: %n_cpp.mgr
+  - pid: 19345
+  - refstring_path: /var/log/rtcmanager.ref
+  - modules
+    - load_path: ./
+    - abs_path_allowed: YES
+    - C++
+      - manager_cmd: rtcd
+      - profile_cmd: rtcprof
+      - suffixes: dylib
+      - load_paths: ./
+    - Python
+      - manager_cmd: rtcd_python
+      - profile_cmd: rtcprof_python
+      - suffixes: py
+      - load_paths: ./
+    - Java
+      - manager_cmd: rtcd_java
+      - profile_cmd: rtcprof_java
+      - suffixes: class
+      - load_paths: ./
+    - preload: 
+    - config_path: 
+    - download_allowed: 
+    - init_func_suffix: 
+    - init_func_prefix: 
+  - is_master: NO
+  - corba_servant: YES
+  - shutdown_on_nortcs: NO
+  - shutdown_auto: NO
+  - auto_shutdown_duration: 10.0
+  - command: rtcd
+  - supported_languages: C++, Python, Java
+  - local_service
+    - enabled_services: ALL
+  - components
+    - precreate: 
+- os
+  - name: Darwin
+  - release: 14.5.0
+  - version: Darwin Kernel Version 14.5.0: Wed Jul 29 02:26:53 PDT 2015; root:xnu-2782.40.9~1/RELEASE_X86_64
+  - arch: x86_64
+  - hostname: visnu.local
+- logger
+  - enable: YES
+  - file_name: ./log/standalonertc_CameraCalibration
+  - date_format: %b %d %H:%M:%S.%Q
+  - log_level: TRACE
+  - stream_lock: NO
+  - master_logger: 
+  - clock_type: 
+- module
+  - conf_path: 
+  - load_path: 
+- naming
+  - enable: YES
+  - type: corba
+  - formats: %n.rtc
+  - update
+    - enable: YES
+    - interval: 10.0
+- timer
+  - enable: YES
+  - tick: 0.1
+- corba
+  - args: 
+  - endpoint: 
+  - id: omniORB
+  - nameservers: localhost:2809
+  - master_manager: localhost:2810
+  - nameservice
+    - replace_endpoint: NO
+- exec_cxt
+  - periodic
+    - type: PeriodicExecutionContext
+    - rate: 1000
+  - sync_transition: YES
+  - transition_timeout: 0.5
+- sdo
+  - service
+    - provider
+      - enabled_service: ALL
+    - consumer
+      - enabled_service: ALL
+- ImageProcessin
+  - CameraCalibration0
+    - config_file: conf/CameraCalibration0.conf
+- config_file: conf/rtc_CameraCalibration.conf
+
+Oct 16 05:51:10.923 DEBUG: manager: corba.endpoint: 
+Oct 16 05:51:10.923 DEBUG: manager: manager.is_master: NO
+Oct 16 05:51:10.923 DEBUG: manager: corba.id: omniORB
+Oct 16 05:51:10.924 TRACE: manager: Manager::initNaming()
+Oct 16 05:51:10.924 TRACE: manager: Register Naming Server: corba/localhost:2809
+Oct 16 05:51:10.924 TRACE: NamingManager: NamingManager::registerNameServer(corba, localhost:2809)
+Oct 16 05:51:10.924 TRACE: NamingManager: createNamingObj(method = corba, nameserver = localhost:2809
+Oct 16 05:51:10.924 TRACE: manager: Manager::getORB()
+Oct 16 05:51:10.933 WARNING: NamingOnCorba: No endpoint for the CORBA naming service (localhost) was found.
+Oct 16 05:51:10.933 INFO: NamingManager: NameServer connection succeeded: corba/localhost:2809
+Oct 16 05:51:10.933 TRACE: manager: Manager::initFactories()
+Oct 16 05:51:10.933 TRACE: manager: Manager::initExecContext()
+Oct 16 05:51:10.933 TRACE: manager: Manager::initComposite()
+Oct 16 05:51:10.933 TRACE: manager: Manager::registerFactory(PeriodicECSharedComposite)
+Oct 16 05:51:10.933 TRACE: manager: Manager::initManagerServant()
+Oct 16 05:51:10.933 TRACE: ManagerServant: This manager is slave.
+Oct 16 05:51:10.933 TRACE: ManagerServant: findManager(host_port = localhost:2810)
+Oct 16 05:51:10.934 DEBUG: ManagerServant: corbaloc: corbaloc::localhost:2810/manager_cpp
+Oct 16 05:51:10.934 TRACE: manager: Manager::getORB()
+Oct 16 05:51:10.934 DEBUG: ManagerServant: CORBA SystemException cought (CORBA::TRANSIENT)
+Oct 16 05:51:10.935 INFO: ManagerServant: Master manager not found
+Oct 16 05:51:10.935 TRACE: manager: Manager::activateManager()
+Oct 16 05:51:10.935 TRACE: manager: Manager::getPOAManager()
+Oct 16 05:51:10.935 TRACE: manager: Manager::getPOAManager()
+Oct 16 05:51:10.935 TRACE: manager: POA Manager activated.
+Oct 16 05:51:10.935 TRACE: manager: Manager::initLocalService()
+Oct 16 05:51:10.935 TRACE: LocalServiceAdmin: LocalServiceAdmin::LocalServiceAdmin()
+Oct 16 05:51:10.935 TRACE: LocalServiceAdmin: LocalServiceAdmin::init():
+Oct 16 05:51:10.935 DEBUG: LocalServiceAdmin: - enabled_services: ALL
+- modules: 
+
+Oct 16 05:51:10.935 INFO: LocalServiceAdmin: All the local services are enabled.
+Oct 16 05:51:10.935 DEBUG: LocalServiceAdmin: Available services: 
+Oct 16 05:51:10.935 DEBUG: manager: LocalServiceAdmin's properties:
+Oct 16 05:51:10.935 DEBUG: manager: - enabled_services: ALL
+- modules: 
+
+Oct 16 05:51:10.935 TRACE: manager: Manager::registerFactory(CameraCalibration)
+Oct 16 05:51:10.935 TRACE: manager: Manager::createComponent(CameraCalibration)
+Oct 16 05:51:10.935 TRACE: manager: RTC basic propfile vendor: 
+Oct 16 05:51:10.935 TRACE: manager: RTC basic propfile category: 
+Oct 16 05:51:10.935 TRACE: manager: RTC basic propfile implementation_id: CameraCalibration
+Oct 16 05:51:10.935 TRACE: manager: RTC basic propfile version: 
+Oct 16 05:51:10.935 TRACE: manager: Manager::getORB()
+Oct 16 05:51:10.935 TRACE: manager: Manager::getPOA()
+Oct 16 05:51:10.935 TRACE: manager: Manager::getORB()
+Oct 16 05:51:10.935 TRACE: manager: Manager::getPOA()
+Oct 16 05:51:10.935 TRACE: : getProperties()
+Oct 16 05:51:10.935 TRACE: SdoServiceAdmin: SdoServiceAdmin::SdoServiceAdmin()
+Oct 16 05:51:10.935 TRACE: : getProperties()
+Oct 16 05:51:10.935 DEBUG: SdoServiceAdmin: sdo.service.provider.enabled_services: 
+Oct 16 05:51:10.935 DEBUG: SdoServiceAdmin: sdo.service.provider.available_services: 
+Oct 16 05:51:10.935 DEBUG: SdoServiceAdmin: sdo.service.consumer.enabled_services: 
+Oct 16 05:51:10.935 DEBUG: SdoServiceAdmin: sdo.service.consumer.available_services: 
+Oct 16 05:51:10.935 DEBUG: InImage: Port name: InImage
+Oct 16 05:51:10.935 DEBUG: InImage: setting port.port_type: DataIntPort
+Oct 16 05:51:10.935 DEBUG: InImage: setting dataport.data_type: IDL:Img/TimedCameraImage:1.0
+Oct 16 05:51:10.935 TRACE: : setProperties()
+Oct 16 05:51:10.935 TRACE: : getTypeName()
+Oct 16 05:51:10.935 TRACE: CameraCalibration0: setInstanceName(CameraCalibration0)
+Oct 16 05:51:10.936 TRACE: manager: RTC created: CameraCalibration
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: getCategory()
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: getTypeName()
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: setProperties()
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: setProperties()
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: initialize()
+Oct 16 05:51:10.936 DEBUG: CameraCalibration0: getContextOptions()
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: getGlobalContextOptions()
+Oct 16 05:51:10.936 DEBUG: CameraCalibration0: Global EC options are specified.
+Oct 16 05:51:10.936 DEBUG: CameraCalibration0: - type: PeriodicExecutionContext
+- rate: 1000
+
+Oct 16 05:51:10.936 DEBUG: CameraCalibration0: Copying inherited EC options.
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: getPrivateContextOptions()
+Oct 16 05:51:10.936 DEBUG: CameraCalibration0: No component specific EC specified.
+Oct 16 05:51:10.936 TRACE: ec_worker: ExecutionContextWorker()
+Oct 16 05:51:10.936 TRACE: periodic_ecprofile: ExecutionContextProfile()
+Oct 16 05:51:10.936 DEBUG: periodic_ecprofile: Actual rate: 0 [sec], 1 [usec]
+Oct 16 05:51:10.936 TRACE: periodic_ec: PeriodicExecutionContext()
+Oct 16 05:51:10.936 TRACE: periodic_ecprofile: setObjRef()
+Oct 16 05:51:10.936 TRACE: periodic_ecprofile: setKind(PERIODIC)
+Oct 16 05:51:10.936 TRACE: ec_base: setRate(1000000.000000)
+Oct 16 05:51:10.936 TRACE: periodic_ecprofile: setRate(1000000.000000)
+Oct 16 05:51:10.936 INFO: ec_base: setRate(1000000.000000) done
+Oct 16 05:51:10.936 DEBUG: periodic_ec: Actual period: 0 [sec], 1 [usec]
+Oct 16 05:51:10.936 DEBUG: CameraCalibration0: EC (PeriodicExecutionContext) created.
+Oct 16 05:51:10.936 TRACE: ec_base: init()
+Oct 16 05:51:10.936 DEBUG: ec_base: - sync_transition: YES
+- transition_timeout: 0.5
+- type: PeriodicExecutionContext
+- rate: 1000
+- name: 
+
+Oct 16 05:51:10.936 TRACE: ec_base: setRate(1000.000000)
+Oct 16 05:51:10.936 TRACE: periodic_ecprofile: setRate(1000.000000)
+Oct 16 05:51:10.936 INFO: ec_base: setRate(1000.000000) done
+Oct 16 05:51:10.936 TRACE: ec_base: setTransitionMode(sync_transition)
+Oct 16 05:51:10.936 DEBUG: ec_base: Transition Mode: sync_transition = YES
+Oct 16 05:51:10.936 TRACE: ec_base: setTransitionMode(sync_activation)
+Oct 16 05:51:10.936 DEBUG: ec_base: Configuration sync_activation not found.
+Oct 16 05:51:10.936 TRACE: ec_base: setTransitionMode(sync_deactivation)
+Oct 16 05:51:10.936 DEBUG: ec_base: Configuration sync_deactivation not found.
+Oct 16 05:51:10.936 TRACE: ec_base: setTransitionMode(sync_reset)
+Oct 16 05:51:10.936 DEBUG: ec_base: Configuration sync_reset not found.
+Oct 16 05:51:10.936 TRACE: ec_base: setTimeout(transition_timeout)
+Oct 16 05:51:10.936 DEBUG: ec_base: Timeout (transition_timeout): 0.500000 [s]
+Oct 16 05:51:10.936 TRACE: ec_base: setTimeout(activation_timeout)
+Oct 16 05:51:10.936 DEBUG: ec_base: Configuration activation_timeout not found.
+Oct 16 05:51:10.936 TRACE: ec_base: setTimeout(deactivation_timeout)
+Oct 16 05:51:10.936 DEBUG: ec_base: Configuration deactivation_timeout not found.
+Oct 16 05:51:10.936 TRACE: ec_base: setTimeout(reset_timeout)
+Oct 16 05:51:10.936 DEBUG: ec_base: Configuration reset_timeout not found.
+Oct 16 05:51:10.936 DEBUG: ec_base: ExecutionContext's configurations:
+Oct 16 05:51:10.936 DEBUG: ec_base: Exec rate   : 1000.000000 [Hz]
+Oct 16 05:51:10.936 DEBUG: ec_base: Activation  : Sync = YES, Timeout = 0.500000
+Oct 16 05:51:10.936 DEBUG: ec_base: Deactivation: Sync = YES, Timeout = 0.500000
+Oct 16 05:51:10.936 DEBUG: ec_base: Reset       : Sync = YES, Timeout = 0.500000
+Oct 16 05:51:10.936 TRACE: periodic_ecprofile: setProperties()
+Oct 16 05:51:10.936 DEBUG: periodic_ecprofile: - sync_transition: YES
+- transition_timeout: 0.5
+- type: PeriodicExecutionContext
+- rate: 1000
+- name: 
+
+Oct 16 05:51:10.936 TRACE: ec_worker: bindComponent()
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: bindContext()
+Oct 16 05:51:10.936 DEBUG: ec_worker: bindContext returns id = 0
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:51:10.936 TRACE: manager: Manager::getPOA()
+Oct 16 05:51:10.936 DEBUG: ec_worker: bindComponent() succeeded.
+Oct 16 05:51:10.936 INFO: CameraCalibration0: 1 execution context was created.
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: on_initialize()
+Oct 16 05:51:10.936 DEBUG: CameraCalibration0: Calling onInitialize().
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: addInPort(InImage)
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: addPort(PortBase&)
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 05:51:10.936 TRACE: InImage: setOwner(CameraCalibration0)
+Oct 16 05:51:10.936 TRACE: InImage: getPortProfile()
+Oct 16 05:51:10.936 TRACE: InImage: getName() = CameraCalibration0.InImage
+Oct 16 05:51:10.936 TRACE: InImage: getPortRef()
+Oct 16 05:51:10.936 TRACE: InImage: getProfile()
+Oct 16 05:51:10.936 TRACE: InImage: init()
+Oct 16 05:51:10.936 DEBUG: InImage: single buffer mode.
+Oct 16 05:51:10.936 TRACE: InImage: initProviders()
+Oct 16 05:51:10.936 DEBUG: InImage: available providers: corba_cdr
+Oct 16 05:51:10.936 DEBUG: InImage: dataflow_type push is supported
+Oct 16 05:51:10.936 TRACE: InImage: initConsumers()
+Oct 16 05:51:10.936 DEBUG: InImage: available consumers: corba_cdr
+Oct 16 05:51:10.936 TRACE: CameraCaptureService: registerConsumer()
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: addPort(CrobaPort)
+Oct 16 05:51:10.936 TRACE: CameraCaptureService: init()
+Oct 16 05:51:10.936 DEBUG: CameraCaptureService: : 
+
+Oct 16 05:51:10.936 DEBUG: CameraCaptureService: : 
+
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: addPort(PortBase&)
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 05:51:10.936 TRACE: InImage: get_port_profile()
+Oct 16 05:51:10.936 TRACE: CameraCaptureService: setOwner(CameraCalibration0)
+Oct 16 05:51:10.936 TRACE: CameraCaptureService: getPortProfile()
+Oct 16 05:51:10.936 TRACE: CameraCaptureService: getName() = CameraCalibration0.CameraCaptureService
+Oct 16 05:51:10.936 TRACE: InImage: get_port_profile()
+Oct 16 05:51:10.936 TRACE: CameraCaptureService: getPortRef()
+Oct 16 05:51:10.936 TRACE: CameraCaptureService: getProfile()
+Oct 16 05:51:10.936 TRACE: InImage: getProfile()
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: bindParameter(image_num (default: 10))
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: bindParameter(chess_pattern_row (default: 7))
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: bindParameter(chess_pattern_column (default: 10))
+Oct 16 05:51:10.936 TRACE: CameraCalibration0: bindParameter(chess_pattern_size (default: 24.0))
+Oct 16 05:51:10.937 TRACE: CameraCalibration0: bindParameter(output_file_name (default: calib.yml))
+Oct 16 05:51:10.937 DEBUG: CameraCalibration0: onInitialize() succeeded.
+Oct 16 05:51:10.937 DEBUG: CameraCalibration0: Active configuration set: default exists.
+Oct 16 05:51:10.937 INFO: CameraCalibration0: Initial active configuration set is default.
+Oct 16 05:51:10.937 DEBUG: CameraCalibration0: on_initialize() was properly done.
+Oct 16 05:51:10.937 DEBUG: CameraCalibration0: EC[0] starting.
+Oct 16 05:51:10.937 TRACE: ec_base: start()
+Oct 16 05:51:10.937 TRACE: ec_worker: start()
+Oct 16 05:51:10.937 TRACE: CameraCalibration0: on_startup(0)
+Oct 16 05:51:10.937 TRACE: CameraCalibration0: onStartup(0)
+Oct 16 05:51:10.937 DEBUG: ec_worker: 1 components started.
+Oct 16 05:51:10.937 TRACE: periodic_ec: open()
+Oct 16 05:51:10.937 TRACE: manager: RTC initialization succeeded: CameraCalibration
+Oct 16 05:51:10.937 TRACE: CameraCalibration0: getInstanceName()
+
+Oct 16 05:51:10.937 TRACE: periodic_ec: svc()
+
+Oct 16 05:51:10.937 TRACE: manager: Manager::registerComponent(CameraCalibration0)
+Oct 16 05:51:10.937 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 05:51:10.937 TRACE: CameraCalibration0: getNamingNames()
+Oct 16 05:51:10.937 TRACE: manager: Bind name: CameraCalibration0.rtc
+Oct 16 05:51:10.937 TRACE: NamingManager: NamingManager::bindObject(CameraCalibration0.rtc)
+Oct 16 05:51:10.937 TRACE: NamingOnCorba: bindObject(name = CameraCalibration0.rtc, rtobj)
+Oct 16 05:51:10.937 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:51:10.937 TRACE: manager: Manager::runManager(): blocking mode
+Oct 16 05:51:21.181 TRACE: NamingManager: NamingManager::update()
+Oct 16 05:51:21.181 TRACE: NamingOnCorba: isAlive()
+Oct 16 05:51:44.197 INFO: manager: 1.1.1
+Oct 16 05:51:44.198 INFO: manager: Copyright (C) 2003-2012
+Oct 16 05:51:44.198 INFO: manager:   Noriaki Ando
+Oct 16 05:51:44.198 INFO: manager:   Intelligent Systems Research Institute, AIST
+Oct 16 05:51:44.198 INFO: manager: Manager starting.
+Oct 16 05:51:44.198 INFO: manager: Starting local logging.
+Oct 16 05:51:44.198 TRACE: manager: Manager::initORB()
+Oct 16 05:51:44.198 DEBUG: manager: corba.args: 
+Oct 16 05:51:44.198 DEBUG: manager: - config
+  - version: 1.1.1
+- openrtm
+  - name: OpenRTM-aist-1.1.1
+  - version: 1.1.1
+- manager
+  - instance_name: manager
+  - name: manager_cpp
+  - naming_formats: %n_cpp.mgr
+  - pid: 19363
+  - refstring_path: /var/log/rtcmanager.ref
+  - modules
+    - load_path: ./
+    - abs_path_allowed: YES
+    - C++
+      - manager_cmd: rtcd
+      - profile_cmd: rtcprof
+      - suffixes: dylib
+      - load_paths: ./
+    - Python
+      - manager_cmd: rtcd_python
+      - profile_cmd: rtcprof_python
+      - suffixes: py
+      - load_paths: ./
+    - Java
+      - manager_cmd: rtcd_java
+      - profile_cmd: rtcprof_java
+      - suffixes: class
+      - load_paths: ./
+    - preload: 
+    - config_path: 
+    - download_allowed: 
+    - init_func_suffix: 
+    - init_func_prefix: 
+  - is_master: NO
+  - corba_servant: YES
+  - shutdown_on_nortcs: NO
+  - shutdown_auto: NO
+  - auto_shutdown_duration: 10.0
+  - command: rtcd
+  - supported_languages: C++, Python, Java
+  - local_service
+    - enabled_services: ALL
+  - components
+    - precreate: 
+- os
+  - name: Darwin
+  - release: 14.5.0
+  - version: Darwin Kernel Version 14.5.0: Wed Jul 29 02:26:53 PDT 2015; root:xnu-2782.40.9~1/RELEASE_X86_64
+  - arch: x86_64
+  - hostname: visnu.local
+- logger
+  - enable: YES
+  - file_name: ./log/standalonertc_CameraCalibration
+  - date_format: %b %d %H:%M:%S.%Q
+  - log_level: TRACE
+  - stream_lock: NO
+  - master_logger: 
+  - clock_type: 
+- module
+  - conf_path: 
+  - load_path: 
+- naming
+  - enable: YES
+  - type: corba
+  - formats: %n.rtc
+  - update
+    - enable: YES
+    - interval: 10.0
+- timer
+  - enable: YES
+  - tick: 0.1
+- corba
+  - args: 
+  - endpoint: 
+  - id: omniORB
+  - nameservers: localhost:2809
+  - master_manager: localhost:2810
+  - nameservice
+    - replace_endpoint: NO
+- exec_cxt
+  - periodic
+    - type: PeriodicExecutionContext
+    - rate: 1000
+  - sync_transition: YES
+  - transition_timeout: 0.5
+- sdo
+  - service
+    - provider
+      - enabled_service: ALL
+    - consumer
+      - enabled_service: ALL
+- ImageProcessin
+  - CameraCalibration0
+    - config_file: conf/CameraCalibration0.conf
+- config_file: conf/rtc_CameraCalibration.conf
+
+Oct 16 05:51:44.198 DEBUG: manager: corba.endpoint: 
+Oct 16 05:51:44.198 DEBUG: manager: manager.is_master: NO
+Oct 16 05:51:44.198 DEBUG: manager: corba.id: omniORB
+Oct 16 05:51:44.199 TRACE: manager: Manager::initNaming()
+Oct 16 05:51:44.199 TRACE: manager: Register Naming Server: corba/localhost:2809
+Oct 16 05:51:44.199 TRACE: NamingManager: NamingManager::registerNameServer(corba, localhost:2809)
+Oct 16 05:51:44.199 TRACE: NamingManager: createNamingObj(method = corba, nameserver = localhost:2809
+Oct 16 05:51:44.199 TRACE: manager: Manager::getORB()
+Oct 16 05:51:44.207 WARNING: NamingOnCorba: No endpoint for the CORBA naming service (localhost) was found.
+Oct 16 05:51:44.207 INFO: NamingManager: NameServer connection succeeded: corba/localhost:2809
+Oct 16 05:51:44.207 TRACE: manager: Manager::initFactories()
+Oct 16 05:51:44.207 TRACE: manager: Manager::initExecContext()
+Oct 16 05:51:44.207 TRACE: manager: Manager::initComposite()
+Oct 16 05:51:44.207 TRACE: manager: Manager::registerFactory(PeriodicECSharedComposite)
+Oct 16 05:51:44.207 TRACE: manager: Manager::initManagerServant()
+Oct 16 05:51:44.208 TRACE: ManagerServant: This manager is slave.
+Oct 16 05:51:44.208 TRACE: ManagerServant: findManager(host_port = localhost:2810)
+Oct 16 05:51:44.208 DEBUG: ManagerServant: corbaloc: corbaloc::localhost:2810/manager_cpp
+Oct 16 05:51:44.208 TRACE: manager: Manager::getORB()
+Oct 16 05:51:44.209 DEBUG: ManagerServant: CORBA SystemException cought (CORBA::TRANSIENT)
+Oct 16 05:51:44.209 INFO: ManagerServant: Master manager not found
+Oct 16 05:51:44.209 TRACE: manager: Manager::activateManager()
+Oct 16 05:51:44.209 TRACE: manager: Manager::getPOAManager()
+Oct 16 05:51:44.209 TRACE: manager: Manager::getPOAManager()
+Oct 16 05:51:44.209 TRACE: manager: POA Manager activated.
+Oct 16 05:51:44.209 TRACE: manager: Manager::initLocalService()
+Oct 16 05:51:44.209 TRACE: LocalServiceAdmin: LocalServiceAdmin::LocalServiceAdmin()
+Oct 16 05:51:44.209 TRACE: LocalServiceAdmin: LocalServiceAdmin::init():
+Oct 16 05:51:44.209 DEBUG: LocalServiceAdmin: - enabled_services: ALL
+- modules: 
+
+Oct 16 05:51:44.209 INFO: LocalServiceAdmin: All the local services are enabled.
+Oct 16 05:51:44.209 DEBUG: LocalServiceAdmin: Available services: 
+Oct 16 05:51:44.209 DEBUG: manager: LocalServiceAdmin's properties:
+Oct 16 05:51:44.209 DEBUG: manager: - enabled_services: ALL
+- modules: 
+
+Oct 16 05:51:44.209 TRACE: manager: Manager::registerFactory(CameraCalibration)
+Oct 16 05:51:44.209 TRACE: manager: Manager::createComponent(CameraCalibration)
+Oct 16 05:51:44.209 TRACE: manager: RTC basic propfile vendor: 
+Oct 16 05:51:44.209 TRACE: manager: RTC basic propfile category: 
+Oct 16 05:51:44.209 TRACE: manager: RTC basic propfile implementation_id: CameraCalibration
+Oct 16 05:51:44.209 TRACE: manager: RTC basic propfile version: 
+Oct 16 05:51:44.209 TRACE: manager: Manager::getORB()
+Oct 16 05:51:44.209 TRACE: manager: Manager::getPOA()
+Oct 16 05:51:44.209 TRACE: manager: Manager::getORB()
+Oct 16 05:51:44.209 TRACE: manager: Manager::getPOA()
+Oct 16 05:51:44.210 TRACE: : getProperties()
+Oct 16 05:51:44.210 TRACE: SdoServiceAdmin: SdoServiceAdmin::SdoServiceAdmin()
+Oct 16 05:51:44.210 TRACE: : getProperties()
+Oct 16 05:51:44.210 DEBUG: SdoServiceAdmin: sdo.service.provider.enabled_services: 
+Oct 16 05:51:44.210 DEBUG: SdoServiceAdmin: sdo.service.provider.available_services: 
+Oct 16 05:51:44.210 DEBUG: SdoServiceAdmin: sdo.service.consumer.enabled_services: 
+Oct 16 05:51:44.210 DEBUG: SdoServiceAdmin: sdo.service.consumer.available_services: 
+Oct 16 05:51:44.210 DEBUG: InImage: Port name: InImage
+Oct 16 05:51:44.210 DEBUG: InImage: setting port.port_type: DataIntPort
+Oct 16 05:51:44.210 DEBUG: InImage: setting dataport.data_type: IDL:Img/TimedCameraImage:1.0
+Oct 16 05:51:44.210 TRACE: : setProperties()
+Oct 16 05:51:44.210 TRACE: : getTypeName()
+Oct 16 05:51:44.210 TRACE: CameraCalibration0: setInstanceName(CameraCalibration0)
+Oct 16 05:51:44.210 TRACE: manager: RTC created: CameraCalibration
+Oct 16 05:51:44.210 TRACE: CameraCalibration0: getCategory()
+Oct 16 05:51:44.210 TRACE: CameraCalibration0: getTypeName()
+Oct 16 05:51:44.210 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 05:51:44.210 TRACE: CameraCalibration0: setProperties()
+Oct 16 05:51:44.210 TRACE: CameraCalibration0: setProperties()
+Oct 16 05:51:44.210 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:51:44.210 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:51:44.210 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:51:44.210 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:51:44.210 TRACE: CameraCalibration0: initialize()
+Oct 16 05:51:44.210 DEBUG: CameraCalibration0: getContextOptions()
+Oct 16 05:51:44.210 TRACE: CameraCalibration0: getGlobalContextOptions()
+Oct 16 05:51:44.210 DEBUG: CameraCalibration0: Global EC options are specified.
+Oct 16 05:51:44.210 DEBUG: CameraCalibration0: - type: PeriodicExecutionContext
+- rate: 1000
+
+Oct 16 05:51:44.210 DEBUG: CameraCalibration0: Copying inherited EC options.
+Oct 16 05:51:44.210 TRACE: CameraCalibration0: getPrivateContextOptions()
+Oct 16 05:51:44.210 DEBUG: CameraCalibration0: No component specific EC specified.
+Oct 16 05:51:44.210 TRACE: ec_worker: ExecutionContextWorker()
+Oct 16 05:51:44.210 TRACE: periodic_ecprofile: ExecutionContextProfile()
+Oct 16 05:51:44.210 DEBUG: periodic_ecprofile: Actual rate: 0 [sec], 1 [usec]
+Oct 16 05:51:44.210 TRACE: periodic_ec: PeriodicExecutionContext()
+Oct 16 05:51:44.210 TRACE: periodic_ecprofile: setObjRef()
+Oct 16 05:51:44.210 TRACE: periodic_ecprofile: setKind(PERIODIC)
+Oct 16 05:51:44.210 TRACE: ec_base: setRate(1000000.000000)
+Oct 16 05:51:44.210 TRACE: periodic_ecprofile: setRate(1000000.000000)
+Oct 16 05:51:44.210 INFO: ec_base: setRate(1000000.000000) done
+Oct 16 05:51:44.210 DEBUG: periodic_ec: Actual period: 0 [sec], 1 [usec]
+Oct 16 05:51:44.210 DEBUG: CameraCalibration0: EC (PeriodicExecutionContext) created.
+Oct 16 05:51:44.210 TRACE: ec_base: init()
+Oct 16 05:51:44.210 DEBUG: ec_base: - sync_transition: YES
+- transition_timeout: 0.5
+- type: PeriodicExecutionContext
+- rate: 1000
+- name: 
+
+Oct 16 05:51:44.210 TRACE: ec_base: setRate(1000.000000)
+Oct 16 05:51:44.210 TRACE: periodic_ecprofile: setRate(1000.000000)
+Oct 16 05:51:44.210 INFO: ec_base: setRate(1000.000000) done
+Oct 16 05:51:44.210 TRACE: ec_base: setTransitionMode(sync_transition)
+Oct 16 05:51:44.210 DEBUG: ec_base: Transition Mode: sync_transition = YES
+Oct 16 05:51:44.210 TRACE: ec_base: setTransitionMode(sync_activation)
+Oct 16 05:51:44.210 DEBUG: ec_base: Configuration sync_activation not found.
+Oct 16 05:51:44.210 TRACE: ec_base: setTransitionMode(sync_deactivation)
+Oct 16 05:51:44.210 DEBUG: ec_base: Configuration sync_deactivation not found.
+Oct 16 05:51:44.210 TRACE: ec_base: setTransitionMode(sync_reset)
+Oct 16 05:51:44.210 DEBUG: ec_base: Configuration sync_reset not found.
+Oct 16 05:51:44.210 TRACE: ec_base: setTimeout(transition_timeout)
+Oct 16 05:51:44.210 DEBUG: ec_base: Timeout (transition_timeout): 0.500000 [s]
+Oct 16 05:51:44.210 TRACE: ec_base: setTimeout(activation_timeout)
+Oct 16 05:51:44.210 DEBUG: ec_base: Configuration activation_timeout not found.
+Oct 16 05:51:44.210 TRACE: ec_base: setTimeout(deactivation_timeout)
+Oct 16 05:51:44.210 DEBUG: ec_base: Configuration deactivation_timeout not found.
+Oct 16 05:51:44.210 TRACE: ec_base: setTimeout(reset_timeout)
+Oct 16 05:51:44.210 DEBUG: ec_base: Configuration reset_timeout not found.
+Oct 16 05:51:44.210 DEBUG: ec_base: ExecutionContext's configurations:
+Oct 16 05:51:44.210 DEBUG: ec_base: Exec rate   : 1000.000000 [Hz]
+Oct 16 05:51:44.210 DEBUG: ec_base: Activation  : Sync = YES, Timeout = 0.500000
+Oct 16 05:51:44.210 DEBUG: ec_base: Deactivation: Sync = YES, Timeout = 0.500000
+Oct 16 05:51:44.210 DEBUG: ec_base: Reset       : Sync = YES, Timeout = 0.500000
+Oct 16 05:51:44.210 TRACE: periodic_ecprofile: setProperties()
+Oct 16 05:51:44.210 DEBUG: periodic_ecprofile: - sync_transition: YES
+- transition_timeout: 0.5
+- type: PeriodicExecutionContext
+- rate: 1000
+- name: 
+
+Oct 16 05:51:44.210 TRACE: ec_worker: bindComponent()
+Oct 16 05:51:44.210 TRACE: CameraCalibration0: bindContext()
+Oct 16 05:51:44.210 DEBUG: ec_worker: bindContext returns id = 0
+Oct 16 05:51:44.210 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:51:44.210 TRACE: manager: Manager::getPOA()
+Oct 16 05:51:44.210 DEBUG: ec_worker: bindComponent() succeeded.
+Oct 16 05:51:44.210 INFO: CameraCalibration0: 1 execution context was created.
+Oct 16 05:51:44.210 TRACE: CameraCalibration0: on_initialize()
+Oct 16 05:51:44.210 DEBUG: CameraCalibration0: Calling onInitialize().
+Oct 16 05:51:44.210 TRACE: CameraCalibration0: addInPort(InImage)
+Oct 16 05:51:44.210 TRACE: CameraCalibration0: addPort(PortBase&)
+Oct 16 05:51:44.210 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:51:44.210 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 05:51:44.211 TRACE: InImage: setOwner(CameraCalibration0)
+Oct 16 05:51:44.211 TRACE: InImage: getPortProfile()
+Oct 16 05:51:44.211 TRACE: InImage: getName() = CameraCalibration0.InImage
+Oct 16 05:51:44.211 TRACE: InImage: getPortRef()
+Oct 16 05:51:44.211 TRACE: InImage: getProfile()
+Oct 16 05:51:44.211 TRACE: InImage: init()
+Oct 16 05:51:44.211 DEBUG: InImage: single buffer mode.
+Oct 16 05:51:44.211 TRACE: InImage: initProviders()
+Oct 16 05:51:44.211 DEBUG: InImage: available providers: corba_cdr
+Oct 16 05:51:44.211 DEBUG: InImage: dataflow_type push is supported
+Oct 16 05:51:44.211 TRACE: InImage: initConsumers()
+Oct 16 05:51:44.211 DEBUG: InImage: available consumers: corba_cdr
+Oct 16 05:51:44.211 TRACE: CameraCaptureService: registerConsumer()
+Oct 16 05:51:44.211 TRACE: CameraCalibration0: addPort(CrobaPort)
+Oct 16 05:51:44.211 TRACE: CameraCaptureService: init()
+Oct 16 05:51:44.211 DEBUG: CameraCaptureService: : 
+
+Oct 16 05:51:44.211 DEBUG: CameraCaptureService: : 
+
+Oct 16 05:51:44.211 TRACE: CameraCalibration0: addPort(PortBase&)
+Oct 16 05:51:44.211 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:51:44.211 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 05:51:44.211 TRACE: InImage: get_port_profile()
+Oct 16 05:51:44.211 TRACE: CameraCaptureService: setOwner(CameraCalibration0)
+Oct 16 05:51:44.211 TRACE: CameraCaptureService: getPortProfile()
+Oct 16 05:51:44.211 TRACE: CameraCaptureService: getName() = CameraCalibration0.CameraCaptureService
+Oct 16 05:51:44.211 TRACE: InImage: get_port_profile()
+Oct 16 05:51:44.211 TRACE: CameraCaptureService: getPortRef()
+Oct 16 05:51:44.211 TRACE: CameraCaptureService: getProfile()
+Oct 16 05:51:44.211 TRACE: InImage: getProfile()
+Oct 16 05:51:44.211 TRACE: CameraCalibration0: bindParameter(image_num (default: 10))
+Oct 16 05:51:44.211 TRACE: CameraCalibration0: bindParameter(chess_pattern_row (default: 7))
+Oct 16 05:51:44.211 TRACE: CameraCalibration0: bindParameter(chess_pattern_column (default: 10))
+Oct 16 05:51:44.211 TRACE: CameraCalibration0: bindParameter(chess_pattern_size (default: 24.0))
+Oct 16 05:51:44.211 TRACE: CameraCalibration0: bindParameter(output_file_name (default: calib.yml))
+Oct 16 05:51:44.211 DEBUG: CameraCalibration0: onInitialize() succeeded.
+Oct 16 05:51:44.211 DEBUG: CameraCalibration0: Active configuration set: default exists.
+Oct 16 05:51:44.211 INFO: CameraCalibration0: Initial active configuration set is default.
+Oct 16 05:51:44.211 DEBUG: CameraCalibration0: on_initialize() was properly done.
+Oct 16 05:51:44.211 DEBUG: CameraCalibration0: EC[0] starting.
+Oct 16 05:51:44.211 TRACE: ec_base: start()
+Oct 16 05:51:44.211 TRACE: ec_worker: start()
+Oct 16 05:51:44.211 TRACE: CameraCalibration0: on_startup(0)
+Oct 16 05:51:44.211 TRACE: CameraCalibration0: onStartup(0)
+Oct 16 05:51:44.211 DEBUG: ec_worker: 1 components started.
+Oct 16 05:51:44.211 TRACE: periodic_ec: open()
+Oct 16 05:51:44.211 TRACE: periodic_ec: svc()
+Oct 16 05:51:44.211 TRACE: manager: RTC initialization succeeded: CameraCalibration
+Oct 16 05:51:44.211 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 05:51:44.211 TRACE: manager: Manager::registerComponent(CameraCalibration0)
+Oct 16 05:51:44.211 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 05:51:44.211 TRACE: CameraCalibration0: getNamingNames()
+Oct 16 05:51:44.211 TRACE: manager: Bind name: CameraCalibration0.rtc
+Oct 16 05:51:44.211 TRACE: NamingManager: NamingManager::bindObject(CameraCalibration0.rtc)
+Oct 16 05:51:44.211 TRACE: NamingOnCorba: bindObject(name = CameraCalibration0.rtc, rtobj)
+Oct 16 05:51:44.211 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:51:44.211 TRACE: manager: Manager::runManager(): blocking mode
+Oct 16 05:51:54.456 TRACE: NamingManager: NamingManager::update()
+Oct 16 05:51:54.456 TRACE: NamingOnCorba: isAlive()
+Oct 16 05:52:04.748 TRACE: NamingManager: NamingManager::update()
+Oct 16 05:52:04.748 TRACE: NamingOnCorba: isAlive()
+Oct 16 05:52:16.682 INFO: manager: 1.1.1
+Oct 16 05:52:16.683 INFO: manager: Copyright (C) 2003-2012
+Oct 16 05:52:16.683 INFO: manager:   Noriaki Ando
+Oct 16 05:52:16.683 INFO: manager:   Intelligent Systems Research Institute, AIST
+Oct 16 05:52:16.683 INFO: manager: Manager starting.
+Oct 16 05:52:16.683 INFO: manager: Starting local logging.
+Oct 16 05:52:16.683 TRACE: manager: Manager::initORB()
+Oct 16 05:52:16.683 DEBUG: manager: corba.args: 
+Oct 16 05:52:16.683 DEBUG: manager: - config
+  - version: 1.1.1
+- openrtm
+  - name: OpenRTM-aist-1.1.1
+  - version: 1.1.1
+- manager
+  - instance_name: manager
+  - name: manager_cpp
+  - naming_formats: %n_cpp.mgr
+  - pid: 19382
+  - refstring_path: /var/log/rtcmanager.ref
+  - modules
+    - load_path: ./
+    - abs_path_allowed: YES
+    - C++
+      - manager_cmd: rtcd
+      - profile_cmd: rtcprof
+      - suffixes: dylib
+      - load_paths: ./
+    - Python
+      - manager_cmd: rtcd_python
+      - profile_cmd: rtcprof_python
+      - suffixes: py
+      - load_paths: ./
+    - Java
+      - manager_cmd: rtcd_java
+      - profile_cmd: rtcprof_java
+      - suffixes: class
+      - load_paths: ./
+    - preload: 
+    - config_path: 
+    - download_allowed: 
+    - init_func_suffix: 
+    - init_func_prefix: 
+  - is_master: NO
+  - corba_servant: YES
+  - shutdown_on_nortcs: NO
+  - shutdown_auto: NO
+  - auto_shutdown_duration: 10.0
+  - command: rtcd
+  - supported_languages: C++, Python, Java
+  - local_service
+    - enabled_services: ALL
+  - components
+    - precreate: 
+- os
+  - name: Darwin
+  - release: 14.5.0
+  - version: Darwin Kernel Version 14.5.0: Wed Jul 29 02:26:53 PDT 2015; root:xnu-2782.40.9~1/RELEASE_X86_64
+  - arch: x86_64
+  - hostname: visnu.local
+- logger
+  - enable: YES
+  - file_name: ./log/standalonertc_CameraCalibration
+  - date_format: %b %d %H:%M:%S.%Q
+  - log_level: TRACE
+  - stream_lock: NO
+  - master_logger: 
+  - clock_type: 
+- module
+  - conf_path: 
+  - load_path: 
+- naming
+  - enable: YES
+  - type: corba
+  - formats: %n.rtc
+  - update
+    - enable: YES
+    - interval: 10.0
+- timer
+  - enable: YES
+  - tick: 0.1
+- corba
+  - args: 
+  - endpoint: 
+  - id: omniORB
+  - nameservers: localhost:2809
+  - master_manager: localhost:2810
+  - nameservice
+    - replace_endpoint: NO
+- exec_cxt
+  - periodic
+    - type: PeriodicExecutionContext
+    - rate: 1000
+  - sync_transition: YES
+  - transition_timeout: 0.5
+- sdo
+  - service
+    - provider
+      - enabled_service: ALL
+    - consumer
+      - enabled_service: ALL
+- ImageProcessin
+  - CameraCalibration0
+    - config_file: conf/CameraCalibration0.conf
+- config_file: conf/rtc_CameraCalibration.conf
+
+Oct 16 05:52:16.683 DEBUG: manager: corba.endpoint: 
+Oct 16 05:52:16.683 DEBUG: manager: manager.is_master: NO
+Oct 16 05:52:16.683 DEBUG: manager: corba.id: omniORB
+Oct 16 05:52:16.684 TRACE: manager: Manager::initNaming()
+Oct 16 05:52:16.684 TRACE: manager: Register Naming Server: corba/localhost:2809
+Oct 16 05:52:16.684 TRACE: NamingManager: NamingManager::registerNameServer(corba, localhost:2809)
+Oct 16 05:52:16.684 TRACE: NamingManager: createNamingObj(method = corba, nameserver = localhost:2809
+Oct 16 05:52:16.684 TRACE: manager: Manager::getORB()
+Oct 16 05:52:16.692 WARNING: NamingOnCorba: No endpoint for the CORBA naming service (localhost) was found.
+Oct 16 05:52:16.692 INFO: NamingManager: NameServer connection succeeded: corba/localhost:2809
+Oct 16 05:52:16.692 TRACE: manager: Manager::initFactories()
+Oct 16 05:52:16.692 TRACE: manager: Manager::initExecContext()
+Oct 16 05:52:16.692 TRACE: manager: Manager::initComposite()
+Oct 16 05:52:16.692 TRACE: manager: Manager::registerFactory(PeriodicECSharedComposite)
+Oct 16 05:52:16.692 TRACE: manager: Manager::initManagerServant()
+Oct 16 05:52:16.692 TRACE: ManagerServant: This manager is slave.
+Oct 16 05:52:16.692 TRACE: ManagerServant: findManager(host_port = localhost:2810)
+Oct 16 05:52:16.693 DEBUG: ManagerServant: corbaloc: corbaloc::localhost:2810/manager_cpp
+Oct 16 05:52:16.693 TRACE: manager: Manager::getORB()
+Oct 16 05:52:16.693 DEBUG: ManagerServant: CORBA SystemException cought (CORBA::TRANSIENT)
+Oct 16 05:52:16.693 INFO: ManagerServant: Master manager not found
+Oct 16 05:52:16.693 TRACE: manager: Manager::activateManager()
+Oct 16 05:52:16.693 TRACE: manager: Manager::getPOAManager()
+Oct 16 05:52:16.693 TRACE: manager: Manager::getPOAManager()
+Oct 16 05:52:16.693 TRACE: manager: POA Manager activated.
+Oct 16 05:52:16.693 TRACE: manager: Manager::initLocalService()
+Oct 16 05:52:16.693 TRACE: LocalServiceAdmin: LocalServiceAdmin::LocalServiceAdmin()
+Oct 16 05:52:16.693 TRACE: LocalServiceAdmin: LocalServiceAdmin::init():
+Oct 16 05:52:16.693 DEBUG: LocalServiceAdmin: - enabled_services: ALL
+- modules: 
+
+Oct 16 05:52:16.693 INFO: LocalServiceAdmin: All the local services are enabled.
+Oct 16 05:52:16.693 DEBUG: LocalServiceAdmin: Available services: 
+Oct 16 05:52:16.693 DEBUG: manager: LocalServiceAdmin's properties:
+Oct 16 05:52:16.693 DEBUG: manager: - enabled_services: ALL
+- modules: 
+
+Oct 16 05:52:16.693 TRACE: manager: Manager::registerFactory(CameraCalibration)
+Oct 16 05:52:16.693 TRACE: manager: Manager::createComponent(CameraCalibration)
+Oct 16 05:52:16.693 TRACE: manager: RTC basic propfile vendor: 
+Oct 16 05:52:16.693 TRACE: manager: RTC basic propfile category: 
+Oct 16 05:52:16.693 TRACE: manager: RTC basic propfile implementation_id: CameraCalibration
+Oct 16 05:52:16.693 TRACE: manager: RTC basic propfile version: 
+Oct 16 05:52:16.693 TRACE: manager: Manager::getORB()
+Oct 16 05:52:16.693 TRACE: manager: Manager::getPOA()
+Oct 16 05:52:16.693 TRACE: manager: Manager::getORB()
+Oct 16 05:52:16.694 TRACE: manager: Manager::getPOA()
+Oct 16 05:52:16.694 TRACE: : getProperties()
+Oct 16 05:52:16.694 TRACE: SdoServiceAdmin: SdoServiceAdmin::SdoServiceAdmin()
+Oct 16 05:52:16.694 TRACE: : getProperties()
+Oct 16 05:52:16.694 DEBUG: SdoServiceAdmin: sdo.service.provider.enabled_services: 
+Oct 16 05:52:16.694 DEBUG: SdoServiceAdmin: sdo.service.provider.available_services: 
+Oct 16 05:52:16.694 DEBUG: SdoServiceAdmin: sdo.service.consumer.enabled_services: 
+Oct 16 05:52:16.694 DEBUG: SdoServiceAdmin: sdo.service.consumer.available_services: 
+Oct 16 05:52:16.694 DEBUG: InImage: Port name: InImage
+Oct 16 05:52:16.694 DEBUG: InImage: setting port.port_type: DataIntPort
+Oct 16 05:52:16.694 DEBUG: InImage: setting dataport.data_type: IDL:Img/TimedCameraImage:1.0
+Oct 16 05:52:16.694 TRACE: : setProperties()
+Oct 16 05:52:16.694 TRACE: : getTypeName()
+Oct 16 05:52:16.694 TRACE: CameraCalibration0: setInstanceName(CameraCalibration0)
+Oct 16 05:52:16.694 TRACE: manager: RTC created: CameraCalibration
+Oct 16 05:52:16.694 TRACE: CameraCalibration0: getCategory()
+Oct 16 05:52:16.694 TRACE: CameraCalibration0: getTypeName()
+Oct 16 05:52:16.694 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 05:52:16.694 TRACE: CameraCalibration0: setProperties()
+Oct 16 05:52:16.694 TRACE: CameraCalibration0: setProperties()
+Oct 16 05:52:16.694 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:52:16.694 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:52:16.694 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:52:16.694 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:52:16.694 TRACE: CameraCalibration0: initialize()
+Oct 16 05:52:16.694 DEBUG: CameraCalibration0: getContextOptions()
+Oct 16 05:52:16.694 TRACE: CameraCalibration0: getGlobalContextOptions()
+Oct 16 05:52:16.694 DEBUG: CameraCalibration0: Global EC options are specified.
+Oct 16 05:52:16.694 DEBUG: CameraCalibration0: - type: PeriodicExecutionContext
+- rate: 1000
+
+Oct 16 05:52:16.694 DEBUG: CameraCalibration0: Copying inherited EC options.
+Oct 16 05:52:16.694 TRACE: CameraCalibration0: getPrivateContextOptions()
+Oct 16 05:52:16.694 DEBUG: CameraCalibration0: No component specific EC specified.
+Oct 16 05:52:16.694 TRACE: ec_worker: ExecutionContextWorker()
+Oct 16 05:52:16.694 TRACE: periodic_ecprofile: ExecutionContextProfile()
+Oct 16 05:52:16.694 DEBUG: periodic_ecprofile: Actual rate: 0 [sec], 1 [usec]
+Oct 16 05:52:16.694 TRACE: periodic_ec: PeriodicExecutionContext()
+Oct 16 05:52:16.694 TRACE: periodic_ecprofile: setObjRef()
+Oct 16 05:52:16.694 TRACE: periodic_ecprofile: setKind(PERIODIC)
+Oct 16 05:52:16.694 TRACE: ec_base: setRate(1000000.000000)
+Oct 16 05:52:16.694 TRACE: periodic_ecprofile: setRate(1000000.000000)
+Oct 16 05:52:16.694 INFO: ec_base: setRate(1000000.000000) done
+Oct 16 05:52:16.694 DEBUG: periodic_ec: Actual period: 0 [sec], 1 [usec]
+Oct 16 05:52:16.694 DEBUG: CameraCalibration0: EC (PeriodicExecutionContext) created.
+Oct 16 05:52:16.694 TRACE: ec_base: init()
+Oct 16 05:52:16.694 DEBUG: ec_base: - sync_transition: YES
+- transition_timeout: 0.5
+- type: PeriodicExecutionContext
+- rate: 1000
+- name: 
+
+Oct 16 05:52:16.694 TRACE: ec_base: setRate(1000.000000)
+Oct 16 05:52:16.694 TRACE: periodic_ecprofile: setRate(1000.000000)
+Oct 16 05:52:16.694 INFO: ec_base: setRate(1000.000000) done
+Oct 16 05:52:16.694 TRACE: ec_base: setTransitionMode(sync_transition)
+Oct 16 05:52:16.694 DEBUG: ec_base: Transition Mode: sync_transition = YES
+Oct 16 05:52:16.694 TRACE: ec_base: setTransitionMode(sync_activation)
+Oct 16 05:52:16.694 DEBUG: ec_base: Configuration sync_activation not found.
+Oct 16 05:52:16.694 TRACE: ec_base: setTransitionMode(sync_deactivation)
+Oct 16 05:52:16.694 DEBUG: ec_base: Configuration sync_deactivation not found.
+Oct 16 05:52:16.694 TRACE: ec_base: setTransitionMode(sync_reset)
+Oct 16 05:52:16.694 DEBUG: ec_base: Configuration sync_reset not found.
+Oct 16 05:52:16.694 TRACE: ec_base: setTimeout(transition_timeout)
+Oct 16 05:52:16.694 DEBUG: ec_base: Timeout (transition_timeout): 0.500000 [s]
+Oct 16 05:52:16.694 TRACE: ec_base: setTimeout(activation_timeout)
+Oct 16 05:52:16.694 DEBUG: ec_base: Configuration activation_timeout not found.
+Oct 16 05:52:16.694 TRACE: ec_base: setTimeout(deactivation_timeout)
+Oct 16 05:52:16.694 DEBUG: ec_base: Configuration deactivation_timeout not found.
+Oct 16 05:52:16.694 TRACE: ec_base: setTimeout(reset_timeout)
+Oct 16 05:52:16.694 DEBUG: ec_base: Configuration reset_timeout not found.
+Oct 16 05:52:16.694 DEBUG: ec_base: ExecutionContext's configurations:
+Oct 16 05:52:16.694 DEBUG: ec_base: Exec rate   : 1000.000000 [Hz]
+Oct 16 05:52:16.694 DEBUG: ec_base: Activation  : Sync = YES, Timeout = 0.500000
+Oct 16 05:52:16.694 DEBUG: ec_base: Deactivation: Sync = YES, Timeout = 0.500000
+Oct 16 05:52:16.694 DEBUG: ec_base: Reset       : Sync = YES, Timeout = 0.500000
+Oct 16 05:52:16.694 TRACE: periodic_ecprofile: setProperties()
+Oct 16 05:52:16.694 DEBUG: periodic_ecprofile: - sync_transition: YES
+- transition_timeout: 0.5
+- type: PeriodicExecutionContext
+- rate: 1000
+- name: 
+
+Oct 16 05:52:16.694 TRACE: ec_worker: bindComponent()
+Oct 16 05:52:16.694 TRACE: CameraCalibration0: bindContext()
+Oct 16 05:52:16.694 DEBUG: ec_worker: bindContext returns id = 0
+Oct 16 05:52:16.694 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:52:16.694 TRACE: manager: Manager::getPOA()
+Oct 16 05:52:16.694 DEBUG: ec_worker: bindComponent() succeeded.
+Oct 16 05:52:16.694 INFO: CameraCalibration0: 1 execution context was created.
+Oct 16 05:52:16.694 TRACE: CameraCalibration0: on_initialize()
+Oct 16 05:52:16.694 DEBUG: CameraCalibration0: Calling onInitialize().
+Oct 16 05:52:16.694 TRACE: CameraCalibration0: addInPort(InImage)
+Oct 16 05:52:16.694 TRACE: CameraCalibration0: addPort(PortBase&)
+Oct 16 05:52:16.694 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:52:16.694 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 05:52:16.694 TRACE: InImage: setOwner(CameraCalibration0)
+Oct 16 05:52:16.694 TRACE: InImage: getPortProfile()
+Oct 16 05:52:16.694 TRACE: InImage: getName() = CameraCalibration0.InImage
+Oct 16 05:52:16.695 TRACE: InImage: getPortRef()
+Oct 16 05:52:16.695 TRACE: InImage: getProfile()
+Oct 16 05:52:16.695 TRACE: InImage: init()
+Oct 16 05:52:16.695 DEBUG: InImage: single buffer mode.
+Oct 16 05:52:16.695 TRACE: InImage: initProviders()
+Oct 16 05:52:16.695 DEBUG: InImage: available providers: corba_cdr
+Oct 16 05:52:16.695 DEBUG: InImage: dataflow_type push is supported
+Oct 16 05:52:16.695 TRACE: InImage: initConsumers()
+Oct 16 05:52:16.695 DEBUG: InImage: available consumers: corba_cdr
+Oct 16 05:52:16.695 TRACE: CameraCaptureService: registerConsumer()
+Oct 16 05:52:16.695 TRACE: CameraCalibration0: addPort(CrobaPort)
+Oct 16 05:52:16.695 TRACE: CameraCaptureService: init()
+Oct 16 05:52:16.695 DEBUG: CameraCaptureService: : 
+
+Oct 16 05:52:16.695 DEBUG: CameraCaptureService: : 
+
+Oct 16 05:52:16.695 TRACE: CameraCalibration0: addPort(PortBase&)
+Oct 16 05:52:16.695 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:52:16.695 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 05:52:16.695 TRACE: InImage: get_port_profile()
+Oct 16 05:52:16.695 TRACE: CameraCaptureService: setOwner(CameraCalibration0)
+Oct 16 05:52:16.695 TRACE: CameraCaptureService: getPortProfile()
+Oct 16 05:52:16.695 TRACE: CameraCaptureService: getName() = CameraCalibration0.CameraCaptureService
+Oct 16 05:52:16.695 TRACE: InImage: get_port_profile()
+Oct 16 05:52:16.695 TRACE: CameraCaptureService: getPortRef()
+Oct 16 05:52:16.695 TRACE: CameraCaptureService: getProfile()
+Oct 16 05:52:16.695 TRACE: InImage: getProfile()
+Oct 16 05:52:16.695 TRACE: CameraCalibration0: bindParameter(image_num (default: 10))
+Oct 16 05:52:16.695 TRACE: CameraCalibration0: bindParameter(chess_pattern_row (default: 7))
+Oct 16 05:52:16.695 TRACE: CameraCalibration0: bindParameter(chess_pattern_column (default: 10))
+Oct 16 05:52:16.695 TRACE: CameraCalibration0: bindParameter(chess_pattern_size (default: 24.0))
+Oct 16 05:52:16.695 TRACE: CameraCalibration0: bindParameter(output_file_name (default: calib.yml))
+Oct 16 05:52:16.695 DEBUG: CameraCalibration0: onInitialize() succeeded.
+Oct 16 05:52:16.695 DEBUG: CameraCalibration0: Active configuration set: default exists.
+Oct 16 05:52:16.695 INFO: CameraCalibration0: Initial active configuration set is default.
+Oct 16 05:52:16.695 DEBUG: CameraCalibration0: on_initialize() was properly done.
+Oct 16 05:52:16.695 DEBUG: CameraCalibration0: EC[0] starting.
+Oct 16 05:52:16.695 TRACE: ec_base: start()
+Oct 16 05:52:16.695 TRACE: ec_worker: start()
+Oct 16 05:52:16.695 TRACE: CameraCalibration0: on_startup(0)
+Oct 16 05:52:16.695 TRACE: CameraCalibration0: onStartup(0)
+Oct 16 05:52:16.695 DEBUG: ec_worker: 1 components started.
+Oct 16 05:52:16.695 TRACE: periodic_ec: open()
+Oct 16 05:52:16.695 TRACE: manager: RTC initialization succeeded: CameraCalibration
+Oct 16 05:52:16.695 TRACE: CameraCalibration0: getInstanceName()
+
+Oct 16 05:52:16.695 TRACE: manager: Oct 16 05:52:16.695 TRACE: periodic_ec: Manager::registerComponent(CameraCalibration0)svc()
+
+
+Oct 16 05:52:16.695 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 05:52:16.695 TRACE: CameraCalibration0: getNamingNames()
+Oct 16 05:52:16.695 TRACE: manager: Bind name: CameraCalibration0.rtc
+Oct 16 05:52:16.695 TRACE: NamingManager: NamingManager::bindObject(CameraCalibration0.rtc)
+Oct 16 05:52:16.695 TRACE: NamingOnCorba: bindObject(name = CameraCalibration0.rtc, rtobj)
+Oct 16 05:52:16.695 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:52:16.695 TRACE: manager: Manager::runManager(): blocking mode
+Oct 16 05:52:26.956 TRACE: NamingManager: NamingManager::update()
+Oct 16 05:52:26.956 TRACE: NamingOnCorba: isAlive()
+Oct 16 05:52:37.264 TRACE: NamingManager: NamingManager::update()
+Oct 16 05:52:37.264 TRACE: NamingOnCorba: isAlive()
+Oct 16 05:54:36.642 INFO: manager: 1.1.1
+Oct 16 05:54:36.642 INFO: manager: Copyright (C) 2003-2012
+Oct 16 05:54:36.642 INFO: manager:   Noriaki Ando
+Oct 16 05:54:36.642 INFO: manager:   Intelligent Systems Research Institute, AIST
+Oct 16 05:54:36.642 INFO: manager: Manager starting.
+Oct 16 05:54:36.642 INFO: manager: Starting local logging.
+Oct 16 05:54:36.642 TRACE: manager: Manager::initORB()
+Oct 16 05:54:36.642 DEBUG: manager: corba.args: 
+Oct 16 05:54:36.642 DEBUG: manager: - config
+  - version: 1.1.1
+- openrtm
+  - name: OpenRTM-aist-1.1.1
+  - version: 1.1.1
+- manager
+  - instance_name: manager
+  - name: manager_cpp
+  - naming_formats: %n_cpp.mgr
+  - pid: 19410
+  - refstring_path: /var/log/rtcmanager.ref
+  - modules
+    - load_path: ./
+    - abs_path_allowed: YES
+    - C++
+      - manager_cmd: rtcd
+      - profile_cmd: rtcprof
+      - suffixes: dylib
+      - load_paths: ./
+    - Python
+      - manager_cmd: rtcd_python
+      - profile_cmd: rtcprof_python
+      - suffixes: py
+      - load_paths: ./
+    - Java
+      - manager_cmd: rtcd_java
+      - profile_cmd: rtcprof_java
+      - suffixes: class
+      - load_paths: ./
+    - preload: 
+    - config_path: 
+    - download_allowed: 
+    - init_func_suffix: 
+    - init_func_prefix: 
+  - is_master: NO
+  - corba_servant: YES
+  - shutdown_on_nortcs: NO
+  - shutdown_auto: NO
+  - auto_shutdown_duration: 10.0
+  - command: rtcd
+  - supported_languages: C++, Python, Java
+  - local_service
+    - enabled_services: ALL
+  - components
+    - precreate: 
+- os
+  - name: Darwin
+  - release: 14.5.0
+  - version: Darwin Kernel Version 14.5.0: Wed Jul 29 02:26:53 PDT 2015; root:xnu-2782.40.9~1/RELEASE_X86_64
+  - arch: x86_64
+  - hostname: visnu.local
+- logger
+  - enable: YES
+  - file_name: ./log/standalonertc_CameraCalibration
+  - date_format: %b %d %H:%M:%S.%Q
+  - log_level: TRACE
+  - stream_lock: NO
+  - master_logger: 
+  - clock_type: 
+- module
+  - conf_path: 
+  - load_path: 
+- naming
+  - enable: YES
+  - type: corba
+  - formats: %n.rtc
+  - update
+    - enable: YES
+    - interval: 10.0
+- timer
+  - enable: YES
+  - tick: 0.1
+- corba
+  - args: 
+  - endpoint: 
+  - id: omniORB
+  - nameservers: localhost:2809
+  - master_manager: localhost:2810
+  - nameservice
+    - replace_endpoint: NO
+- exec_cxt
+  - periodic
+    - type: PeriodicExecutionContext
+    - rate: 1000
+  - sync_transition: YES
+  - transition_timeout: 0.5
+- sdo
+  - service
+    - provider
+      - enabled_service: ALL
+    - consumer
+      - enabled_service: ALL
+- ImageProcessin
+  - CameraCalibration0
+    - config_file: conf/CameraCalibration0.conf
+- config_file: conf/rtc_CameraCalibration.conf
+
+Oct 16 05:54:36.643 DEBUG: manager: corba.endpoint: 
+Oct 16 05:54:36.643 DEBUG: manager: manager.is_master: NO
+Oct 16 05:54:36.643 DEBUG: manager: corba.id: omniORB
+Oct 16 05:54:36.643 TRACE: manager: Manager::initNaming()
+Oct 16 05:54:36.643 TRACE: manager: Register Naming Server: corba/localhost:2809
+Oct 16 05:54:36.643 TRACE: NamingManager: NamingManager::registerNameServer(corba, localhost:2809)
+Oct 16 05:54:36.643 TRACE: NamingManager: createNamingObj(method = corba, nameserver = localhost:2809
+Oct 16 05:54:36.643 TRACE: manager: Manager::getORB()
+Oct 16 05:54:36.651 WARNING: NamingOnCorba: No endpoint for the CORBA naming service (localhost) was found.
+Oct 16 05:54:36.651 INFO: NamingManager: NameServer connection succeeded: corba/localhost:2809
+Oct 16 05:54:36.651 TRACE: manager: Manager::initFactories()
+Oct 16 05:54:36.651 TRACE: manager: Manager::initExecContext()
+Oct 16 05:54:36.651 TRACE: manager: Manager::initComposite()
+Oct 16 05:54:36.651 TRACE: manager: Manager::registerFactory(PeriodicECSharedComposite)
+Oct 16 05:54:36.651 TRACE: manager: Manager::initManagerServant()
+Oct 16 05:54:36.652 TRACE: ManagerServant: This manager is slave.
+Oct 16 05:54:36.652 TRACE: ManagerServant: findManager(host_port = localhost:2810)
+Oct 16 05:54:36.652 DEBUG: ManagerServant: corbaloc: corbaloc::localhost:2810/manager_cpp
+Oct 16 05:54:36.652 TRACE: manager: Manager::getORB()
+Oct 16 05:54:36.653 DEBUG: ManagerServant: CORBA SystemException cought (CORBA::TRANSIENT)
+Oct 16 05:54:36.653 INFO: ManagerServant: Master manager not found
+Oct 16 05:54:36.653 TRACE: manager: Manager::activateManager()
+Oct 16 05:54:36.653 TRACE: manager: Manager::getPOAManager()
+Oct 16 05:54:36.653 TRACE: manager: Manager::getPOAManager()
+Oct 16 05:54:36.653 TRACE: manager: POA Manager activated.
+Oct 16 05:54:36.653 TRACE: manager: Manager::initLocalService()
+Oct 16 05:54:36.653 TRACE: LocalServiceAdmin: LocalServiceAdmin::LocalServiceAdmin()
+Oct 16 05:54:36.653 TRACE: LocalServiceAdmin: LocalServiceAdmin::init():
+Oct 16 05:54:36.653 DEBUG: LocalServiceAdmin: - enabled_services: ALL
+- modules: 
+
+Oct 16 05:54:36.653 INFO: LocalServiceAdmin: All the local services are enabled.
+Oct 16 05:54:36.653 DEBUG: LocalServiceAdmin: Available services: 
+Oct 16 05:54:36.653 DEBUG: manager: LocalServiceAdmin's properties:
+Oct 16 05:54:36.653 DEBUG: manager: - enabled_services: ALL
+- modules: 
+
+Oct 16 05:54:36.653 TRACE: manager: Manager::registerFactory(CameraCalibration)
+Oct 16 05:54:36.653 TRACE: manager: Manager::createComponent(CameraCalibration)
+Oct 16 05:54:36.653 TRACE: manager: RTC basic propfile vendor: 
+Oct 16 05:54:36.653 TRACE: manager: RTC basic propfile category: 
+Oct 16 05:54:36.653 TRACE: manager: RTC basic propfile implementation_id: CameraCalibration
+Oct 16 05:54:36.653 TRACE: manager: RTC basic propfile version: 
+Oct 16 05:54:36.653 TRACE: manager: Manager::getORB()
+Oct 16 05:54:36.653 TRACE: manager: Manager::getPOA()
+Oct 16 05:54:36.653 TRACE: manager: Manager::getORB()
+Oct 16 05:54:36.653 TRACE: manager: Manager::getPOA()
+Oct 16 05:54:36.653 TRACE: : getProperties()
+Oct 16 05:54:36.653 TRACE: SdoServiceAdmin: SdoServiceAdmin::SdoServiceAdmin()
+Oct 16 05:54:36.653 TRACE: : getProperties()
+Oct 16 05:54:36.653 DEBUG: SdoServiceAdmin: sdo.service.provider.enabled_services: 
+Oct 16 05:54:36.653 DEBUG: SdoServiceAdmin: sdo.service.provider.available_services: 
+Oct 16 05:54:36.653 DEBUG: SdoServiceAdmin: sdo.service.consumer.enabled_services: 
+Oct 16 05:54:36.653 DEBUG: SdoServiceAdmin: sdo.service.consumer.available_services: 
+Oct 16 05:54:36.653 DEBUG: InImage: Port name: InImage
+Oct 16 05:54:36.653 DEBUG: InImage: setting port.port_type: DataIntPort
+Oct 16 05:54:36.653 DEBUG: InImage: setting dataport.data_type: IDL:Img/TimedCameraImage:1.0
+Oct 16 05:54:36.654 TRACE: : setProperties()
+Oct 16 05:54:36.654 TRACE: : getTypeName()
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: setInstanceName(CameraCalibration0)
+Oct 16 05:54:36.654 TRACE: manager: RTC created: CameraCalibration
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: getCategory()
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: getTypeName()
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: setProperties()
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: setProperties()
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: initialize()
+Oct 16 05:54:36.654 DEBUG: CameraCalibration0: getContextOptions()
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: getGlobalContextOptions()
+Oct 16 05:54:36.654 DEBUG: CameraCalibration0: Global EC options are specified.
+Oct 16 05:54:36.654 DEBUG: CameraCalibration0: - type: PeriodicExecutionContext
+- rate: 1000
+
+Oct 16 05:54:36.654 DEBUG: CameraCalibration0: Copying inherited EC options.
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: getPrivateContextOptions()
+Oct 16 05:54:36.654 DEBUG: CameraCalibration0: No component specific EC specified.
+Oct 16 05:54:36.654 TRACE: ec_worker: ExecutionContextWorker()
+Oct 16 05:54:36.654 TRACE: periodic_ecprofile: ExecutionContextProfile()
+Oct 16 05:54:36.654 DEBUG: periodic_ecprofile: Actual rate: 0 [sec], 1 [usec]
+Oct 16 05:54:36.654 TRACE: periodic_ec: PeriodicExecutionContext()
+Oct 16 05:54:36.654 TRACE: periodic_ecprofile: setObjRef()
+Oct 16 05:54:36.654 TRACE: periodic_ecprofile: setKind(PERIODIC)
+Oct 16 05:54:36.654 TRACE: ec_base: setRate(1000000.000000)
+Oct 16 05:54:36.654 TRACE: periodic_ecprofile: setRate(1000000.000000)
+Oct 16 05:54:36.654 INFO: ec_base: setRate(1000000.000000) done
+Oct 16 05:54:36.654 DEBUG: periodic_ec: Actual period: 0 [sec], 1 [usec]
+Oct 16 05:54:36.654 DEBUG: CameraCalibration0: EC (PeriodicExecutionContext) created.
+Oct 16 05:54:36.654 TRACE: ec_base: init()
+Oct 16 05:54:36.654 DEBUG: ec_base: - sync_transition: YES
+- transition_timeout: 0.5
+- type: PeriodicExecutionContext
+- rate: 1000
+- name: 
+
+Oct 16 05:54:36.654 TRACE: ec_base: setRate(1000.000000)
+Oct 16 05:54:36.654 TRACE: periodic_ecprofile: setRate(1000.000000)
+Oct 16 05:54:36.654 INFO: ec_base: setRate(1000.000000) done
+Oct 16 05:54:36.654 TRACE: ec_base: setTransitionMode(sync_transition)
+Oct 16 05:54:36.654 DEBUG: ec_base: Transition Mode: sync_transition = YES
+Oct 16 05:54:36.654 TRACE: ec_base: setTransitionMode(sync_activation)
+Oct 16 05:54:36.654 DEBUG: ec_base: Configuration sync_activation not found.
+Oct 16 05:54:36.654 TRACE: ec_base: setTransitionMode(sync_deactivation)
+Oct 16 05:54:36.654 DEBUG: ec_base: Configuration sync_deactivation not found.
+Oct 16 05:54:36.654 TRACE: ec_base: setTransitionMode(sync_reset)
+Oct 16 05:54:36.654 DEBUG: ec_base: Configuration sync_reset not found.
+Oct 16 05:54:36.654 TRACE: ec_base: setTimeout(transition_timeout)
+Oct 16 05:54:36.654 DEBUG: ec_base: Timeout (transition_timeout): 0.500000 [s]
+Oct 16 05:54:36.654 TRACE: ec_base: setTimeout(activation_timeout)
+Oct 16 05:54:36.654 DEBUG: ec_base: Configuration activation_timeout not found.
+Oct 16 05:54:36.654 TRACE: ec_base: setTimeout(deactivation_timeout)
+Oct 16 05:54:36.654 DEBUG: ec_base: Configuration deactivation_timeout not found.
+Oct 16 05:54:36.654 TRACE: ec_base: setTimeout(reset_timeout)
+Oct 16 05:54:36.654 DEBUG: ec_base: Configuration reset_timeout not found.
+Oct 16 05:54:36.654 DEBUG: ec_base: ExecutionContext's configurations:
+Oct 16 05:54:36.654 DEBUG: ec_base: Exec rate   : 1000.000000 [Hz]
+Oct 16 05:54:36.654 DEBUG: ec_base: Activation  : Sync = YES, Timeout = 0.500000
+Oct 16 05:54:36.654 DEBUG: ec_base: Deactivation: Sync = YES, Timeout = 0.500000
+Oct 16 05:54:36.654 DEBUG: ec_base: Reset       : Sync = YES, Timeout = 0.500000
+Oct 16 05:54:36.654 TRACE: periodic_ecprofile: setProperties()
+Oct 16 05:54:36.654 DEBUG: periodic_ecprofile: - sync_transition: YES
+- transition_timeout: 0.5
+- type: PeriodicExecutionContext
+- rate: 1000
+- name: 
+
+Oct 16 05:54:36.654 TRACE: ec_worker: bindComponent()
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: bindContext()
+Oct 16 05:54:36.654 DEBUG: ec_worker: bindContext returns id = 0
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:54:36.654 TRACE: manager: Manager::getPOA()
+Oct 16 05:54:36.654 DEBUG: ec_worker: bindComponent() succeeded.
+Oct 16 05:54:36.654 INFO: CameraCalibration0: 1 execution context was created.
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: on_initialize()
+Oct 16 05:54:36.654 DEBUG: CameraCalibration0: Calling onInitialize().
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: addInPort(InImage)
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: addPort(PortBase&)
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 05:54:36.654 TRACE: InImage: setOwner(CameraCalibration0)
+Oct 16 05:54:36.654 TRACE: InImage: getPortProfile()
+Oct 16 05:54:36.654 TRACE: InImage: getName() = CameraCalibration0.InImage
+Oct 16 05:54:36.654 TRACE: InImage: getPortRef()
+Oct 16 05:54:36.654 TRACE: InImage: getProfile()
+Oct 16 05:54:36.654 TRACE: InImage: init()
+Oct 16 05:54:36.654 DEBUG: InImage: single buffer mode.
+Oct 16 05:54:36.654 TRACE: InImage: initProviders()
+Oct 16 05:54:36.654 DEBUG: InImage: available providers: corba_cdr
+Oct 16 05:54:36.654 DEBUG: InImage: dataflow_type push is supported
+Oct 16 05:54:36.654 TRACE: InImage: initConsumers()
+Oct 16 05:54:36.654 DEBUG: InImage: available consumers: corba_cdr
+Oct 16 05:54:36.654 TRACE: CameraCaptureService: registerConsumer()
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: addPort(CrobaPort)
+Oct 16 05:54:36.654 TRACE: CameraCaptureService: init()
+Oct 16 05:54:36.654 DEBUG: CameraCaptureService: : 
+
+Oct 16 05:54:36.654 DEBUG: CameraCaptureService: : 
+
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: addPort(PortBase&)
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:54:36.654 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 05:54:36.654 TRACE: InImage: get_port_profile()
+Oct 16 05:54:36.655 TRACE: CameraCaptureService: setOwner(CameraCalibration0)
+Oct 16 05:54:36.655 TRACE: CameraCaptureService: getPortProfile()
+Oct 16 05:54:36.655 TRACE: CameraCaptureService: getName() = CameraCalibration0.CameraCaptureService
+Oct 16 05:54:36.655 TRACE: InImage: get_port_profile()
+Oct 16 05:54:36.655 TRACE: CameraCaptureService: getPortRef()
+Oct 16 05:54:36.655 TRACE: CameraCaptureService: getProfile()
+Oct 16 05:54:36.655 TRACE: InImage: getProfile()
+Oct 16 05:54:36.655 TRACE: CameraCalibration0: bindParameter(image_num (default: 10))
+Oct 16 05:54:36.655 TRACE: CameraCalibration0: bindParameter(chess_pattern_row (default: 7))
+Oct 16 05:54:36.655 TRACE: CameraCalibration0: bindParameter(chess_pattern_column (default: 10))
+Oct 16 05:54:36.655 TRACE: CameraCalibration0: bindParameter(chess_pattern_size (default: 24.0))
+Oct 16 05:54:36.655 TRACE: CameraCalibration0: bindParameter(output_file_name (default: calib.yml))
+Oct 16 05:54:36.655 DEBUG: CameraCalibration0: onInitialize() succeeded.
+Oct 16 05:54:36.655 DEBUG: CameraCalibration0: Active configuration set: default exists.
+Oct 16 05:54:36.655 INFO: CameraCalibration0: Initial active configuration set is default.
+Oct 16 05:54:36.655 DEBUG: CameraCalibration0: on_initialize() was properly done.
+Oct 16 05:54:36.655 DEBUG: CameraCalibration0: EC[0] starting.
+Oct 16 05:54:36.655 TRACE: ec_base: start()
+Oct 16 05:54:36.655 TRACE: ec_worker: start()
+Oct 16 05:54:36.655 TRACE: CameraCalibration0: on_startup(0)
+Oct 16 05:54:36.655 TRACE: CameraCalibration0: onStartup(0)
+Oct 16 05:54:36.655 DEBUG: ec_worker: 1 components started.
+Oct 16 05:54:36.655 TRACE: periodic_ec: open()
+Oct 16 05:54:36.655 TRACE: manager: RTC initialization succeeded: CameraCalibration
+Oct 16 05:54:36.655 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 05:54:36.655 TRACE: periodic_ec: Oct 16 05:54:36.655 TRACE: manager: Manager::registerComponent(CameraCalibration0)svc()
+
+
+Oct 16 05:54:36.655 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 05:54:36.655 TRACE: CameraCalibration0: getNamingNames()
+Oct 16 05:54:36.655 TRACE: manager: Bind name: CameraCalibration0.rtc
+Oct 16 05:54:36.655 TRACE: NamingManager: NamingManager::bindObject(CameraCalibration0.rtc)
+Oct 16 05:54:36.655 TRACE: NamingOnCorba: bindObject(name = CameraCalibration0.rtc, rtobj)
+Oct 16 05:54:36.655 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:54:36.655 TRACE: manager: Manager::runManager(): blocking mode
+Oct 16 05:54:46.910 TRACE: NamingManager: NamingManager::update()
+Oct 16 05:54:46.910 TRACE: NamingOnCorba: isAlive()
+Oct 16 05:54:53.059 TRACE: manager: Manager::shutdown()
+Oct 16 05:54:53.059 TRACE: manager: Manager::shutdownComponents()
+Oct 16 05:54:53.059 TRACE: CameraCalibration0: exit()
+Oct 16 05:54:53.059 TRACE: ec_base: deactivateComponent()
+Oct 16 05:54:53.059 TRACE: ec_worker: deactivateComponent()
+Oct 16 05:54:53.059 ERROR: ec_worker: State of the RTC is not ACTIVE_STATE.
+Oct 16 05:54:53.059 TRACE: ec_base: stop()
+Oct 16 05:54:53.059 TRACE: ec_worker: stop()
+Oct 16 05:54:53.059 TRACE: CameraCalibration0: on_shutdown(0)
+Oct 16 05:54:53.059 TRACE: CameraCalibration0: onShutdown(0)
+Oct 16 05:54:53.059 TRACE: CameraCalibration0: finalize()
+Oct 16 05:54:53.059 TRACE: CameraCalibration0: on_finalize()
+Oct 16 05:54:53.059 TRACE: CameraCalibration0: onFinalize()
+Oct 16 05:54:53.059 TRACE: CameraCalibration0: shutdown()
+Oct 16 05:54:53.059 TRACE: CameraCalibration0: finalizePorts()
+Oct 16 05:54:53.059 TRACE: InImage: deactivateInterfaces()
+Oct 16 05:54:53.059 TRACE: InImage: disconnect_all()
+Oct 16 05:54:53.059 DEBUG: InImage: disconnecting 0 connections.
+Oct 16 05:54:53.059 TRACE: InImage: getProfile()
+Oct 16 05:54:53.059 TRACE: InImage: get_port_profile()
+Oct 16 05:54:53.059 TRACE: InImage: setPortRef()
+Oct 16 05:54:53.059 TRACE: InImage: getProfile()
+Oct 16 05:54:53.059 TRACE: CameraCaptureService: disconnect_all()
+Oct 16 05:54:53.059 DEBUG: CameraCaptureService: disconnecting 0 connections.
+Oct 16 05:54:53.059 TRACE: CameraCaptureService: getProfile()
+Oct 16 05:54:53.059 TRACE: CameraCaptureService: get_port_profile()
+Oct 16 05:54:53.059 TRACE: CameraCaptureService: setPortRef()
+Oct 16 05:54:53.059 TRACE: CameraCaptureService: getProfile()
+Oct 16 05:54:53.059 TRACE: CameraCalibration0: finalizeContexts()
+Oct 16 05:54:53.059 TRACE: periodic_ecprofile: getObjRef()
+Oct 16 05:54:53.059 TRACE: ec_base: stop()
+Oct 16 05:54:53.059 TRACE: ec_worker: stop()
+Oct 16 05:54:53.059 WARNING: ec_worker: ExecutionContext is already stopped.
+Oct 16 05:54:53.059 ERROR: ec_base: Invoking on_shutdown() for each RTC failed.
+Oct 16 05:54:53.059 DEBUG: CameraCalibration0: Deactivating Execution Context.
+Oct 16 05:54:53.059 DEBUG: CameraCalibration0: Deactivating EC done.
+Oct 16 05:54:53.059 TRACE: periodic_ec: ~PeriodicExecutionContext()
+Oct 16 05:54:53.060 DEBUG: periodic_ec: Thread terminated.
+Oct 16 05:54:53.060 TRACE: periodic_ecprofile: ~ExecutionContextProfile()
+Oct 16 05:54:53.061 TRACE: ec_worker: ~ExecutionContextWorker()
+Oct 16 05:54:53.061 DEBUG: CameraCalibration0: Cleanup on Manager
+Oct 16 05:54:53.061 TRACE: manager: Manager::notifyFinalized()
+Oct 16 05:54:53.061 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 05:54:53.061 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:54:53.061 TRACE: manager: Manager::shutdownNaming()
+Oct 16 05:54:53.061 TRACE: manager: Manager::getComponents()
+Oct 16 05:54:53.061 TRACE: CameraCalibration0: getNamingNames()
+Oct 16 05:54:53.061 TRACE: NamingManager: NamingManager::unbindObject(CameraCalibration0.rtc)
+Oct 16 05:54:53.061 TRACE: NamingOnCorba: unbindObject(name  = CameraCalibration0.rtc)
+Oct 16 05:54:53.061 TRACE: NamingManager: NamingManager::unbindAll(): 0 names.
+Oct 16 05:54:53.061 TRACE: manager: Manager::shutdownORB()
+Oct 16 05:54:53.061 DEBUG: manager: No pending works of ORB. Shutting down POA and ORB.
+Oct 16 05:54:53.061 DEBUG: manager: POA Manager was deactivated.
+Oct 16 05:54:53.061 DEBUG: manager: POA was destroid.
+Oct 16 05:54:53.061 DEBUG: manager: ORB was shutdown.
+Oct 16 05:54:53.061 DEBUG: manager: ORB was destroied.
+Oct 16 05:54:53.061 TRACE: manager: Manager::shutdownManager()
+Oct 16 05:54:53.061 TRACE: manager: Manager::wait()
+Oct 16 05:54:53.061 TRACE: manager: Manager::runManager(): ORB was terminated
+Oct 16 05:54:53.061 TRACE: manager: Manager::wait()
+Oct 16 05:56:18.248 INFO: manager: 1.1.1
+Oct 16 05:56:18.249 INFO: manager: Copyright (C) 2003-2012
+Oct 16 05:56:18.249 INFO: manager:   Noriaki Ando
+Oct 16 05:56:18.249 INFO: manager:   Intelligent Systems Research Institute, AIST
+Oct 16 05:56:18.249 INFO: manager: Manager starting.
+Oct 16 05:56:18.249 INFO: manager: Starting local logging.
+Oct 16 05:56:18.249 TRACE: manager: Manager::initORB()
+Oct 16 05:56:18.249 DEBUG: manager: corba.args: 
+Oct 16 05:56:18.249 DEBUG: manager: - config
+  - version: 1.1.1
+- openrtm
+  - name: OpenRTM-aist-1.1.1
+  - version: 1.1.1
+- manager
+  - instance_name: manager
+  - name: manager_cpp
+  - naming_formats: %n_cpp.mgr
+  - pid: 19434
+  - refstring_path: /var/log/rtcmanager.ref
+  - modules
+    - load_path: ./
+    - abs_path_allowed: YES
+    - C++
+      - manager_cmd: rtcd
+      - profile_cmd: rtcprof
+      - suffixes: dylib
+      - load_paths: ./
+    - Python
+      - manager_cmd: rtcd_python
+      - profile_cmd: rtcprof_python
+      - suffixes: py
+      - load_paths: ./
+    - Java
+      - manager_cmd: rtcd_java
+      - profile_cmd: rtcprof_java
+      - suffixes: class
+      - load_paths: ./
+    - preload: 
+    - config_path: 
+    - download_allowed: 
+    - init_func_suffix: 
+    - init_func_prefix: 
+  - is_master: NO
+  - corba_servant: YES
+  - shutdown_on_nortcs: NO
+  - shutdown_auto: NO
+  - auto_shutdown_duration: 10.0
+  - command: rtcd
+  - supported_languages: C++, Python, Java
+  - local_service
+    - enabled_services: ALL
+  - components
+    - precreate: 
+- os
+  - name: Darwin
+  - release: 14.5.0
+  - version: Darwin Kernel Version 14.5.0: Wed Jul 29 02:26:53 PDT 2015; root:xnu-2782.40.9~1/RELEASE_X86_64
+  - arch: x86_64
+  - hostname: visnu.local
+- logger
+  - enable: YES
+  - file_name: ./log/standalonertc_CameraCalibration
+  - date_format: %b %d %H:%M:%S.%Q
+  - log_level: TRACE
+  - stream_lock: NO
+  - master_logger: 
+  - clock_type: 
+- module
+  - conf_path: 
+  - load_path: 
+- naming
+  - enable: YES
+  - type: corba
+  - formats: %n.rtc
+  - update
+    - enable: YES
+    - interval: 10.0
+- timer
+  - enable: YES
+  - tick: 0.1
+- corba
+  - args: 
+  - endpoint: 
+  - id: omniORB
+  - nameservers: localhost:2809
+  - master_manager: localhost:2810
+  - nameservice
+    - replace_endpoint: NO
+- exec_cxt
+  - periodic
+    - type: PeriodicExecutionContext
+    - rate: 1000
+  - sync_transition: YES
+  - transition_timeout: 0.5
+- sdo
+  - service
+    - provider
+      - enabled_service: ALL
+    - consumer
+      - enabled_service: ALL
+- ImageProcessin
+  - CameraCalibration0
+    - config_file: conf/CameraCalibration0.conf
+- config_file: conf/rtc_CameraCalibration.conf
+
+Oct 16 05:56:18.250 DEBUG: manager: corba.endpoint: 
+Oct 16 05:56:18.250 DEBUG: manager: manager.is_master: NO
+Oct 16 05:56:18.250 DEBUG: manager: corba.id: omniORB
+Oct 16 05:56:18.250 TRACE: manager: Manager::initNaming()
+Oct 16 05:56:18.250 TRACE: manager: Register Naming Server: corba/localhost:2809
+Oct 16 05:56:18.250 TRACE: NamingManager: NamingManager::registerNameServer(corba, localhost:2809)
+Oct 16 05:56:18.250 TRACE: NamingManager: createNamingObj(method = corba, nameserver = localhost:2809
+Oct 16 05:56:18.250 TRACE: manager: Manager::getORB()
+Oct 16 05:56:18.258 WARNING: NamingOnCorba: No endpoint for the CORBA naming service (localhost) was found.
+Oct 16 05:56:18.258 INFO: NamingManager: NameServer connection succeeded: corba/localhost:2809
+Oct 16 05:56:18.258 TRACE: manager: Manager::initFactories()
+Oct 16 05:56:18.258 TRACE: manager: Manager::initExecContext()
+Oct 16 05:56:18.258 TRACE: manager: Manager::initComposite()
+Oct 16 05:56:18.258 TRACE: manager: Manager::registerFactory(PeriodicECSharedComposite)
+Oct 16 05:56:18.258 TRACE: manager: Manager::initManagerServant()
+Oct 16 05:56:18.259 TRACE: ManagerServant: This manager is slave.
+Oct 16 05:56:18.259 TRACE: ManagerServant: findManager(host_port = localhost:2810)
+Oct 16 05:56:18.259 DEBUG: ManagerServant: corbaloc: corbaloc::localhost:2810/manager_cpp
+Oct 16 05:56:18.259 TRACE: manager: Manager::getORB()
+Oct 16 05:56:18.260 DEBUG: ManagerServant: CORBA SystemException cought (CORBA::TRANSIENT)
+Oct 16 05:56:18.260 INFO: ManagerServant: Master manager not found
+Oct 16 05:56:18.260 TRACE: manager: Manager::activateManager()
+Oct 16 05:56:18.260 TRACE: manager: Manager::getPOAManager()
+Oct 16 05:56:18.260 TRACE: manager: Manager::getPOAManager()
+Oct 16 05:56:18.260 TRACE: manager: POA Manager activated.
+Oct 16 05:56:18.260 TRACE: manager: Manager::initLocalService()
+Oct 16 05:56:18.260 TRACE: LocalServiceAdmin: LocalServiceAdmin::LocalServiceAdmin()
+Oct 16 05:56:18.260 TRACE: LocalServiceAdmin: LocalServiceAdmin::init():
+Oct 16 05:56:18.260 DEBUG: LocalServiceAdmin: - enabled_services: ALL
+- modules: 
+
+Oct 16 05:56:18.260 INFO: LocalServiceAdmin: All the local services are enabled.
+Oct 16 05:56:18.260 DEBUG: LocalServiceAdmin: Available services: 
+Oct 16 05:56:18.260 DEBUG: manager: LocalServiceAdmin's properties:
+Oct 16 05:56:18.260 DEBUG: manager: - enabled_services: ALL
+- modules: 
+
+Oct 16 05:56:18.260 TRACE: manager: Manager::registerFactory(CameraCalibration)
+Oct 16 05:56:18.260 TRACE: manager: Manager::createComponent(CameraCalibration)
+Oct 16 05:56:18.260 TRACE: manager: RTC basic propfile vendor: 
+Oct 16 05:56:18.260 TRACE: manager: RTC basic propfile category: 
+Oct 16 05:56:18.260 TRACE: manager: RTC basic propfile implementation_id: CameraCalibration
+Oct 16 05:56:18.260 TRACE: manager: RTC basic propfile version: 
+Oct 16 05:56:18.260 TRACE: manager: Manager::getORB()
+Oct 16 05:56:18.260 TRACE: manager: Manager::getPOA()
+Oct 16 05:56:18.260 TRACE: manager: Manager::getORB()
+Oct 16 05:56:18.260 TRACE: manager: Manager::getPOA()
+Oct 16 05:56:18.261 TRACE: : getProperties()
+Oct 16 05:56:18.261 TRACE: SdoServiceAdmin: SdoServiceAdmin::SdoServiceAdmin()
+Oct 16 05:56:18.261 TRACE: : getProperties()
+Oct 16 05:56:18.261 DEBUG: SdoServiceAdmin: sdo.service.provider.enabled_services: 
+Oct 16 05:56:18.261 DEBUG: SdoServiceAdmin: sdo.service.provider.available_services: 
+Oct 16 05:56:18.261 DEBUG: SdoServiceAdmin: sdo.service.consumer.enabled_services: 
+Oct 16 05:56:18.261 DEBUG: SdoServiceAdmin: sdo.service.consumer.available_services: 
+Oct 16 05:56:18.261 DEBUG: InImage: Port name: InImage
+Oct 16 05:56:18.261 DEBUG: InImage: setting port.port_type: DataIntPort
+Oct 16 05:56:18.261 DEBUG: InImage: setting dataport.data_type: IDL:Img/TimedCameraImage:1.0
+Oct 16 05:56:18.261 TRACE: : setProperties()
+Oct 16 05:56:18.261 TRACE: : getTypeName()
+Oct 16 05:56:18.261 TRACE: CameraCalibration0: setInstanceName(CameraCalibration0)
+Oct 16 05:56:18.261 TRACE: manager: RTC created: CameraCalibration
+Oct 16 05:56:18.261 TRACE: CameraCalibration0: getCategory()
+Oct 16 05:56:18.261 TRACE: CameraCalibration0: getTypeName()
+Oct 16 05:56:18.261 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 05:56:18.261 TRACE: CameraCalibration0: setProperties()
+Oct 16 05:56:18.261 TRACE: CameraCalibration0: setProperties()
+Oct 16 05:56:18.261 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:56:18.261 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:56:18.261 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:56:18.261 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:56:18.261 TRACE: CameraCalibration0: initialize()
+Oct 16 05:56:18.261 DEBUG: CameraCalibration0: getContextOptions()
+Oct 16 05:56:18.261 TRACE: CameraCalibration0: getGlobalContextOptions()
+Oct 16 05:56:18.261 DEBUG: CameraCalibration0: Global EC options are specified.
+Oct 16 05:56:18.261 DEBUG: CameraCalibration0: - type: PeriodicExecutionContext
+- rate: 1000
+
+Oct 16 05:56:18.261 DEBUG: CameraCalibration0: Copying inherited EC options.
+Oct 16 05:56:18.261 TRACE: CameraCalibration0: getPrivateContextOptions()
+Oct 16 05:56:18.261 DEBUG: CameraCalibration0: No component specific EC specified.
+Oct 16 05:56:18.261 TRACE: ec_worker: ExecutionContextWorker()
+Oct 16 05:56:18.261 TRACE: periodic_ecprofile: ExecutionContextProfile()
+Oct 16 05:56:18.261 DEBUG: periodic_ecprofile: Actual rate: 0 [sec], 1 [usec]
+Oct 16 05:56:18.261 TRACE: periodic_ec: PeriodicExecutionContext()
+Oct 16 05:56:18.261 TRACE: periodic_ecprofile: setObjRef()
+Oct 16 05:56:18.261 TRACE: periodic_ecprofile: setKind(PERIODIC)
+Oct 16 05:56:18.261 TRACE: ec_base: setRate(1000000.000000)
+Oct 16 05:56:18.261 TRACE: periodic_ecprofile: setRate(1000000.000000)
+Oct 16 05:56:18.261 INFO: ec_base: setRate(1000000.000000) done
+Oct 16 05:56:18.261 DEBUG: periodic_ec: Actual period: 0 [sec], 1 [usec]
+Oct 16 05:56:18.261 DEBUG: CameraCalibration0: EC (PeriodicExecutionContext) created.
+Oct 16 05:56:18.261 TRACE: ec_base: init()
+Oct 16 05:56:18.261 DEBUG: ec_base: - sync_transition: YES
+- transition_timeout: 0.5
+- type: PeriodicExecutionContext
+- rate: 1000
+- name: 
+
+Oct 16 05:56:18.261 TRACE: ec_base: setRate(1000.000000)
+Oct 16 05:56:18.261 TRACE: periodic_ecprofile: setRate(1000.000000)
+Oct 16 05:56:18.261 INFO: ec_base: setRate(1000.000000) done
+Oct 16 05:56:18.261 TRACE: ec_base: setTransitionMode(sync_transition)
+Oct 16 05:56:18.261 DEBUG: ec_base: Transition Mode: sync_transition = YES
+Oct 16 05:56:18.261 TRACE: ec_base: setTransitionMode(sync_activation)
+Oct 16 05:56:18.261 DEBUG: ec_base: Configuration sync_activation not found.
+Oct 16 05:56:18.261 TRACE: ec_base: setTransitionMode(sync_deactivation)
+Oct 16 05:56:18.261 DEBUG: ec_base: Configuration sync_deactivation not found.
+Oct 16 05:56:18.261 TRACE: ec_base: setTransitionMode(sync_reset)
+Oct 16 05:56:18.261 DEBUG: ec_base: Configuration sync_reset not found.
+Oct 16 05:56:18.261 TRACE: ec_base: setTimeout(transition_timeout)
+Oct 16 05:56:18.261 DEBUG: ec_base: Timeout (transition_timeout): 0.500000 [s]
+Oct 16 05:56:18.261 TRACE: ec_base: setTimeout(activation_timeout)
+Oct 16 05:56:18.261 DEBUG: ec_base: Configuration activation_timeout not found.
+Oct 16 05:56:18.261 TRACE: ec_base: setTimeout(deactivation_timeout)
+Oct 16 05:56:18.261 DEBUG: ec_base: Configuration deactivation_timeout not found.
+Oct 16 05:56:18.261 TRACE: ec_base: setTimeout(reset_timeout)
+Oct 16 05:56:18.261 DEBUG: ec_base: Configuration reset_timeout not found.
+Oct 16 05:56:18.261 DEBUG: ec_base: ExecutionContext's configurations:
+Oct 16 05:56:18.261 DEBUG: ec_base: Exec rate   : 1000.000000 [Hz]
+Oct 16 05:56:18.261 DEBUG: ec_base: Activation  : Sync = YES, Timeout = 0.500000
+Oct 16 05:56:18.261 DEBUG: ec_base: Deactivation: Sync = YES, Timeout = 0.500000
+Oct 16 05:56:18.261 DEBUG: ec_base: Reset       : Sync = YES, Timeout = 0.500000
+Oct 16 05:56:18.261 TRACE: periodic_ecprofile: setProperties()
+Oct 16 05:56:18.261 DEBUG: periodic_ecprofile: - sync_transition: YES
+- transition_timeout: 0.5
+- type: PeriodicExecutionContext
+- rate: 1000
+- name: 
+
+Oct 16 05:56:18.261 TRACE: ec_worker: bindComponent()
+Oct 16 05:56:18.261 TRACE: CameraCalibration0: bindContext()
+Oct 16 05:56:18.261 DEBUG: ec_worker: bindContext returns id = 0
+Oct 16 05:56:18.261 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:56:18.261 TRACE: manager: Manager::getPOA()
+Oct 16 05:56:18.261 DEBUG: ec_worker: bindComponent() succeeded.
+Oct 16 05:56:18.261 INFO: CameraCalibration0: 1 execution context was created.
+Oct 16 05:56:18.261 TRACE: CameraCalibration0: on_initialize()
+Oct 16 05:56:18.261 DEBUG: CameraCalibration0: Calling onInitialize().
+Oct 16 05:56:18.261 TRACE: CameraCalibration0: addInPort(InImage)
+Oct 16 05:56:18.261 TRACE: CameraCalibration0: addPort(PortBase&)
+Oct 16 05:56:18.261 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:56:18.261 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 05:56:18.261 TRACE: InImage: setOwner(CameraCalibration0)
+Oct 16 05:56:18.262 TRACE: InImage: getPortProfile()
+Oct 16 05:56:18.262 TRACE: InImage: getName() = CameraCalibration0.InImage
+Oct 16 05:56:18.262 TRACE: InImage: getPortRef()
+Oct 16 05:56:18.262 TRACE: InImage: getProfile()
+Oct 16 05:56:18.262 TRACE: InImage: init()
+Oct 16 05:56:18.262 DEBUG: InImage: single buffer mode.
+Oct 16 05:56:18.262 TRACE: InImage: initProviders()
+Oct 16 05:56:18.262 DEBUG: InImage: available providers: corba_cdr
+Oct 16 05:56:18.262 DEBUG: InImage: dataflow_type push is supported
+Oct 16 05:56:18.262 TRACE: InImage: initConsumers()
+Oct 16 05:56:18.262 DEBUG: InImage: available consumers: corba_cdr
+Oct 16 05:56:18.262 TRACE: CameraCaptureService: registerConsumer()
+Oct 16 05:56:18.262 TRACE: CameraCalibration0: addPort(CrobaPort)
+Oct 16 05:56:18.262 TRACE: CameraCaptureService: init()
+Oct 16 05:56:18.262 DEBUG: CameraCaptureService: : 
+
+Oct 16 05:56:18.262 DEBUG: CameraCaptureService: : 
+
+Oct 16 05:56:18.262 TRACE: CameraCalibration0: addPort(PortBase&)
+Oct 16 05:56:18.262 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:56:18.262 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 05:56:18.262 TRACE: InImage: get_port_profile()
+Oct 16 05:56:18.262 TRACE: CameraCaptureService: setOwner(CameraCalibration0)
+Oct 16 05:56:18.262 TRACE: CameraCaptureService: getPortProfile()
+Oct 16 05:56:18.262 TRACE: CameraCaptureService: getName() = CameraCalibration0.CameraCaptureService
+Oct 16 05:56:18.262 TRACE: InImage: get_port_profile()
+Oct 16 05:56:18.262 TRACE: CameraCaptureService: getPortRef()
+Oct 16 05:56:18.262 TRACE: CameraCaptureService: getProfile()
+Oct 16 05:56:18.262 TRACE: InImage: getProfile()
+Oct 16 05:56:18.262 TRACE: CameraCalibration0: bindParameter(image_num (default: 10))
+Oct 16 05:56:18.262 TRACE: CameraCalibration0: bindParameter(chess_pattern_row (default: 7))
+Oct 16 05:56:18.262 TRACE: CameraCalibration0: bindParameter(chess_pattern_column (default: 10))
+Oct 16 05:56:18.262 TRACE: CameraCalibration0: bindParameter(chess_pattern_size (default: 24.0))
+Oct 16 05:56:18.262 TRACE: CameraCalibration0: bindParameter(output_file_name (default: calib.yml))
+Oct 16 05:56:18.262 DEBUG: CameraCalibration0: onInitialize() succeeded.
+Oct 16 05:56:18.262 DEBUG: CameraCalibration0: Active configuration set: default exists.
+Oct 16 05:56:18.262 INFO: CameraCalibration0: Initial active configuration set is default.
+Oct 16 05:56:18.262 DEBUG: CameraCalibration0: on_initialize() was properly done.
+Oct 16 05:56:18.262 DEBUG: CameraCalibration0: EC[0] starting.
+Oct 16 05:56:18.262 TRACE: ec_base: start()
+Oct 16 05:56:18.262 TRACE: ec_worker: start()
+Oct 16 05:56:18.262 TRACE: CameraCalibration0: on_startup(0)
+Oct 16 05:56:18.262 TRACE: CameraCalibration0: onStartup(0)
+Oct 16 05:56:18.262 DEBUG: ec_worker: 1 components started.
+Oct 16 05:56:18.262 TRACE: periodic_ec: open()
+Oct 16 05:56:18.262 TRACE: manager: RTC initialization succeeded: CameraCalibration
+Oct 16 05:56:18.262 TRACE: CameraCalibration0: Oct 16 05:56:18.262 TRACE: periodic_ec: getInstanceName()svc()
+
+
+Oct 16 05:56:18.262 TRACE: manager: Manager::registerComponent(CameraCalibration0)
+Oct 16 05:56:18.262 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 05:56:18.262 TRACE: CameraCalibration0: getNamingNames()
+Oct 16 05:56:18.262 TRACE: manager: Bind name: CameraCalibration0.rtc
+Oct 16 05:56:18.262 TRACE: NamingManager: NamingManager::bindObject(CameraCalibration0.rtc)
+Oct 16 05:56:18.262 TRACE: NamingOnCorba: bindObject(name = CameraCalibration0.rtc, rtobj)
+Oct 16 05:56:18.262 TRACE: CameraCalibration0: getObjRef()
+Oct 16 05:56:18.262 TRACE: manager: Manager::runManager(): blocking mode
+Oct 16 05:56:28.536 TRACE: NamingManager: NamingManager::update()
+Oct 16 05:56:28.536 TRACE: NamingOnCorba: isAlive()
+Oct 16 05:56:38.809 TRACE: NamingManager: NamingManager::update()
+Oct 16 05:56:38.809 TRACE: NamingOnCorba: isAlive()
+Oct 16 05:56:49.078 TRACE: NamingManager: NamingManager::update()
+Oct 16 05:56:49.078 TRACE: NamingOnCorba: isAlive()
+Oct 16 05:56:59.373 TRACE: NamingManager: NamingManager::update()
+Oct 16 05:56:59.373 TRACE: NamingOnCorba: isAlive()
+Oct 16 05:57:09.675 TRACE: NamingManager: NamingManager::update()
+Oct 16 05:57:09.675 TRACE: NamingOnCorba: isAlive()
+Oct 16 05:57:19.517 TRACE: manager: Manager::shutdown()
+Oct 16 05:57:19.517 TRACE: manager: Manager::shutdownComponents()
+Oct 16 05:57:19.517 TRACE: CameraCalibration0: exit()
+Oct 16 05:57:19.517 TRACE: ec_base: deactivateComponent()
+Oct 16 05:57:19.517 TRACE: ec_worker: deactivateComponent()
+Oct 16 05:57:19.517 ERROR: ec_worker: State of the RTC is not ACTIVE_STATE.
+Oct 16 05:57:19.517 TRACE: ec_base: stop()
+Oct 16 05:57:19.517 TRACE: ec_worker: stop()
+Oct 16 05:57:19.517 TRACE: CameraCalibration0: on_shutdown(0)
+Oct 16 05:57:19.517 TRACE: CameraCalibration0: onShutdown(0)
+Oct 16 05:57:19.517 TRACE: CameraCalibration0: finalize()
+Oct 16 05:57:19.517 TRACE: CameraCalibration0: on_finalize()
+Oct 16 05:57:19.517 TRACE: CameraCalibration0: onFinalize()
+Oct 16 05:57:19.517 TRACE: CameraCalibration0: shutdown()
+Oct 16 05:57:19.517 TRACE: CameraCalibration0: finalizePorts()
+Oct 16 05:57:19.517 TRACE: InImage: deactivateInterfaces()
+Oct 16 05:57:19.517 TRACE: InImage: disconnect_all()
+Oct 16 05:57:19.517 DEBUG: InImage: disconnecting 0 connections.
+Oct 16 05:57:19.517 TRACE: InImage: getProfile()
+Oct 16 05:57:19.517 TRACE: InImage: get_port_profile()
+Oct 16 05:57:19.517 TRACE: InImage: setPortRef()
+Oct 16 05:57:19.517 TRACE: InImage: getProfile()
+Oct 16 05:57:19.517 TRACE: CameraCaptureService: disconnect_all()
+Oct 16 05:57:19.517 DEBUG: CameraCaptureService: disconnecting 0 connections.
+Oct 16 05:57:19.517 TRACE: CameraCaptureService: getProfile()
+Oct 16 05:57:19.517 TRACE: CameraCaptureService: get_port_profile()
+Oct 16 05:57:19.517 TRACE: CameraCaptureService: setPortRef()
+Oct 16 05:57:19.517 TRACE: CameraCaptureService: getProfile()
+Oct 16 05:57:19.517 TRACE: CameraCalibration0: finalizeContexts()
+Oct 16 05:57:19.517 TRACE: periodic_ecprofile: getObjRef()
+Oct 16 05:57:19.517 TRACE: ec_base: stop()
+Oct 16 05:57:19.517 TRACE: ec_worker: stop()
+Oct 16 05:57:19.517 WARNING: ec_worker: ExecutionContext is already stopped.
+Oct 16 05:57:19.517 ERROR: ec_base: Invoking on_shutdown() for each RTC failed.
+Oct 16 05:57:19.517 DEBUG: CameraCalibration0: Deactivating Execution Context.
+Oct 16 05:57:19.517 DEBUG: CameraCalibration0: Deactivating EC done.
+Oct 16 05:57:19.517 TRACE: periodic_ec: ~PeriodicExecutionContext()
+Oct 16 05:57:19.518 DEBUG: periodic_ec: Thread terminated.
+Oct 16 05:57:19.518 TRACE: periodic_ecprofile: ~ExecutionContextProfile()
+Oct 16 05:57:19.518 TRACE: ec_worker: ~ExecutionContextWorker()
+Oct 16 05:57:19.518 DEBUG: CameraCalibration0: Cleanup on Manager
+Oct 16 05:57:19.518 TRACE: manager: Manager::notifyFinalized()
+Oct 16 05:57:19.518 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 05:57:19.518 TRACE: CameraCalibration0: getProperties()
+Oct 16 05:57:19.518 TRACE: manager: Manager::shutdownNaming()
+Oct 16 05:57:19.518 TRACE: manager: Manager::getComponents()
+Oct 16 05:57:19.518 TRACE: CameraCalibration0: getNamingNames()
+Oct 16 05:57:19.518 TRACE: NamingManager: NamingManager::unbindObject(CameraCalibration0.rtc)
+Oct 16 05:57:19.518 TRACE: NamingOnCorba: unbindObject(name  = CameraCalibration0.rtc)
+Oct 16 05:57:19.519 TRACE: NamingManager: NamingManager::unbindAll(): 0 names.
+Oct 16 05:57:19.519 TRACE: manager: Manager::shutdownORB()
+Oct 16 05:57:19.519 DEBUG: manager: No pending works of ORB. Shutting down POA and ORB.
+Oct 16 05:57:19.519 DEBUG: manager: POA Manager was deactivated.
+Oct 16 05:57:19.519 DEBUG: manager: POA was destroid.
+Oct 16 05:57:19.519 DEBUG: manager: ORB was shutdown.
+Oct 16 05:57:19.519 DEBUG: manager: ORB was destroied.
+Oct 16 05:57:19.519 TRACE: manager: Manager::shutdownManager()
+Oct 16 05:57:19.519 TRACE: manager: Manager::wait()
+
+Oct 16 05:57:19.519 TRACE: manager: Manager::runManager(): ORB was terminated
+Oct 16 05:57:19.519 TRACE: manager: Manager::wait()
+Oct 16 07:09:43.539 INFO: manager: 1.1.1
+Oct 16 07:09:43.539 INFO: manager: Copyright (C) 2003-2012
+Oct 16 07:09:43.539 INFO: manager:   Noriaki Ando
+Oct 16 07:09:43.539 INFO: manager:   Intelligent Systems Research Institute, AIST
+Oct 16 07:09:43.539 INFO: manager: Manager starting.
+Oct 16 07:09:43.539 INFO: manager: Starting local logging.
+Oct 16 07:09:43.540 TRACE: manager: Manager::initORB()
+Oct 16 07:09:43.540 DEBUG: manager: corba.args: 
+Oct 16 07:09:43.540 DEBUG: manager: - config
+  - version: 1.1.1
+- openrtm
+  - name: OpenRTM-aist-1.1.1
+  - version: 1.1.1
+- manager
+  - instance_name: manager
+  - name: manager_cpp
+  - naming_formats: %n_cpp.mgr
+  - pid: 23146
+  - refstring_path: /var/log/rtcmanager.ref
+  - modules
+    - load_path: ./
+    - abs_path_allowed: YES
+    - C++
+      - manager_cmd: rtcd
+      - profile_cmd: rtcprof
+      - suffixes: dylib
+      - load_paths: ./
+    - Python
+      - manager_cmd: rtcd_python
+      - profile_cmd: rtcprof_python
+      - suffixes: py
+      - load_paths: ./
+    - Java
+      - manager_cmd: rtcd_java
+      - profile_cmd: rtcprof_java
+      - suffixes: class
+      - load_paths: ./
+    - preload: 
+    - config_path: 
+    - download_allowed: 
+    - init_func_suffix: 
+    - init_func_prefix: 
+  - is_master: NO
+  - corba_servant: YES
+  - shutdown_on_nortcs: NO
+  - shutdown_auto: NO
+  - auto_shutdown_duration: 10.0
+  - command: rtcd
+  - supported_languages: C++, Python, Java
+  - local_service
+    - enabled_services: ALL
+  - components
+    - precreate: 
+- os
+  - name: Darwin
+  - release: 14.5.0
+  - version: Darwin Kernel Version 14.5.0: Wed Jul 29 02:26:53 PDT 2015; root:xnu-2782.40.9~1/RELEASE_X86_64
+  - arch: x86_64
+  - hostname: visnu
+- logger
+  - enable: YES
+  - file_name: ./log/standalonertc_CameraCalibration
+  - date_format: %b %d %H:%M:%S.%Q
+  - log_level: TRACE
+  - stream_lock: NO
+  - master_logger: 
+  - clock_type: 
+- module
+  - conf_path: 
+  - load_path: 
+- naming
+  - enable: YES
+  - type: corba
+  - formats: %n.rtc
+  - update
+    - enable: YES
+    - interval: 10.0
+- timer
+  - enable: YES
+  - tick: 0.1
+- corba
+  - args: 
+  - endpoint: 
+  - id: omniORB
+  - nameservers: localhost:2809
+  - master_manager: localhost:2810
+  - nameservice
+    - replace_endpoint: NO
+- exec_cxt
+  - periodic
+    - type: PeriodicExecutionContext
+    - rate: 1000
+  - sync_transition: YES
+  - transition_timeout: 0.5
+- sdo
+  - service
+    - provider
+      - enabled_service: ALL
+    - consumer
+      - enabled_service: ALL
+- ImageProcessin
+  - CameraCalibration0
+    - config_file: conf/CameraCalibration0.conf
+- config_file: conf/rtc_CameraCalibration.conf
+
+Oct 16 07:09:43.540 DEBUG: manager: corba.endpoint: 
+Oct 16 07:09:43.540 DEBUG: manager: manager.is_master: NO
+Oct 16 07:09:43.540 DEBUG: manager: corba.id: omniORB
+Oct 16 07:09:43.540 TRACE: manager: Manager::initNaming()
+Oct 16 07:09:43.540 TRACE: manager: Register Naming Server: corba/localhost:2809
+Oct 16 07:09:43.540 TRACE: NamingManager: NamingManager::registerNameServer(corba, localhost:2809)
+Oct 16 07:09:43.540 TRACE: NamingManager: createNamingObj(method = corba, nameserver = localhost:2809
+Oct 16 07:09:43.540 TRACE: manager: Manager::getORB()
+Oct 16 07:09:43.551 WARNING: NamingOnCorba: No endpoint for the CORBA naming service (localhost) was found.
+Oct 16 07:09:43.551 INFO: NamingManager: NameServer connection succeeded: corba/localhost:2809
+Oct 16 07:09:43.551 TRACE: manager: Manager::initFactories()
+Oct 16 07:09:43.551 TRACE: manager: Manager::initExecContext()
+Oct 16 07:09:43.551 TRACE: manager: Manager::initComposite()
+Oct 16 07:09:43.551 TRACE: manager: Manager::registerFactory(PeriodicECSharedComposite)
+Oct 16 07:09:43.551 TRACE: manager: Manager::initManagerServant()
+Oct 16 07:09:43.551 TRACE: ManagerServant: This manager is slave.
+Oct 16 07:09:43.551 TRACE: ManagerServant: findManager(host_port = localhost:2810)
+Oct 16 07:09:43.551 DEBUG: ManagerServant: corbaloc: corbaloc::localhost:2810/manager_cpp
+Oct 16 07:09:43.551 TRACE: manager: Manager::getORB()
+Oct 16 07:09:43.552 DEBUG: ManagerServant: CORBA SystemException cought (CORBA::TRANSIENT)
+Oct 16 07:09:43.552 INFO: ManagerServant: Master manager not found
+Oct 16 07:09:43.552 TRACE: manager: Manager::activateManager()
+Oct 16 07:09:43.552 TRACE: manager: Manager::getPOAManager()
+Oct 16 07:09:43.552 TRACE: manager: Manager::getPOAManager()
+Oct 16 07:09:43.552 TRACE: manager: POA Manager activated.
+Oct 16 07:09:43.552 TRACE: manager: Manager::initLocalService()
+Oct 16 07:09:43.552 TRACE: LocalServiceAdmin: LocalServiceAdmin::LocalServiceAdmin()
+Oct 16 07:09:43.552 TRACE: LocalServiceAdmin: LocalServiceAdmin::init():
+Oct 16 07:09:43.552 DEBUG: LocalServiceAdmin: - enabled_services: ALL
+- modules: 
+
+Oct 16 07:09:43.552 INFO: LocalServiceAdmin: All the local services are enabled.
+Oct 16 07:09:43.552 DEBUG: LocalServiceAdmin: Available services: 
+Oct 16 07:09:43.552 DEBUG: manager: LocalServiceAdmin's properties:
+Oct 16 07:09:43.552 DEBUG: manager: - enabled_services: ALL
+- modules: 
+
+Oct 16 07:09:43.552 TRACE: manager: Manager::registerFactory(CameraCalibration)
+Oct 16 07:09:43.552 TRACE: manager: Manager::createComponent(CameraCalibration)
+Oct 16 07:09:43.552 TRACE: manager: RTC basic propfile vendor: 
+Oct 16 07:09:43.552 TRACE: manager: RTC basic propfile category: 
+Oct 16 07:09:43.552 TRACE: manager: RTC basic propfile implementation_id: CameraCalibration
+Oct 16 07:09:43.552 TRACE: manager: RTC basic propfile version: 
+Oct 16 07:09:43.552 TRACE: manager: Manager::getORB()
+Oct 16 07:09:43.552 TRACE: manager: Manager::getPOA()
+Oct 16 07:09:43.552 TRACE: manager: Manager::getORB()
+Oct 16 07:09:43.552 TRACE: manager: Manager::getPOA()
+Oct 16 07:09:43.552 TRACE: : getProperties()
+Oct 16 07:09:43.552 TRACE: SdoServiceAdmin: SdoServiceAdmin::SdoServiceAdmin()
+Oct 16 07:09:43.552 TRACE: : getProperties()
+Oct 16 07:09:43.552 DEBUG: SdoServiceAdmin: sdo.service.provider.enabled_services: 
+Oct 16 07:09:43.552 DEBUG: SdoServiceAdmin: sdo.service.provider.available_services: 
+Oct 16 07:09:43.552 DEBUG: SdoServiceAdmin: sdo.service.consumer.enabled_services: 
+Oct 16 07:09:43.552 DEBUG: SdoServiceAdmin: sdo.service.consumer.available_services: 
+Oct 16 07:09:43.552 DEBUG: InImage: Port name: InImage
+Oct 16 07:09:43.552 DEBUG: InImage: setting port.port_type: DataIntPort
+Oct 16 07:09:43.552 DEBUG: InImage: setting dataport.data_type: IDL:Img/TimedCameraImage:1.0
+Oct 16 07:09:43.552 TRACE: : setProperties()
+Oct 16 07:09:43.553 TRACE: : getTypeName()
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: setInstanceName(CameraCalibration0)
+Oct 16 07:09:43.553 TRACE: manager: RTC created: CameraCalibration
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: getCategory()
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: getTypeName()
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: setProperties()
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: setProperties()
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: getProperties()
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: getProperties()
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: getProperties()
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: getProperties()
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: initialize()
+Oct 16 07:09:43.553 DEBUG: CameraCalibration0: getContextOptions()
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: getGlobalContextOptions()
+Oct 16 07:09:43.553 DEBUG: CameraCalibration0: Global EC options are specified.
+Oct 16 07:09:43.553 DEBUG: CameraCalibration0: - type: PeriodicExecutionContext
+- rate: 1000
+
+Oct 16 07:09:43.553 DEBUG: CameraCalibration0: Copying inherited EC options.
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: getPrivateContextOptions()
+Oct 16 07:09:43.553 DEBUG: CameraCalibration0: No component specific EC specified.
+Oct 16 07:09:43.553 TRACE: ec_worker: ExecutionContextWorker()
+Oct 16 07:09:43.553 TRACE: periodic_ecprofile: ExecutionContextProfile()
+Oct 16 07:09:43.553 DEBUG: periodic_ecprofile: Actual rate: 0 [sec], 1 [usec]
+Oct 16 07:09:43.553 TRACE: periodic_ec: PeriodicExecutionContext()
+Oct 16 07:09:43.553 TRACE: periodic_ecprofile: setObjRef()
+Oct 16 07:09:43.553 TRACE: periodic_ecprofile: setKind(PERIODIC)
+Oct 16 07:09:43.553 TRACE: ec_base: setRate(1000000.000000)
+Oct 16 07:09:43.553 TRACE: periodic_ecprofile: setRate(1000000.000000)
+Oct 16 07:09:43.553 INFO: ec_base: setRate(1000000.000000) done
+Oct 16 07:09:43.553 DEBUG: periodic_ec: Actual period: 0 [sec], 1 [usec]
+Oct 16 07:09:43.553 DEBUG: CameraCalibration0: EC (PeriodicExecutionContext) created.
+Oct 16 07:09:43.553 TRACE: ec_base: init()
+Oct 16 07:09:43.553 DEBUG: ec_base: - sync_transition: YES
+- transition_timeout: 0.5
+- type: PeriodicExecutionContext
+- rate: 1000
+- name: 
+
+Oct 16 07:09:43.553 TRACE: ec_base: setRate(1000.000000)
+Oct 16 07:09:43.553 TRACE: periodic_ecprofile: setRate(1000.000000)
+Oct 16 07:09:43.553 INFO: ec_base: setRate(1000.000000) done
+Oct 16 07:09:43.553 TRACE: ec_base: setTransitionMode(sync_transition)
+Oct 16 07:09:43.553 DEBUG: ec_base: Transition Mode: sync_transition = YES
+Oct 16 07:09:43.553 TRACE: ec_base: setTransitionMode(sync_activation)
+Oct 16 07:09:43.553 DEBUG: ec_base: Configuration sync_activation not found.
+Oct 16 07:09:43.553 TRACE: ec_base: setTransitionMode(sync_deactivation)
+Oct 16 07:09:43.553 DEBUG: ec_base: Configuration sync_deactivation not found.
+Oct 16 07:09:43.553 TRACE: ec_base: setTransitionMode(sync_reset)
+Oct 16 07:09:43.553 DEBUG: ec_base: Configuration sync_reset not found.
+Oct 16 07:09:43.553 TRACE: ec_base: setTimeout(transition_timeout)
+Oct 16 07:09:43.553 DEBUG: ec_base: Timeout (transition_timeout): 0.500000 [s]
+Oct 16 07:09:43.553 TRACE: ec_base: setTimeout(activation_timeout)
+Oct 16 07:09:43.553 DEBUG: ec_base: Configuration activation_timeout not found.
+Oct 16 07:09:43.553 TRACE: ec_base: setTimeout(deactivation_timeout)
+Oct 16 07:09:43.553 DEBUG: ec_base: Configuration deactivation_timeout not found.
+Oct 16 07:09:43.553 TRACE: ec_base: setTimeout(reset_timeout)
+Oct 16 07:09:43.553 DEBUG: ec_base: Configuration reset_timeout not found.
+Oct 16 07:09:43.553 DEBUG: ec_base: ExecutionContext's configurations:
+Oct 16 07:09:43.553 DEBUG: ec_base: Exec rate   : 1000.000000 [Hz]
+Oct 16 07:09:43.553 DEBUG: ec_base: Activation  : Sync = YES, Timeout = 0.500000
+Oct 16 07:09:43.553 DEBUG: ec_base: Deactivation: Sync = YES, Timeout = 0.500000
+Oct 16 07:09:43.553 DEBUG: ec_base: Reset       : Sync = YES, Timeout = 0.500000
+Oct 16 07:09:43.553 TRACE: periodic_ecprofile: setProperties()
+Oct 16 07:09:43.553 DEBUG: periodic_ecprofile: - sync_transition: YES
+- transition_timeout: 0.5
+- type: PeriodicExecutionContext
+- rate: 1000
+- name: 
+
+Oct 16 07:09:43.553 TRACE: ec_worker: bindComponent()
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: bindContext()
+Oct 16 07:09:43.553 DEBUG: ec_worker: bindContext returns id = 0
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: getObjRef()
+Oct 16 07:09:43.553 TRACE: manager: Manager::getPOA()
+Oct 16 07:09:43.553 DEBUG: ec_worker: bindComponent() succeeded.
+Oct 16 07:09:43.553 INFO: CameraCalibration0: 1 execution context was created.
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: on_initialize()
+Oct 16 07:09:43.553 DEBUG: CameraCalibration0: Calling onInitialize().
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: addInPort(InImage)
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: addPort(PortBase&)
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: getObjRef()
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 07:09:43.553 TRACE: InImage: setOwner(CameraCalibration0)
+Oct 16 07:09:43.553 TRACE: InImage: getPortProfile()
+Oct 16 07:09:43.553 TRACE: InImage: getName() = CameraCalibration0.InImage
+Oct 16 07:09:43.553 TRACE: InImage: getPortRef()
+Oct 16 07:09:43.553 TRACE: InImage: getProfile()
+Oct 16 07:09:43.553 TRACE: InImage: init()
+Oct 16 07:09:43.553 DEBUG: InImage: single buffer mode.
+Oct 16 07:09:43.553 TRACE: InImage: initProviders()
+Oct 16 07:09:43.553 DEBUG: InImage: available providers: corba_cdr
+Oct 16 07:09:43.553 DEBUG: InImage: dataflow_type push is supported
+Oct 16 07:09:43.553 TRACE: InImage: initConsumers()
+Oct 16 07:09:43.553 DEBUG: InImage: available consumers: corba_cdr
+Oct 16 07:09:43.553 TRACE: CameraCaptureService: registerConsumer()
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: addPort(CrobaPort)
+Oct 16 07:09:43.553 TRACE: CameraCaptureService: init()
+Oct 16 07:09:43.553 DEBUG: CameraCaptureService: : 
+
+Oct 16 07:09:43.553 DEBUG: CameraCaptureService: : 
+
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: addPort(PortBase&)
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: getObjRef()
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 07:09:43.553 TRACE: InImage: get_port_profile()
+Oct 16 07:09:43.553 TRACE: CameraCaptureService: setOwner(CameraCalibration0)
+Oct 16 07:09:43.553 TRACE: CameraCaptureService: getPortProfile()
+Oct 16 07:09:43.553 TRACE: CameraCaptureService: getName() = CameraCalibration0.CameraCaptureService
+Oct 16 07:09:43.553 TRACE: InImage: get_port_profile()
+Oct 16 07:09:43.553 TRACE: CameraCaptureService: getPortRef()
+Oct 16 07:09:43.553 TRACE: CameraCaptureService: getProfile()
+Oct 16 07:09:43.553 TRACE: InImage: getProfile()
+Oct 16 07:09:43.553 TRACE: CameraCalibration0: bindParameter(image_num (default: 10))
+Oct 16 07:09:43.554 TRACE: CameraCalibration0: bindParameter(chess_pattern_row (default: 7))
+Oct 16 07:09:43.554 TRACE: CameraCalibration0: bindParameter(chess_pattern_column (default: 10))
+Oct 16 07:09:43.554 TRACE: CameraCalibration0: bindParameter(chess_pattern_size (default: 24.0))
+Oct 16 07:09:43.554 TRACE: CameraCalibration0: bindParameter(output_file_name (default: calib.yml))
+Oct 16 07:09:43.554 DEBUG: CameraCalibration0: onInitialize() succeeded.
+Oct 16 07:09:43.554 DEBUG: CameraCalibration0: Active configuration set: default exists.
+Oct 16 07:09:43.554 INFO: CameraCalibration0: Initial active configuration set is default.
+Oct 16 07:09:43.554 DEBUG: CameraCalibration0: on_initialize() was properly done.
+Oct 16 07:09:43.554 DEBUG: CameraCalibration0: EC[0] starting.
+Oct 16 07:09:43.554 TRACE: ec_base: start()
+Oct 16 07:09:43.554 TRACE: ec_worker: start()
+Oct 16 07:09:43.554 TRACE: CameraCalibration0: on_startup(0)
+Oct 16 07:09:43.554 TRACE: CameraCalibration0: onStartup(0)
+Oct 16 07:09:43.554 DEBUG: ec_worker: 1 components started.
+Oct 16 07:09:43.554 TRACE: periodic_ec: open()
+Oct 16 07:09:43.554 TRACE: manager: RTC initialization succeeded: CameraCalibration
+Oct 16 07:09:43.554 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 07:09:43.554 TRACE: manager: Manager::registerComponent(CameraCalibration0)
+Oct 16 07:09:43.554 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 07:09:43.554 TRACE: CameraCalibration0: getNamingNames()
+Oct 16 07:09:43.554 TRACE: manager: Bind name: CameraCalibration0.rtc
+
+Oct 16 07:09:43.554 TRACE: NamingManager: Oct 16 07:09:43.554 TRACE: periodic_ec: NamingManager::bindObject(CameraCalibration0.rtc)svc()
+
+Oct 16 07:09:43.554 TRACE: NamingOnCorba: bindObject(name = CameraCalibration0.rtc, rtobj)
+Oct 16 07:09:43.554 TRACE: CameraCalibration0: getObjRef()
+Oct 16 07:09:43.554 TRACE: manager: Manager::runManager(): non-blocking mode
+Oct 16 07:09:47.850 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 07:09:47.850 TRACE: InImage: get_port_profile()
+Oct 16 07:09:47.850 TRACE: CameraCaptureService: get_port_profile()
+Oct 16 07:09:49.193 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 07:09:49.193 TRACE: InImage: get_port_profile()
+Oct 16 07:09:49.193 TRACE: CameraCaptureService: get_port_profile()
+Oct 16 07:09:53.823 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:09:53.823 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:09:56.489 TRACE: manager: Manager::shutdown()
+Oct 16 07:09:56.489 TRACE: manager: Manager::shutdownComponents()
+Oct 16 07:09:56.489 TRACE: CameraCalibration0: exit()
+Oct 16 07:09:56.489 TRACE: ec_base: deactivateComponent()
+Oct 16 07:09:56.489 TRACE: ec_worker: deactivateComponent()
+Oct 16 07:09:56.489 ERROR: ec_worker: State of the RTC is not ACTIVE_STATE.
+Oct 16 07:09:56.489 TRACE: ec_base: stop()
+Oct 16 07:09:56.489 TRACE: ec_worker: stop()
+Oct 16 07:09:56.489 TRACE: CameraCalibration0: on_shutdown(0)
+Oct 16 07:09:56.489 TRACE: CameraCalibration0: onShutdown(0)
+Oct 16 07:09:56.489 TRACE: CameraCalibration0: finalize()
+Oct 16 07:09:56.489 TRACE: CameraCalibration0: on_finalize()
+Oct 16 07:09:56.489 TRACE: CameraCalibration0: shutdown()
+Oct 16 07:09:56.489 TRACE: CameraCalibration0: finalizePorts()
+Oct 16 07:09:56.489 TRACE: InImage: deactivateInterfaces()
+Oct 16 07:09:56.489 TRACE: InImage: disconnect_all()
+Oct 16 07:09:56.489 DEBUG: InImage: disconnecting 0 connections.
+Oct 16 07:09:56.489 TRACE: InImage: getProfile()
+Oct 16 07:09:56.489 TRACE: InImage: get_port_profile()
+Oct 16 07:09:56.489 TRACE: InImage: setPortRef()
+Oct 16 07:09:56.489 TRACE: InImage: getProfile()
+Oct 16 07:09:56.489 TRACE: CameraCaptureService: disconnect_all()
+Oct 16 07:09:56.489 DEBUG: CameraCaptureService: disconnecting 0 connections.
+Oct 16 07:09:56.489 TRACE: CameraCaptureService: getProfile()
+Oct 16 07:09:56.489 TRACE: CameraCaptureService: get_port_profile()
+Oct 16 07:09:56.489 TRACE: CameraCaptureService: setPortRef()
+Oct 16 07:09:56.489 TRACE: CameraCaptureService: getProfile()
+Oct 16 07:09:56.489 TRACE: CameraCalibration0: finalizeContexts()
+Oct 16 07:09:56.489 TRACE: periodic_ecprofile: getObjRef()
+Oct 16 07:09:56.489 TRACE: ec_base: stop()
+Oct 16 07:09:56.489 TRACE: ec_worker: stop()
+Oct 16 07:09:56.489 WARNING: ec_worker: ExecutionContext is already stopped.
+Oct 16 07:09:56.489 ERROR: ec_base: Invoking on_shutdown() for each RTC failed.
+Oct 16 07:09:56.489 DEBUG: CameraCalibration0: Deactivating Execution Context.
+Oct 16 07:09:56.489 DEBUG: CameraCalibration0: Deactivating EC done.
+Oct 16 07:09:56.489 TRACE: periodic_ec: ~PeriodicExecutionContext()
+Oct 16 07:10:14.810 INFO: manager: 1.1.1
+Oct 16 07:10:14.811 INFO: manager: Copyright (C) 2003-2012
+Oct 16 07:10:14.811 INFO: manager:   Noriaki Ando
+Oct 16 07:10:14.811 INFO: manager:   Intelligent Systems Research Institute, AIST
+Oct 16 07:10:14.811 INFO: manager: Manager starting.
+Oct 16 07:10:14.811 INFO: manager: Starting local logging.
+Oct 16 07:10:14.811 TRACE: manager: Manager::initORB()
+Oct 16 07:10:14.811 DEBUG: manager: corba.args: 
+Oct 16 07:10:14.811 DEBUG: manager: - config
+  - version: 1.1.1
+- openrtm
+  - name: OpenRTM-aist-1.1.1
+  - version: 1.1.1
+- manager
+  - instance_name: manager
+  - name: manager_cpp
+  - naming_formats: %n_cpp.mgr
+  - pid: 23161
+  - refstring_path: /var/log/rtcmanager.ref
+  - modules
+    - load_path: ./
+    - abs_path_allowed: YES
+    - C++
+      - manager_cmd: rtcd
+      - profile_cmd: rtcprof
+      - suffixes: dylib
+      - load_paths: ./
+    - Python
+      - manager_cmd: rtcd_python
+      - profile_cmd: rtcprof_python
+      - suffixes: py
+      - load_paths: ./
+    - Java
+      - manager_cmd: rtcd_java
+      - profile_cmd: rtcprof_java
+      - suffixes: class
+      - load_paths: ./
+    - preload: 
+    - config_path: 
+    - download_allowed: 
+    - init_func_suffix: 
+    - init_func_prefix: 
+  - is_master: NO
+  - corba_servant: YES
+  - shutdown_on_nortcs: NO
+  - shutdown_auto: NO
+  - auto_shutdown_duration: 10.0
+  - command: rtcd
+  - supported_languages: C++, Python, Java
+  - local_service
+    - enabled_services: ALL
+  - components
+    - precreate: 
+- os
+  - name: Darwin
+  - release: 14.5.0
+  - version: Darwin Kernel Version 14.5.0: Wed Jul 29 02:26:53 PDT 2015; root:xnu-2782.40.9~1/RELEASE_X86_64
+  - arch: x86_64
+  - hostname: visnu
+- logger
+  - enable: YES
+  - file_name: ./log/standalonertc_CameraCalibration
+  - date_format: %b %d %H:%M:%S.%Q
+  - log_level: TRACE
+  - stream_lock: NO
+  - master_logger: 
+  - clock_type: 
+- module
+  - conf_path: 
+  - load_path: 
+- naming
+  - enable: YES
+  - type: corba
+  - formats: %n.rtc
+  - update
+    - enable: YES
+    - interval: 10.0
+- timer
+  - enable: YES
+  - tick: 0.1
+- corba
+  - args: 
+  - endpoint: 
+  - id: omniORB
+  - nameservers: localhost:2809
+  - master_manager: localhost:2810
+  - nameservice
+    - replace_endpoint: NO
+- exec_cxt
+  - periodic
+    - type: PeriodicExecutionContext
+    - rate: 1000
+  - sync_transition: YES
+  - transition_timeout: 0.5
+- sdo
+  - service
+    - provider
+      - enabled_service: ALL
+    - consumer
+      - enabled_service: ALL
+- ImageProcessin
+  - CameraCalibration0
+    - config_file: conf/CameraCalibration0.conf
+- config_file: conf/rtc_CameraCalibration.conf
+
+Oct 16 07:10:14.811 DEBUG: manager: corba.endpoint: 
+Oct 16 07:10:14.811 DEBUG: manager: manager.is_master: NO
+Oct 16 07:10:14.811 DEBUG: manager: corba.id: omniORB
+Oct 16 07:10:14.812 TRACE: manager: Manager::initNaming()
+Oct 16 07:10:14.812 TRACE: manager: Register Naming Server: corba/localhost:2809
+Oct 16 07:10:14.812 TRACE: NamingManager: NamingManager::registerNameServer(corba, localhost:2809)
+Oct 16 07:10:14.812 TRACE: NamingManager: createNamingObj(method = corba, nameserver = localhost:2809
+Oct 16 07:10:14.812 TRACE: manager: Manager::getORB()
+Oct 16 07:10:14.821 WARNING: NamingOnCorba: No endpoint for the CORBA naming service (localhost) was found.
+Oct 16 07:10:14.821 INFO: NamingManager: NameServer connection succeeded: corba/localhost:2809
+Oct 16 07:10:14.821 TRACE: manager: Manager::initFactories()
+Oct 16 07:10:14.821 TRACE: manager: Manager::initExecContext()
+Oct 16 07:10:14.821 TRACE: manager: Manager::initComposite()
+Oct 16 07:10:14.821 TRACE: manager: Manager::registerFactory(PeriodicECSharedComposite)
+Oct 16 07:10:14.821 TRACE: manager: Manager::initManagerServant()
+Oct 16 07:10:14.821 TRACE: ManagerServant: This manager is slave.
+Oct 16 07:10:14.821 TRACE: ManagerServant: findManager(host_port = localhost:2810)
+Oct 16 07:10:14.821 DEBUG: ManagerServant: corbaloc: corbaloc::localhost:2810/manager_cpp
+Oct 16 07:10:14.821 TRACE: manager: Manager::getORB()
+Oct 16 07:10:14.822 DEBUG: ManagerServant: CORBA SystemException cought (CORBA::TRANSIENT)
+Oct 16 07:10:14.822 INFO: ManagerServant: Master manager not found
+Oct 16 07:10:14.822 TRACE: manager: Manager::activateManager()
+Oct 16 07:10:14.822 TRACE: manager: Manager::getPOAManager()
+Oct 16 07:10:14.822 TRACE: manager: Manager::getPOAManager()
+Oct 16 07:10:14.822 TRACE: manager: POA Manager activated.
+Oct 16 07:10:14.822 TRACE: manager: Manager::initLocalService()
+Oct 16 07:10:14.822 TRACE: LocalServiceAdmin: LocalServiceAdmin::LocalServiceAdmin()
+Oct 16 07:10:14.822 TRACE: LocalServiceAdmin: LocalServiceAdmin::init():
+Oct 16 07:10:14.822 DEBUG: LocalServiceAdmin: - enabled_services: ALL
+- modules: 
+
+Oct 16 07:10:14.822 INFO: LocalServiceAdmin: All the local services are enabled.
+Oct 16 07:10:14.822 DEBUG: LocalServiceAdmin: Available services: 
+Oct 16 07:10:14.822 DEBUG: manager: LocalServiceAdmin's properties:
+Oct 16 07:10:14.822 DEBUG: manager: - enabled_services: ALL
+- modules: 
+
+Oct 16 07:10:14.822 TRACE: manager: Manager::registerFactory(CameraCalibration)
+Oct 16 07:10:14.822 TRACE: manager: Manager::createComponent(CameraCalibration)
+Oct 16 07:10:14.822 TRACE: manager: RTC basic propfile vendor: 
+Oct 16 07:10:14.822 TRACE: manager: RTC basic propfile category: 
+Oct 16 07:10:14.822 TRACE: manager: RTC basic propfile implementation_id: CameraCalibration
+Oct 16 07:10:14.822 TRACE: manager: RTC basic propfile version: 
+Oct 16 07:10:14.822 TRACE: manager: Manager::getORB()
+Oct 16 07:10:14.822 TRACE: manager: Manager::getPOA()
+Oct 16 07:10:14.822 TRACE: manager: Manager::getORB()
+Oct 16 07:10:14.822 TRACE: manager: Manager::getPOA()
+Oct 16 07:10:14.822 TRACE: : getProperties()
+Oct 16 07:10:14.822 TRACE: SdoServiceAdmin: SdoServiceAdmin::SdoServiceAdmin()
+Oct 16 07:10:14.822 TRACE: : getProperties()
+Oct 16 07:10:14.822 DEBUG: SdoServiceAdmin: sdo.service.provider.enabled_services: 
+Oct 16 07:10:14.822 DEBUG: SdoServiceAdmin: sdo.service.provider.available_services: 
+Oct 16 07:10:14.822 DEBUG: SdoServiceAdmin: sdo.service.consumer.enabled_services: 
+Oct 16 07:10:14.822 DEBUG: SdoServiceAdmin: sdo.service.consumer.available_services: 
+Oct 16 07:10:14.823 DEBUG: InImage: Port name: InImage
+Oct 16 07:10:14.823 DEBUG: InImage: setting port.port_type: DataIntPort
+Oct 16 07:10:14.823 DEBUG: InImage: setting dataport.data_type: IDL:Img/TimedCameraImage:1.0
+Oct 16 07:10:14.823 TRACE: : setProperties()
+Oct 16 07:10:14.823 TRACE: : getTypeName()
+Oct 16 07:10:14.823 TRACE: CameraCalibration0: setInstanceName(CameraCalibration0)
+Oct 16 07:10:14.823 TRACE: manager: RTC created: CameraCalibration
+Oct 16 07:10:14.823 TRACE: CameraCalibration0: getCategory()
+Oct 16 07:10:14.823 TRACE: CameraCalibration0: getTypeName()
+Oct 16 07:10:14.823 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 07:10:14.823 TRACE: CameraCalibration0: setProperties()
+Oct 16 07:10:14.823 TRACE: CameraCalibration0: setProperties()
+Oct 16 07:10:14.823 TRACE: CameraCalibration0: getProperties()
+Oct 16 07:10:14.823 TRACE: CameraCalibration0: getProperties()
+Oct 16 07:10:14.823 TRACE: CameraCalibration0: getProperties()
+Oct 16 07:10:14.823 TRACE: CameraCalibration0: getProperties()
+Oct 16 07:10:14.823 TRACE: CameraCalibration0: initialize()
+Oct 16 07:10:14.823 DEBUG: CameraCalibration0: getContextOptions()
+Oct 16 07:10:14.823 TRACE: CameraCalibration0: getGlobalContextOptions()
+Oct 16 07:10:14.823 DEBUG: CameraCalibration0: Global EC options are specified.
+Oct 16 07:10:14.823 DEBUG: CameraCalibration0: - type: PeriodicExecutionContext
+- rate: 1000
+
+Oct 16 07:10:14.823 DEBUG: CameraCalibration0: Copying inherited EC options.
+Oct 16 07:10:14.823 TRACE: CameraCalibration0: getPrivateContextOptions()
+Oct 16 07:10:14.823 DEBUG: CameraCalibration0: No component specific EC specified.
+Oct 16 07:10:14.823 TRACE: ec_worker: ExecutionContextWorker()
+Oct 16 07:10:14.823 TRACE: periodic_ecprofile: ExecutionContextProfile()
+Oct 16 07:10:14.823 DEBUG: periodic_ecprofile: Actual rate: 0 [sec], 1 [usec]
+Oct 16 07:10:14.823 TRACE: periodic_ec: PeriodicExecutionContext()
+Oct 16 07:10:14.823 TRACE: periodic_ecprofile: setObjRef()
+Oct 16 07:10:14.823 TRACE: periodic_ecprofile: setKind(PERIODIC)
+Oct 16 07:10:14.823 TRACE: ec_base: setRate(1000000.000000)
+Oct 16 07:10:14.823 TRACE: periodic_ecprofile: setRate(1000000.000000)
+Oct 16 07:10:14.823 INFO: ec_base: setRate(1000000.000000) done
+Oct 16 07:10:14.823 DEBUG: periodic_ec: Actual period: 0 [sec], 1 [usec]
+Oct 16 07:10:14.823 DEBUG: CameraCalibration0: EC (PeriodicExecutionContext) created.
+Oct 16 07:10:14.823 TRACE: ec_base: init()
+Oct 16 07:10:14.823 DEBUG: ec_base: - sync_transition: YES
+- transition_timeout: 0.5
+- type: PeriodicExecutionContext
+- rate: 1000
+- name: 
+
+Oct 16 07:10:14.823 TRACE: ec_base: setRate(1000.000000)
+Oct 16 07:10:14.823 TRACE: periodic_ecprofile: setRate(1000.000000)
+Oct 16 07:10:14.823 INFO: ec_base: setRate(1000.000000) done
+Oct 16 07:10:14.823 TRACE: ec_base: setTransitionMode(sync_transition)
+Oct 16 07:10:14.823 DEBUG: ec_base: Transition Mode: sync_transition = YES
+Oct 16 07:10:14.823 TRACE: ec_base: setTransitionMode(sync_activation)
+Oct 16 07:10:14.823 DEBUG: ec_base: Configuration sync_activation not found.
+Oct 16 07:10:14.823 TRACE: ec_base: setTransitionMode(sync_deactivation)
+Oct 16 07:10:14.823 DEBUG: ec_base: Configuration sync_deactivation not found.
+Oct 16 07:10:14.823 TRACE: ec_base: setTransitionMode(sync_reset)
+Oct 16 07:10:14.823 DEBUG: ec_base: Configuration sync_reset not found.
+Oct 16 07:10:14.823 TRACE: ec_base: setTimeout(transition_timeout)
+Oct 16 07:10:14.823 DEBUG: ec_base: Timeout (transition_timeout): 0.500000 [s]
+Oct 16 07:10:14.823 TRACE: ec_base: setTimeout(activation_timeout)
+Oct 16 07:10:14.823 DEBUG: ec_base: Configuration activation_timeout not found.
+Oct 16 07:10:14.823 TRACE: ec_base: setTimeout(deactivation_timeout)
+Oct 16 07:10:14.823 DEBUG: ec_base: Configuration deactivation_timeout not found.
+Oct 16 07:10:14.823 TRACE: ec_base: setTimeout(reset_timeout)
+Oct 16 07:10:14.823 DEBUG: ec_base: Configuration reset_timeout not found.
+Oct 16 07:10:14.823 DEBUG: ec_base: ExecutionContext's configurations:
+Oct 16 07:10:14.823 DEBUG: ec_base: Exec rate   : 1000.000000 [Hz]
+Oct 16 07:10:14.823 DEBUG: ec_base: Activation  : Sync = YES, Timeout = 0.500000
+Oct 16 07:10:14.823 DEBUG: ec_base: Deactivation: Sync = YES, Timeout = 0.500000
+Oct 16 07:10:14.823 DEBUG: ec_base: Reset       : Sync = YES, Timeout = 0.500000
+Oct 16 07:10:14.823 TRACE: periodic_ecprofile: setProperties()
+Oct 16 07:10:14.823 DEBUG: periodic_ecprofile: - sync_transition: YES
+- transition_timeout: 0.5
+- type: PeriodicExecutionContext
+- rate: 1000
+- name: 
+
+Oct 16 07:10:14.823 TRACE: ec_worker: bindComponent()
+Oct 16 07:10:14.823 TRACE: CameraCalibration0: bindContext()
+Oct 16 07:10:14.823 DEBUG: ec_worker: bindContext returns id = 0
+Oct 16 07:10:14.823 TRACE: CameraCalibration0: getObjRef()
+Oct 16 07:10:14.823 TRACE: manager: Manager::getPOA()
+Oct 16 07:10:14.823 DEBUG: ec_worker: bindComponent() succeeded.
+Oct 16 07:10:14.823 INFO: CameraCalibration0: 1 execution context was created.
+Oct 16 07:10:14.823 TRACE: CameraCalibration0: on_initialize()
+Oct 16 07:10:14.823 DEBUG: CameraCalibration0: Calling onInitialize().
+Oct 16 07:10:14.823 TRACE: CameraCalibration0: addInPort(InImage)
+Oct 16 07:10:14.823 TRACE: CameraCalibration0: addPort(PortBase&)
+Oct 16 07:10:14.823 TRACE: CameraCalibration0: getObjRef()
+Oct 16 07:10:14.823 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 07:10:14.823 TRACE: InImage: setOwner(CameraCalibration0)
+Oct 16 07:10:14.823 TRACE: InImage: getPortProfile()
+Oct 16 07:10:14.823 TRACE: InImage: getName() = CameraCalibration0.InImage
+Oct 16 07:10:14.823 TRACE: InImage: getPortRef()
+Oct 16 07:10:14.823 TRACE: InImage: getProfile()
+Oct 16 07:10:14.823 TRACE: InImage: init()
+Oct 16 07:10:14.823 DEBUG: InImage: single buffer mode.
+Oct 16 07:10:14.823 TRACE: InImage: initProviders()
+Oct 16 07:10:14.823 DEBUG: InImage: available providers: corba_cdr
+Oct 16 07:10:14.823 DEBUG: InImage: dataflow_type push is supported
+Oct 16 07:10:14.823 TRACE: InImage: initConsumers()
+Oct 16 07:10:14.823 DEBUG: InImage: available consumers: corba_cdr
+Oct 16 07:10:14.823 TRACE: CameraCaptureService: registerConsumer()
+Oct 16 07:10:14.824 TRACE: CameraCalibration0: addPort(CrobaPort)
+Oct 16 07:10:14.824 TRACE: CameraCaptureService: init()
+Oct 16 07:10:14.824 DEBUG: CameraCaptureService: : 
+
+Oct 16 07:10:14.824 DEBUG: CameraCaptureService: : 
+
+Oct 16 07:10:14.824 TRACE: CameraCalibration0: addPort(PortBase&)
+Oct 16 07:10:14.824 TRACE: CameraCalibration0: getObjRef()
+Oct 16 07:10:14.824 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 07:10:14.824 TRACE: InImage: get_port_profile()
+Oct 16 07:10:14.824 TRACE: CameraCaptureService: setOwner(CameraCalibration0)
+Oct 16 07:10:14.824 TRACE: CameraCaptureService: getPortProfile()
+Oct 16 07:10:14.824 TRACE: CameraCaptureService: getName() = CameraCalibration0.CameraCaptureService
+Oct 16 07:10:14.824 TRACE: InImage: get_port_profile()
+Oct 16 07:10:14.824 TRACE: CameraCaptureService: getPortRef()
+Oct 16 07:10:14.824 TRACE: CameraCaptureService: getProfile()
+Oct 16 07:10:14.824 TRACE: InImage: getProfile()
+Oct 16 07:10:14.824 TRACE: CameraCalibration0: bindParameter(image_num (default: 10))
+Oct 16 07:10:14.824 TRACE: CameraCalibration0: bindParameter(chess_pattern_row (default: 7))
+Oct 16 07:10:14.824 TRACE: CameraCalibration0: bindParameter(chess_pattern_column (default: 10))
+Oct 16 07:10:14.824 TRACE: CameraCalibration0: bindParameter(chess_pattern_size (default: 24.0))
+Oct 16 07:10:14.824 TRACE: CameraCalibration0: bindParameter(output_file_name (default: calib.yml))
+Oct 16 07:10:14.824 DEBUG: CameraCalibration0: onInitialize() succeeded.
+Oct 16 07:10:14.824 DEBUG: CameraCalibration0: Active configuration set: default exists.
+Oct 16 07:10:14.824 INFO: CameraCalibration0: Initial active configuration set is default.
+Oct 16 07:10:14.824 DEBUG: CameraCalibration0: on_initialize() was properly done.
+Oct 16 07:10:14.824 DEBUG: CameraCalibration0: EC[0] starting.
+Oct 16 07:10:14.824 TRACE: ec_base: start()
+Oct 16 07:10:14.824 TRACE: ec_worker: start()
+Oct 16 07:10:14.824 TRACE: CameraCalibration0: on_startup(0)
+Oct 16 07:10:14.824 TRACE: CameraCalibration0: onStartup(0)
+Oct 16 07:10:14.824 DEBUG: ec_worker: 1 components started.
+Oct 16 07:10:14.824 TRACE: periodic_ec: open()
+Oct 16 07:10:14.824 TRACE: manager: RTC initialization succeeded: CameraCalibration
+Oct 16 07:10:14.824 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 07:10:14.824 TRACE: manager: Manager::registerComponent(CameraCalibration0)
+Oct 16 07:10:14.824 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 07:10:14.824 TRACE: CameraCalibration0: getNamingNames()
+
+Oct 16 07:10:14.824 TRACE: periodic_ec: Oct 16 07:10:14.824 TRACE: manager: svc()Bind name: CameraCalibration0.rtc
+
+Oct 16 07:10:14.824 TRACE: NamingManager: NamingManager::bindObject(CameraCalibration0.rtc)
+Oct 16 07:10:14.824 TRACE: NamingOnCorba: bindObject(name = CameraCalibration0.rtc, rtobj)
+Oct 16 07:10:14.824 TRACE: CameraCalibration0: getObjRef()
+Oct 16 07:10:14.824 TRACE: manager: Manager::runManager(): non-blocking mode
+Oct 16 07:10:17.822 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 07:10:17.822 TRACE: InImage: get_port_profile()
+Oct 16 07:10:17.822 TRACE: CameraCaptureService: get_port_profile()
+Oct 16 07:10:20.032 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 07:10:20.032 TRACE: InImage: get_port_profile()
+Oct 16 07:10:20.032 TRACE: CameraCaptureService: get_port_profile()
+Oct 16 07:10:25.096 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:10:25.096 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:10:33.487 TRACE: manager: Manager::shutdown()
+Oct 16 07:10:33.487 TRACE: manager: Manager::shutdownComponents()
+Oct 16 07:10:33.487 TRACE: CameraCalibration0: exit()
+Oct 16 07:10:33.487 TRACE: ec_base: deactivateComponent()
+Oct 16 07:10:33.487 TRACE: ec_worker: deactivateComponent()
+Oct 16 07:10:33.487 ERROR: ec_worker: State of the RTC is not ACTIVE_STATE.
+Oct 16 07:10:33.487 TRACE: ec_base: stop()
+Oct 16 07:10:33.487 TRACE: ec_worker: stop()
+Oct 16 07:10:33.487 TRACE: CameraCalibration0: on_shutdown(0)
+Oct 16 07:10:33.487 TRACE: CameraCalibration0: onShutdown(0)
+Oct 16 07:10:33.487 TRACE: CameraCalibration0: finalize()
+Oct 16 07:10:33.487 TRACE: CameraCalibration0: on_finalize()
+Oct 16 07:10:33.487 TRACE: CameraCalibration0: shutdown()
+Oct 16 07:10:33.487 TRACE: CameraCalibration0: finalizePorts()
+Oct 16 07:10:33.487 TRACE: InImage: deactivateInterfaces()
+Oct 16 07:10:33.487 TRACE: InImage: disconnect_all()
+Oct 16 07:10:33.487 DEBUG: InImage: disconnecting 0 connections.
+Oct 16 07:10:33.487 TRACE: InImage: getProfile()
+Oct 16 07:10:33.487 TRACE: InImage: get_port_profile()
+Oct 16 07:10:33.487 TRACE: InImage: setPortRef()
+Oct 16 07:10:33.487 TRACE: InImage: getProfile()
+Oct 16 07:10:33.487 TRACE: CameraCaptureService: disconnect_all()
+Oct 16 07:10:33.487 DEBUG: CameraCaptureService: disconnecting 0 connections.
+Oct 16 07:10:33.487 TRACE: CameraCaptureService: getProfile()
+Oct 16 07:10:33.487 TRACE: CameraCaptureService: get_port_profile()
+Oct 16 07:10:33.487 TRACE: CameraCaptureService: setPortRef()
+Oct 16 07:10:33.488 TRACE: CameraCaptureService: getProfile()
+Oct 16 07:10:33.488 TRACE: CameraCalibration0: finalizeContexts()
+Oct 16 07:10:33.488 TRACE: periodic_ecprofile: getObjRef()
+Oct 16 07:10:33.488 TRACE: ec_base: stop()
+Oct 16 07:10:33.488 TRACE: ec_worker: stop()
+Oct 16 07:10:33.488 WARNING: ec_worker: ExecutionContext is already stopped.
+Oct 16 07:10:33.488 ERROR: ec_base: Invoking on_shutdown() for each RTC failed.
+Oct 16 07:10:33.488 DEBUG: CameraCalibration0: Deactivating Execution Context.
+Oct 16 07:10:33.488 DEBUG: CameraCalibration0: Deactivating EC done.
+Oct 16 07:10:33.488 TRACE: periodic_ec: ~PeriodicExecutionContext()
+Oct 16 07:10:33.489 DEBUG: periodic_ec: Thread terminated.
+Oct 16 07:10:33.489 TRACE: periodic_ecprofile: ~ExecutionContextProfile()
+Oct 16 07:10:33.489 TRACE: ec_worker: ~ExecutionContextWorker()
+Oct 16 07:10:33.489 DEBUG: CameraCalibration0: Cleanup on Manager
+Oct 16 07:10:33.489 TRACE: manager: Manager::notifyFinalized()
+Oct 16 07:10:33.489 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 07:10:33.489 TRACE: CameraCalibration0: getProperties()
+Oct 16 07:19:39.984 INFO: manager: 1.1.1
+Oct 16 07:19:39.987 INFO: manager: Copyright (C) 2003-2012
+Oct 16 07:19:39.987 INFO: manager:   Noriaki Ando
+Oct 16 07:19:39.987 INFO: manager:   Intelligent Systems Research Institute, AIST
+Oct 16 07:19:39.987 INFO: manager: Manager starting.
+Oct 16 07:19:39.987 INFO: manager: Starting local logging.
+Oct 16 07:19:39.987 TRACE: manager: Manager::initORB()
+Oct 16 07:19:39.987 DEBUG: manager: corba.args: 
+Oct 16 07:19:39.987 DEBUG: manager: - config
+  - version: 1.1.1
+- openrtm
+  - name: OpenRTM-aist-1.1.1
+  - version: 1.1.1
+- manager
+  - instance_name: manager
+  - name: manager_cpp
+  - naming_formats: %n_cpp.mgr
+  - pid: 23276
+  - refstring_path: /var/log/rtcmanager.ref
+  - modules
+    - load_path: ./
+    - abs_path_allowed: YES
+    - C++
+      - manager_cmd: rtcd
+      - profile_cmd: rtcprof
+      - suffixes: dylib
+      - load_paths: ./
+    - Python
+      - manager_cmd: rtcd_python
+      - profile_cmd: rtcprof_python
+      - suffixes: py
+      - load_paths: ./
+    - Java
+      - manager_cmd: rtcd_java
+      - profile_cmd: rtcprof_java
+      - suffixes: class
+      - load_paths: ./
+    - preload: 
+    - config_path: 
+    - download_allowed: 
+    - init_func_suffix: 
+    - init_func_prefix: 
+  - is_master: NO
+  - corba_servant: YES
+  - shutdown_on_nortcs: NO
+  - shutdown_auto: NO
+  - auto_shutdown_duration: 10.0
+  - command: rtcd
+  - supported_languages: C++, Python, Java
+  - local_service
+    - enabled_services: ALL
+  - components
+    - precreate: 
+- os
+  - name: Darwin
+  - release: 14.5.0
+  - version: Darwin Kernel Version 14.5.0: Wed Jul 29 02:26:53 PDT 2015; root:xnu-2782.40.9~1/RELEASE_X86_64
+  - arch: x86_64
+  - hostname: visnu
+- logger
+  - enable: YES
+  - file_name: ./log/standalonertc_CameraCalibration
+  - date_format: %b %d %H:%M:%S.%Q
+  - log_level: TRACE
+  - stream_lock: NO
+  - master_logger: 
+  - clock_type: 
+- module
+  - conf_path: 
+  - load_path: 
+- naming
+  - enable: YES
+  - type: corba
+  - formats: %n.rtc
+  - update
+    - enable: YES
+    - interval: 10.0
+- timer
+  - enable: YES
+  - tick: 0.1
+- corba
+  - args: 
+  - endpoint: 
+  - id: omniORB
+  - nameservers: localhost:2809
+  - master_manager: localhost:2810
+  - nameservice
+    - replace_endpoint: NO
+- exec_cxt
+  - periodic
+    - type: PeriodicExecutionContext
+    - rate: 1000
+  - sync_transition: YES
+  - transition_timeout: 0.5
+- sdo
+  - service
+    - provider
+      - enabled_service: ALL
+    - consumer
+      - enabled_service: ALL
+- ImageProcessin
+  - CameraCalibration0
+    - config_file: conf/CameraCalibration0.conf
+- config_file: conf/rtc_CameraCalibration.conf
+
+Oct 16 07:19:39.988 DEBUG: manager: corba.endpoint: 
+Oct 16 07:19:39.988 DEBUG: manager: manager.is_master: NO
+Oct 16 07:19:39.988 DEBUG: manager: corba.id: omniORB
+Oct 16 07:19:39.988 TRACE: manager: Manager::initNaming()
+Oct 16 07:19:39.988 TRACE: manager: Register Naming Server: corba/localhost:2809
+Oct 16 07:19:39.988 TRACE: NamingManager: NamingManager::registerNameServer(corba, localhost:2809)
+Oct 16 07:19:39.988 TRACE: NamingManager: createNamingObj(method = corba, nameserver = localhost:2809
+Oct 16 07:19:39.989 TRACE: manager: Manager::getORB()
+Oct 16 07:19:39.998 WARNING: NamingOnCorba: No endpoint for the CORBA naming service (localhost) was found.
+Oct 16 07:19:39.998 INFO: NamingManager: NameServer connection succeeded: corba/localhost:2809
+Oct 16 07:19:39.998 TRACE: manager: Manager::initFactories()
+Oct 16 07:19:39.998 TRACE: manager: Manager::initExecContext()
+Oct 16 07:19:39.998 TRACE: manager: Manager::initComposite()
+Oct 16 07:19:39.998 TRACE: manager: Manager::registerFactory(PeriodicECSharedComposite)
+Oct 16 07:19:39.998 TRACE: manager: Manager::initManagerServant()
+Oct 16 07:19:39.998 TRACE: ManagerServant: This manager is slave.
+Oct 16 07:19:39.998 TRACE: ManagerServant: findManager(host_port = localhost:2810)
+Oct 16 07:19:39.998 DEBUG: ManagerServant: corbaloc: corbaloc::localhost:2810/manager_cpp
+Oct 16 07:19:39.998 TRACE: manager: Manager::getORB()
+Oct 16 07:19:39.999 DEBUG: ManagerServant: CORBA SystemException cought (CORBA::TRANSIENT)
+Oct 16 07:19:39.999 INFO: ManagerServant: Master manager not found
+Oct 16 07:19:39.999 TRACE: manager: Manager::activateManager()
+Oct 16 07:19:39.999 TRACE: manager: Manager::getPOAManager()
+Oct 16 07:19:39.999 TRACE: manager: Manager::getPOAManager()
+Oct 16 07:19:39.999 TRACE: manager: POA Manager activated.
+Oct 16 07:19:39.999 TRACE: manager: Manager::initLocalService()
+Oct 16 07:19:39.999 TRACE: LocalServiceAdmin: LocalServiceAdmin::LocalServiceAdmin()
+Oct 16 07:19:39.999 TRACE: LocalServiceAdmin: LocalServiceAdmin::init():
+Oct 16 07:19:39.999 DEBUG: LocalServiceAdmin: - enabled_services: ALL
+- modules: 
+
+Oct 16 07:19:39.999 INFO: LocalServiceAdmin: All the local services are enabled.
+Oct 16 07:19:39.999 DEBUG: LocalServiceAdmin: Available services: 
+Oct 16 07:19:39.999 DEBUG: manager: LocalServiceAdmin's properties:
+Oct 16 07:19:39.999 DEBUG: manager: - enabled_services: ALL
+- modules: 
+
+Oct 16 07:19:39.999 TRACE: manager: Manager::registerFactory(CameraCalibration)
+Oct 16 07:19:39.999 TRACE: manager: Manager::createComponent(CameraCalibration)
+Oct 16 07:19:39.999 TRACE: manager: RTC basic propfile vendor: 
+Oct 16 07:19:39.999 TRACE: manager: RTC basic propfile category: 
+Oct 16 07:19:39.999 TRACE: manager: RTC basic propfile implementation_id: CameraCalibration
+Oct 16 07:19:39.999 TRACE: manager: RTC basic propfile version: 
+Oct 16 07:19:39.999 TRACE: manager: Manager::getORB()
+Oct 16 07:19:39.999 TRACE: manager: Manager::getPOA()
+Oct 16 07:19:39.999 TRACE: manager: Manager::getORB()
+Oct 16 07:19:39.999 TRACE: manager: Manager::getPOA()
+Oct 16 07:19:39.999 TRACE: : getProperties()
+Oct 16 07:19:39.999 TRACE: SdoServiceAdmin: SdoServiceAdmin::SdoServiceAdmin()
+Oct 16 07:19:39.999 TRACE: : getProperties()
+Oct 16 07:19:39.999 DEBUG: SdoServiceAdmin: sdo.service.provider.enabled_services: 
+Oct 16 07:19:39.999 DEBUG: SdoServiceAdmin: sdo.service.provider.available_services: 
+Oct 16 07:19:39.999 DEBUG: SdoServiceAdmin: sdo.service.consumer.enabled_services: 
+Oct 16 07:19:39.999 DEBUG: SdoServiceAdmin: sdo.service.consumer.available_services: 
+Oct 16 07:19:40.000 DEBUG: InImage: Port name: InImage
+Oct 16 07:19:40.000 DEBUG: InImage: setting port.port_type: DataIntPort
+Oct 16 07:19:40.000 DEBUG: InImage: setting dataport.data_type: IDL:Img/TimedCameraImage:1.0
+Oct 16 07:19:40.000 TRACE: : setProperties()
+Oct 16 07:19:40.000 TRACE: : getTypeName()
+Oct 16 07:19:40.000 TRACE: CameraCalibration0: setInstanceName(CameraCalibration0)
+Oct 16 07:19:40.000 TRACE: manager: RTC created: CameraCalibration
+Oct 16 07:19:40.000 TRACE: CameraCalibration0: getCategory()
+Oct 16 07:19:40.000 TRACE: CameraCalibration0: getTypeName()
+Oct 16 07:19:40.000 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 07:19:40.000 TRACE: CameraCalibration0: setProperties()
+Oct 16 07:19:40.000 TRACE: CameraCalibration0: setProperties()
+Oct 16 07:19:40.000 TRACE: CameraCalibration0: getProperties()
+Oct 16 07:19:40.000 TRACE: CameraCalibration0: getProperties()
+Oct 16 07:19:40.000 TRACE: CameraCalibration0: getProperties()
+Oct 16 07:19:40.000 TRACE: CameraCalibration0: getProperties()
+Oct 16 07:19:40.000 TRACE: CameraCalibration0: initialize()
+Oct 16 07:19:40.000 DEBUG: CameraCalibration0: getContextOptions()
+Oct 16 07:19:40.000 TRACE: CameraCalibration0: getGlobalContextOptions()
+Oct 16 07:19:40.000 DEBUG: CameraCalibration0: Global EC options are specified.
+Oct 16 07:19:40.000 DEBUG: CameraCalibration0: - type: PeriodicExecutionContext
+- rate: 1000
+
+Oct 16 07:19:40.000 DEBUG: CameraCalibration0: Copying inherited EC options.
+Oct 16 07:19:40.000 TRACE: CameraCalibration0: getPrivateContextOptions()
+Oct 16 07:19:40.000 DEBUG: CameraCalibration0: No component specific EC specified.
+Oct 16 07:19:40.000 TRACE: ec_worker: ExecutionContextWorker()
+Oct 16 07:19:40.000 TRACE: periodic_ecprofile: ExecutionContextProfile()
+Oct 16 07:19:40.000 DEBUG: periodic_ecprofile: Actual rate: 0 [sec], 1 [usec]
+Oct 16 07:19:40.000 TRACE: periodic_ec: PeriodicExecutionContext()
+Oct 16 07:19:40.000 TRACE: periodic_ecprofile: setObjRef()
+Oct 16 07:19:40.000 TRACE: periodic_ecprofile: setKind(PERIODIC)
+Oct 16 07:19:40.000 TRACE: ec_base: setRate(1000000.000000)
+Oct 16 07:19:40.000 TRACE: periodic_ecprofile: setRate(1000000.000000)
+Oct 16 07:19:40.000 INFO: ec_base: setRate(1000000.000000) done
+Oct 16 07:19:40.000 DEBUG: periodic_ec: Actual period: 0 [sec], 1 [usec]
+Oct 16 07:19:40.000 DEBUG: CameraCalibration0: EC (PeriodicExecutionContext) created.
+Oct 16 07:19:40.000 TRACE: ec_base: init()
+Oct 16 07:19:40.000 DEBUG: ec_base: - sync_transition: YES
+- transition_timeout: 0.5
+- type: PeriodicExecutionContext
+- rate: 1000
+- name: 
+
+Oct 16 07:19:40.000 TRACE: ec_base: setRate(1000.000000)
+Oct 16 07:19:40.000 TRACE: periodic_ecprofile: setRate(1000.000000)
+Oct 16 07:19:40.000 INFO: ec_base: setRate(1000.000000) done
+Oct 16 07:19:40.000 TRACE: ec_base: setTransitionMode(sync_transition)
+Oct 16 07:19:40.000 DEBUG: ec_base: Transition Mode: sync_transition = YES
+Oct 16 07:19:40.000 TRACE: ec_base: setTransitionMode(sync_activation)
+Oct 16 07:19:40.000 DEBUG: ec_base: Configuration sync_activation not found.
+Oct 16 07:19:40.000 TRACE: ec_base: setTransitionMode(sync_deactivation)
+Oct 16 07:19:40.000 DEBUG: ec_base: Configuration sync_deactivation not found.
+Oct 16 07:19:40.000 TRACE: ec_base: setTransitionMode(sync_reset)
+Oct 16 07:19:40.000 DEBUG: ec_base: Configuration sync_reset not found.
+Oct 16 07:19:40.000 TRACE: ec_base: setTimeout(transition_timeout)
+Oct 16 07:19:40.000 DEBUG: ec_base: Timeout (transition_timeout): 0.500000 [s]
+Oct 16 07:19:40.000 TRACE: ec_base: setTimeout(activation_timeout)
+Oct 16 07:19:40.000 DEBUG: ec_base: Configuration activation_timeout not found.
+Oct 16 07:19:40.000 TRACE: ec_base: setTimeout(deactivation_timeout)
+Oct 16 07:19:40.000 DEBUG: ec_base: Configuration deactivation_timeout not found.
+Oct 16 07:19:40.000 TRACE: ec_base: setTimeout(reset_timeout)
+Oct 16 07:19:40.000 DEBUG: ec_base: Configuration reset_timeout not found.
+Oct 16 07:19:40.000 DEBUG: ec_base: ExecutionContext's configurations:
+Oct 16 07:19:40.000 DEBUG: ec_base: Exec rate   : 1000.000000 [Hz]
+Oct 16 07:19:40.000 DEBUG: ec_base: Activation  : Sync = YES, Timeout = 0.500000
+Oct 16 07:19:40.000 DEBUG: ec_base: Deactivation: Sync = YES, Timeout = 0.500000
+Oct 16 07:19:40.000 DEBUG: ec_base: Reset       : Sync = YES, Timeout = 0.500000
+Oct 16 07:19:40.000 TRACE: periodic_ecprofile: setProperties()
+Oct 16 07:19:40.000 DEBUG: periodic_ecprofile: - sync_transition: YES
+- transition_timeout: 0.5
+- type: PeriodicExecutionContext
+- rate: 1000
+- name: 
+
+Oct 16 07:19:40.000 TRACE: ec_worker: bindComponent()
+Oct 16 07:19:40.000 TRACE: CameraCalibration0: bindContext()
+Oct 16 07:19:40.000 DEBUG: ec_worker: bindContext returns id = 0
+Oct 16 07:19:40.000 TRACE: CameraCalibration0: getObjRef()
+Oct 16 07:19:40.000 TRACE: manager: Manager::getPOA()
+Oct 16 07:19:40.000 DEBUG: ec_worker: bindComponent() succeeded.
+Oct 16 07:19:40.000 INFO: CameraCalibration0: 1 execution context was created.
+Oct 16 07:19:40.000 TRACE: CameraCalibration0: on_initialize()
+Oct 16 07:19:40.000 DEBUG: CameraCalibration0: Calling onInitialize().
+Oct 16 07:19:40.000 TRACE: CameraCalibration0: addInPort(InImage)
+Oct 16 07:19:40.000 TRACE: CameraCalibration0: addPort(PortBase&)
+Oct 16 07:19:40.000 TRACE: CameraCalibration0: getObjRef()
+Oct 16 07:19:40.000 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 07:19:40.000 TRACE: InImage: setOwner(CameraCalibration0)
+Oct 16 07:19:40.000 TRACE: InImage: getPortProfile()
+Oct 16 07:19:40.000 TRACE: InImage: getName() = CameraCalibration0.InImage
+Oct 16 07:19:40.000 TRACE: InImage: getPortRef()
+Oct 16 07:19:40.000 TRACE: InImage: getProfile()
+Oct 16 07:19:40.000 TRACE: InImage: init()
+Oct 16 07:19:40.000 DEBUG: InImage: single buffer mode.
+Oct 16 07:19:40.000 TRACE: InImage: initProviders()
+Oct 16 07:19:40.000 DEBUG: InImage: available providers: corba_cdr
+Oct 16 07:19:40.000 DEBUG: InImage: dataflow_type push is supported
+Oct 16 07:19:40.000 TRACE: InImage: initConsumers()
+Oct 16 07:19:40.000 DEBUG: InImage: available consumers: corba_cdr
+Oct 16 07:19:40.001 TRACE: CameraCaptureService: registerConsumer()
+Oct 16 07:19:40.001 TRACE: CameraCalibration0: addPort(CrobaPort)
+Oct 16 07:19:40.001 TRACE: CameraCaptureService: init()
+Oct 16 07:19:40.001 DEBUG: CameraCaptureService: : 
+
+Oct 16 07:19:40.001 DEBUG: CameraCaptureService: : 
+
+Oct 16 07:19:40.001 TRACE: CameraCalibration0: addPort(PortBase&)
+Oct 16 07:19:40.001 TRACE: CameraCalibration0: getObjRef()
+Oct 16 07:19:40.001 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 07:19:40.001 TRACE: InImage: get_port_profile()
+Oct 16 07:19:40.001 TRACE: CameraCaptureService: setOwner(CameraCalibration0)
+Oct 16 07:19:40.001 TRACE: CameraCaptureService: getPortProfile()
+Oct 16 07:19:40.001 TRACE: CameraCaptureService: getName() = CameraCalibration0.CameraCaptureService
+Oct 16 07:19:40.001 TRACE: InImage: get_port_profile()
+Oct 16 07:19:40.001 TRACE: CameraCaptureService: getPortRef()
+Oct 16 07:19:40.001 TRACE: CameraCaptureService: getProfile()
+Oct 16 07:19:40.001 TRACE: InImage: getProfile()
+Oct 16 07:19:40.001 TRACE: CameraCalibration0: bindParameter(image_num (default: 10))
+Oct 16 07:19:40.001 TRACE: CameraCalibration0: bindParameter(chess_pattern_row (default: 7))
+Oct 16 07:19:40.001 TRACE: CameraCalibration0: bindParameter(chess_pattern_column (default: 10))
+Oct 16 07:19:40.001 TRACE: CameraCalibration0: bindParameter(chess_pattern_size (default: 24.0))
+Oct 16 07:19:40.001 TRACE: CameraCalibration0: bindParameter(output_file_name (default: calib.yml))
+Oct 16 07:19:40.001 DEBUG: CameraCalibration0: onInitialize() succeeded.
+Oct 16 07:19:40.001 DEBUG: CameraCalibration0: Active configuration set: default exists.
+Oct 16 07:19:40.001 INFO: CameraCalibration0: Initial active configuration set is default.
+Oct 16 07:19:40.001 DEBUG: CameraCalibration0: on_initialize() was properly done.
+Oct 16 07:19:40.001 DEBUG: CameraCalibration0: EC[0] starting.
+Oct 16 07:19:40.001 TRACE: ec_base: start()
+Oct 16 07:19:40.001 TRACE: ec_worker: start()
+Oct 16 07:19:40.001 TRACE: CameraCalibration0: on_startup(0)
+Oct 16 07:19:40.001 TRACE: CameraCalibration0: onStartup(0)
+Oct 16 07:19:40.001 DEBUG: ec_worker: 1 components started.
+Oct 16 07:19:40.001 TRACE: periodic_ec: open()
+Oct 16 07:19:40.001 TRACE: manager: RTC initialization succeeded: CameraCalibration
+Oct 16 07:19:40.001 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 07:19:40.001 TRACE: manager: Manager::registerComponent(CameraCalibration0)
+Oct 16 07:19:40.001 TRACE: CameraCalibration0: getInstanceName()
+Oct 16 07:19:40.001 TRACE: CameraCalibration0: getNamingNames()
+Oct 16 07:19:40.001 TRACE: manager: Bind name: CameraCalibration0.rtc
+Oct 16 07:19:40.001 TRACE: periodic_ec: svc()Oct 16 07:19:40.001 TRACE: NamingManager: 
+
+NamingManager::bindObject(CameraCalibration0.rtc)
+Oct 16 07:19:40.001 TRACE: NamingOnCorba: bindObject(name = CameraCalibration0.rtc, rtobj)
+Oct 16 07:19:40.001 TRACE: CameraCalibration0: getObjRef()
+Oct 16 07:19:40.002 TRACE: manager: Manager::runManager(): non-blocking mode
+Oct 16 07:19:45.084 TRACE: CameraCalibration0: get_component_profile()
+Oct 16 07:19:45.084 TRACE: InImage: get_port_profile()
+Oct 16 07:19:45.084 TRACE: CameraCaptureService: get_port_profile()
+Oct 16 07:19:45.086 TRACE: CameraCalibration0: get_ports()
+Oct 16 07:19:45.086 TRACE: InImage: get_port_profile()
+Oct 16 07:19:45.086 TRACE: InImage: get_port_profile()
+Oct 16 07:19:45.087 TRACE: CameraCaptureService: get_port_profile()
+Oct 16 07:19:45.087 TRACE: CameraCaptureService: get_port_profile()
+Oct 16 07:19:45.087 TRACE: CameraCaptureService: get_port_profile()
+Oct 16 07:19:50.295 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:19:50.295 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:20:00.585 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:20:00.585 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:20:10.837 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:20:10.837 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:20:21.128 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:20:21.128 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:20:31.363 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:20:31.363 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:20:41.627 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:20:41.627 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:20:51.884 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:20:51.884 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:21:02.115 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:21:02.115 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:21:12.391 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:21:12.392 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:21:22.671 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:21:22.671 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:21:32.933 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:21:32.933 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:21:43.182 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:21:43.182 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:21:53.464 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:21:53.464 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:22:03.735 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:22:03.735 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:22:14.005 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:22:14.005 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:22:24.237 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:22:24.237 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:22:34.515 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:22:34.515 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:22:44.789 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:22:44.789 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:22:55.081 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:22:55.081 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:23:05.346 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:23:05.346 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:23:15.607 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:23:15.607 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:23:25.887 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:23:25.887 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:23:36.181 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:23:36.181 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:23:46.444 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:23:46.444 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:23:56.714 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:23:56.714 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:24:06.988 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:24:06.988 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:24:17.298 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:24:17.298 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:24:27.552 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:24:27.553 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:24:37.853 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:24:37.853 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:24:48.133 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:24:48.133 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:24:58.397 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:24:58.397 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:25:08.966 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:25:08.966 TRACE: NamingOnCorba: isAlive()
+Oct 16 07:25:19.633 TRACE: NamingManager: NamingManager::update()
+Oct 16 07:25:19.633 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:41:47.371 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:41:47.371 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:41:57.606 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:41:57.606 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:42:07.877 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:42:07.877 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:42:18.128 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:42:18.128 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:42:28.400 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:42:28.400 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:42:38.656 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:42:38.656 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:42:48.921 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:42:48.921 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:42:59.174 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:42:59.174 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:43:09.394 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:43:09.394 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:43:19.671 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:43:19.671 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:43:29.936 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:43:29.936 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:43:40.220 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:43:40.220 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:43:50.467 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:43:50.467 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:44:00.745 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:44:00.745 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:44:11.054 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:44:11.054 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:44:21.301 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:44:21.301 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:44:31.542 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:44:31.542 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:44:41.837 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:44:41.837 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:44:52.152 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:44:52.152 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:45:02.445 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:45:02.445 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:45:12.745 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:45:12.745 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:45:23.047 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:45:23.047 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:45:33.307 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:45:33.307 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:45:43.581 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:45:43.581 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:45:53.896 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:45:53.896 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:46:04.187 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:46:04.187 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:46:14.452 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:46:14.452 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:46:24.745 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:46:24.745 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:46:35.010 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:46:35.010 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:46:45.244 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:46:45.244 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:46:55.517 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:46:55.517 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:47:05.798 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:47:05.798 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:47:16.075 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:47:16.075 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:47:26.371 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:47:26.371 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:47:36.671 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:47:36.671 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:47:47.002 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:47:47.002 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:47:57.289 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:47:57.289 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:48:07.549 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:48:07.549 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:48:17.832 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:48:17.832 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:48:28.113 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:48:28.113 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:48:38.384 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:48:38.384 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:48:48.666 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:48:48.666 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:48:58.927 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:48:58.927 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:49:09.203 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:49:09.203 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:49:19.453 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:49:19.453 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:49:29.710 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:49:29.711 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:49:39.979 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:49:39.979 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:49:50.286 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:49:50.286 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:50:00.605 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:50:00.605 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:50:10.903 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:50:10.903 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:50:21.205 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:50:21.205 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:50:31.481 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:50:31.481 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:50:41.723 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:50:41.723 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:50:52.025 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:50:52.026 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:51:02.324 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:51:02.324 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:51:12.636 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:51:12.636 TRACE: NamingOnCorba: isAlive()
+Oct 16 08:51:22.945 TRACE: NamingManager: NamingManager::update()
+Oct 16 08:51:22.945 TRACE: NamingOnCorba: isAlive()

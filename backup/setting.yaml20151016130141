@@ -1,0 +1,18 @@
+application:
+  BIN_DIR: bin
+  CONF_DIR: conf
+  RTC_DIR: rtc
+  RTS_DIR: system
+  conf.C++: rtc_cpp.conf
+  conf.Java: rtc_java.conf
+  conf.Python: rtc_py.conf
+  console_bind:
+  - C++
+  - Java
+  - Python
+  name: camera_calibration
+  nameservers:
+  - localhost:2809
+  standalone:
+  - bin/WebCameraComp -f conf/rtc_WebCamera.conf
+  system: DefaultSystem.xml
